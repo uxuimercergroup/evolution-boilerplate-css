@@ -1,0 +1,19 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution - Core v3.0.2
+Social Media Badges v1.0.0 - SASS
+DATE: March 17, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-social-media-badges-ctn a[class^="evo-icon-"] {
+  color: #404040;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
+  color: #404040;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
+  color: #404040;
+}
+.evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
+  color: #404040;
+}

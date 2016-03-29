@@ -1,0 +1,66 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v3.0.2
+Fat Footer v1.0.0 - SASS
+DATE: March 17, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-fat-footer .evo-footer-content-section {
+  background-color: #fafafa;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e6e6e6;
+  padding-top: 1.25rem;
+  min-height: 12.5rem;
+  max-width: none;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+  margin-bottom: 1.25rem;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"] {
+  color: #404040;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
+  color: #404040;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
+  color: #404040;
+}
+.evo-fat-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
+  color: #404040;
+}
+.evo-fat-footer .evo-footer-content-section .evo-fat-footer-logo {
+  margin-bottom: 2.8125rem;
+}
+.evo-fat-footer .evo-footer-link-hdr {
+  color: #000000;
+  font-size: 0.75rem;
+}
+.evo-fat-footer .evo-footer-links li a {
+  color: #006D9E;
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+}
+.evo-fat-footer .evo-fat-footer-brand-bar {
+  background-color: #e6e6e6;
+  min-height: 3.125rem;
+  max-width: none;
+}
+.evo-fat-footer .evo-fat-footer-brand-bar small {
+  color: #808080;
+}
+.evo-fat-footer .evo-footer-copyright {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+}
+.evo-fat-footer .evo-brand-bar-footer-logo {
+  margin-top: 0.75rem;
+}
+
+@media only screen and (min-width: 48em) {
+  .evo-fat-footer .evo-footer-links li {
+    padding-bottom: 0.3125rem;
+  }
+}

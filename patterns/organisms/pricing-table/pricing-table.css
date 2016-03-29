@@ -1,0 +1,62 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v3.0.2
+Pricing Table v1.0.0 - SASS
+DATE: March 17, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-pricing-table [class*="small-block-grid-"] {
+  background-color: #f0f0f0;
+  font-size: 1.0625rem;
+  padding: 0.625rem;
+  margin: 0;
+  margin-bottom: 0.125rem;
+}
+.evo-pricing-table [class*="small-block-grid-"] li {
+  padding-bottom: 0;
+}
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-amt,
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-break-down-amt,
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-total-amt {
+  text-align: right;
+}
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-break-down-label,
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-total-label {
+  text-transform: none;
+}
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-value-label {
+  font-size: 0.75rem;
+  position: relative;
+}
+.evo-pricing-table .evo-pricing-table-category-label {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.evo-pricing-table .evo-pricing-table-category-label li {
+  padding-bottom: 0;
+}
+.evo-pricing-table .evo-pricing-table-category-label .evo-pricing-table-item-label {
+  color: #999999;
+  top: 0.8125rem;
+}
+.evo-pricing-table .evo-pricing-table-item-amt .evo-pricing-table-value-label {
+  color: #999999;
+  text-align: right;
+  top: -3px;
+}
+.evo-pricing-table .evo-pricing-table-break-down-row {
+  background-color: #BFBFBF;
+}
+.evo-pricing-table .evo-pricing-table-total-row {
+  background-color: #404040;
+}
+.evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-label {
+  color: #FFFFFF;
+}
+.evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-amt {
+  color: #FFFFFF;
+}

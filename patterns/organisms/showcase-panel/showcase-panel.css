@@ -1,0 +1,99 @@
+/*-------------------------------------------------------------------------------------------
+Mercer Evolution v3.0.2
+Showcase Panel v1.0.0 - SASS
+DATE: March 17, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+URL: http://evolution.mercer.com
+--------------------------------------------------------------------------------------------*/
+.evo-showcase-panel {
+  -moz-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
+  background-color: #FFFFFF;
+}
+.evo-showcase-panel .evo-showcase-panel-item {
+  min-height: 6.25rem;
+  padding: 0.625rem 0;
+  text-align: center;
+  color: gray;
+}
+.evo-showcase-panel .evo-showcase-panel-item [class^="evo-icon-"] {
+  top: 4px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-label {
+  font-family: "proxima_nova_rgbold", arial, Tahoma, Geneva, sans-serif;
+  line-height: 1;
+}
+.evo-showcase-panel .evo-showcase-panel-item-label sup {
+  position: relative;
+  font-family: "proxima_nova_rgregular", arial, Tahoma, Geneva, sans-serif;
+}
+.evo-showcase-panel .evo-showcase-panel-item-sub-label {
+  position: relative;
+  font-family: "proxima_nova_ltsemibold", arial, Tahoma, Geneva, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.evo-showcase-panel .evo-showcase-panel-item-sub-text {
+  display: block;
+  font-size: 0.6875rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large {
+  padding-top: 1.4375rem;
+  padding-bottom: 0.9375rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-label {
+  font-size: 3rem;
+  letter-spacing: -0.125rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-label sup {
+  font-size: 0.875rem;
+  top: -22px;
+  left: -3px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-sub-label {
+  top: 0;
+  left: -9px;
+  letter-spacing: 0;
+}
+.evo-showcase-panel .evo-showcase-panel-item-large .evo-showcase-panel-item-sub-text {
+  position: relative;
+  top: -7px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-label {
+  font-size: 1.625rem;
+  letter-spacing: -0.0125rem;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-label sup {
+  font-size: 0.6875rem;
+  top: -9px;
+  left: -1px;
+}
+.evo-showcase-panel .evo-showcase-panel-item-small .evo-showcase-panel-item-sub-label {
+  top: 0;
+  left: -5px;
+  letter-spacing: 0;
+  font-family: "proxima_nova_rgbold", arial, Tahoma, Geneva, sans-serif;
+  text-transform: lowercase;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item {
+  color: #FFFFFF;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item a {
+  color: #FFFFFF;
+}
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item [class^="evo-icon-"] {
+  color: #FFFFFF;
+}
+.evo-showcase-panel[data-evo-showcase-panel-fixed] {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+}
