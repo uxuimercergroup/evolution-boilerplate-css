@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------------
 // Project Name v1.0.0 - Site JS
-// DATE: March 29, 2016
+// DATE: March 31, 2016
 // AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 // URL: https://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
@@ -213,7 +213,7 @@ $(function() {
 });
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v3.0.2
+// Mercer Evolution v3.0.3
 // Conversational Form v1.0.0 - JS
 // DATE: March 17, 2016
 // AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
@@ -231,7 +231,7 @@ $(function() {
 // CONVERSATIONAL FORM ITEM TOGGLE - ENDS
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v3.0.2
+// Mercer Evolution v3.0.3
 // Item Selection Panel v1.0.0 - JS
 // DATE: March 17, 2016
 // AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
