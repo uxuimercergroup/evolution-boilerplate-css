@@ -1,7 +1,7 @@
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v3.0.5
-// Item Selection Panel v1.0.0 - JS
-// DATE: March 17, 2016
+// Mercer Evolution v4.0.0
+// Item Selection Panel v1.0.1 - JS
+// DATE: May 26, 2016
 // AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------

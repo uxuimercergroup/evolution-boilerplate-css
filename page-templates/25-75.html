@@ -1,344 +1,287 @@
-<!DOCTYPE HTML>
-<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!doctype html>
+<!--[if IE 9]><html class="no-js ie9" lang=""><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang=""><!--<![endif]-->
 	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-		<title>Project Name : </title>
-		<meta name="keywords" content="" />
-		<meta name="description" content="CSS Boilerplate for Evolution" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="cleartype" content="on" />
 		
-		<!-- Mobile touch icons - http://goo.gl/6nVq0 -->
-		<!-- For Chrome for Android: -->
-		<!-- <link rel="icon" sizes="192x192" href="touch-icon-192x192.png"> -->
-		<!-- For iPhone 6 Plus with @3× display: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon-180x180-precomposed.png"> -->
-		<!-- For iPad with @2× display running iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png"> -->
-		<!-- For iPad with @2× display running iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png"> -->
-		<!-- For iPhone with @2× display running iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png"> -->
-		<!-- For iPhone with @2× display running iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png"> -->
-		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png"> -->
-		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png"> -->
-		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-		<!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"> --><!-- 57×57px -->
-
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
-		<!-- <meta name="msapplication-TileImage" content="apple-touch-icon-144x144-precomposed.png"> -->
-		<!-- <meta name="msapplication-TileColor" content="#002C77"> -->
-
-		<!-- Add to homescreen for Chrome on Android -->
-		<!--
-        <meta name="mobile-web-app-capable" content="yes">
-        -->
-
-		<!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-		<!--
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="apple-mobile-web-app-title" content="" />
-		-->
-
-		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-		<!--
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-    	-->
-
-		<!-- FAVICON -->
-		<link rel="shortcut icon" href="../assets/images/core/favicon.ico" />
-
-		<!-- EVOLUTION CORE STYLES -->
-		<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css" />
-
-		<!-- EVOLUTION UI STYLES -->
-		<link href="../assets/css/evolution_ui.css" rel="stylesheet" type="text/css" />
-
-		<!-- SITE STYLES -->
-		<link href="../assets/css/styles.css" rel="stylesheet" type="text/css" />
-
-		<!-- SITE IE CONDITIONAL STYLES -->
-		<!--[if IE 9]><link href="../assets/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
-
-		<!-- MODERNIZR - USED TO CHECK HTML & CSS3 SUPPORT IN BROWSERS -->
-		<script src="../assets/scripts/core/foundation/vendor/modernizr.js"></script>
-
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Project Name : </title>
+		<meta name="keywords" content="">
+		<meta name="description" content="CSS Boilerplate for Evolution">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+		<link rel="shortcut icon" href="../assets/images/core/favicon.ico">
+		
+		<link href="../assets/css/evolution.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+		<link href="../assets/css/app.css" rel="stylesheet" type="text/css">
+		<!--[if IE 9]><link href="../assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
 	</head>
 	<body>
 
 		<!-- OFF-CANVAS WRAPPER - BEGINS -->
-		<div class="off-canvas-wrap evo-off-canvas" data-offcanvas>
-			<div class="inner-wrap">
+		<div class="off-canvas-wrapper evo-off-canvas">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
 				<!-- HEADER - BEGINS -->
-				<header class="evo-header" role="banner">
-					
-					<!-- TOP BAR CONTAINER - DEFAULT - BEGINS -->
-					<div class="contain-to-grid show-for-large-up">
+				<header class="evo-header evo-site-header" role="banner">
 				
-						<!-- TOP BAR - BEGINS -->
-						<nav class="top-bar evo-top-bar" data-topbar role="navigation">
-							
-							<!-- TOP BAR TITLE AREA - BEGINS -->
-							<ul class="title-area">
-								<li class="name">
-									<h1><a href="../index.html">Project Name <span class="evo-top-bar-sub-name"></span></a></h1>
-									<!-- <a href="#/"><img  src="../assets/images/core/corp-logos/mercer/mercer_logo_rgb_reverse.png" alt="Mercer - Make Tomorrow, Today" width="160"  ></a> -->
-								</li>
-							</ul>
-							<!-- TOP BAR TITLE AREA - ENDS -->
-				
-							<!-- TOP BAR NAV SECTION - BEGINS -->
-							<section class="top-bar-section">
-				
-								<!-- TOP BAR RIGHT NAV SECTION - BEGINS -->
-								<ul class="right">
-									<li class="has-dropdown">
-										<a class="evo-icon-user"></a>
-										<ul class="dropdown">
-											<li>
-												<a href="">View Profile</a>
-											</li>
-											<li class="divider"></li>
-											<li class="active">
-												<a href="">Change Language</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">User Administration</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Log Out</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<!-- TOP BAR RIGHT NAV SECTION - ENDS -->
-				
-								<!-- TOP BAR LEFT NAV SECTION - BEGINS -->
-								<ul class="left">
-									<li class="has-dropdown">
-										<a>Nav Link 1</a>
-										<ul class="dropdown">
-											<li>
-												<a href="">Item 1</a>
-											</li>
-											<li class="divider"></li>
-											<li class="has-dropdown">
-												<a>Item 2</a>
-												<ul class="dropdown">
-													<li>
-														<a href="">Sub-item 1</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 2</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 3</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 4</a>
-													</li>
-												</ul>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Item 3</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Item 4</a>
-											</li>
-										</ul>
-									</li>
-									<li class="active">
-										<a href="">Nav Link 2</a>
-									</li>
-									<li>
-										<a href="">Nav Link 3</a>
-									</li>
-				
-									<!-- TOP BAR - MEGA MENU - BEGINS -->
-									<li class="has-dropdown" data-evo-top-bar-mega-menu>
-										<a>Mega Menu</a>
-										<ul class="dropdown" data-evo-top-bar-mega-menu-ctn>
-											<li>
-												<div class="evo-contain-to-grid" data-evo-top-bar-mega-menu-content-ctn>
-													<div class="row">
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<!-- TOP BAR - MEGA MENU - ENDS -->
-									
-								</ul>
-								<!-- TOP BAR LEFT NAV SECTION - ENDS -->
-				
-							</section>
-							<!-- TOP BAR NAV SECTION - ENDS -->
-				
-						</nav>
-						<!-- TOP BAR - ENDS -->
-				
-					</div>
-					<!-- TOP BAR CONTAINER - DEFAULT - ENDS -->
-				
-					<!-- OFF-CANVAS - TAB BAR - BEGINS -->
-					<nav class="tab-bar hide-for-large-up" aria-hidden="true">
-						<section class="left-small">
-							<a class="left-off-canvas-toggle menu-icon">
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+					<nav class="title-bar" data-responsive-toggle="evo-site-top-bar" data-hide-for="large" role="navigation">
+						<div class="title-bar-left">
+							<button class="menu-icon" type="button" data-open="evo-off-canvas-left-menu">
 								<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
-							</a>
-						</section>
-				
-						<section class="middle tab-bar-section">
-							<h1 class="title">
-								<a href="../index.html">Project Name</a>
-							</h1>
-							<!-- <a class="title" href="#/"><img  src="../assets/images/core/corp-logos/mercer/mercer_logo_rgb_reverse.png" alt="Mercer - Make Tomorrow, Today" width="160"  ></a> -->
-						</section>
-				
-						<section class="right-small">
-							<a class="right-off-canvas-toggle menu-icon">
-								<i class="evo-icon-user evo-icon-size-medium" title="User Account"></i>
-							</a>
-						</section>
+							</button>
+						</div>
+						<div class="title-bar-title">
+							<a href="../index.html">Project Name</a>
+						</div>
+						<div class="title-bar-right">
+							<button class="menu-icon" type="button" data-open="evo-off-canvas-right-menu">
+								<i class="evo-icon-user evo-icon-size-medium" title="Menu"></i>
+							</button>
+						</div>
 					</nav>
-					<!-- OFF-CANVAS - TAB BAR - ENDS -->
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
 				
-					<!-- OFF-CANVAS - LEFT MENU - BEGINS -->
-					<aside class="left-off-canvas-menu">
-						<ul class="off-canvas-list">
+				<!-- OFF-CANVAS - LEFT MENU - BEGINS -->
+					<div class="off-canvas position-left" id="evo-off-canvas-left-menu" data-off-canvas>
+						<ul class="vertical menu" data-drilldown>
 							<li>
 								<label>Label</label>
 							</li>
-							<li class="has-submenu">
+							<li>
 								<a href="">Item 1 w/ menu</a>
-								<ul class="left-submenu">
-									<li class="back">
-										<a href="">Back</a>
-									</li>
+								<ul class="vertical menu">
 									<li>
 										<label>Level 1</label>
 									</li>
 									<li>
-										<a href="">Sub-item 1</a>
+										<a href="#/">Sub-item 1</a>
 									</li>
-									<li class="has-submenu">
+									<li>
 										<a href="">Sub-item 2 w/ menu</a>
-										<ul class="left-submenu">
-											<li class="back">
-												<a href="">Back</a>
-											</li>
+										<ul class="vertical menu">
 											<li>
 												<label>Level 2</label>
 											</li>
 											<li>
-												<a href="">Sub-sub-item 1</a>
+												<a href="#/">Sub-sub-item 1</a>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="">Sub-item 3</a>
+										<a href="#/">Sub-item 3</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="">Item 2</a>
+								<a href="#/">Item 2</a>
 							</li>
 							<li>
-								<a href="">Item 3</a>
+								<a href="#/">Item 3</a>
 							</li>
 							<li>
-								<a href="">Item 4</a>
+								<a href="#/">Item 4</a>
 							</li>
 							<li>
-								<a href="">Item 5</a>
+								<a href="#/">Item 5</a>
 							</li>
 						</ul>
-					</aside>
-					<!-- OFF-CANVAS - LEFT MENU - ENDS -->
+					</div>
+				<!-- OFF-CANVAS - LEFT MENU - ENDS -->
 				
-					<!-- OFF-CANVAS - RIGHT MENU - BEGINS -->
-					<aside class="right-off-canvas-menu">
-						<ul class="off-canvas-list">
+				<!-- OFF-CANVAS - RIGHT MENU - BEGINS -->
+					<div class="off-canvas position-right" id="evo-off-canvas-right-menu" data-off-canvas data-position="right">
+						<ul class="vertical menu" data-drilldown>
 							<li>
-								<label>User Account</label>
+								<label>Label</label>
 							</li>
 							<li>
-								<a href="">View Profile</a>
+								<a href="">Item 1 w/ menu</a>
+								<ul class="vertical menu">
+									<li>
+										<label>Level 1</label>
+									</li>
+									<li>
+										<a href="#/">Sub-item 1</a>
+									</li>
+									<li>
+										<a href="">Sub-item 2 w/ menu</a>
+										<ul class="vertical menu">
+											<li>
+												<label>Level 2</label>
+											</li>
+											<li>
+												<a href="#/">Sub-sub-item 1</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#/">Sub-item 3</a>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<a href="">Change Language</a>
+								<a href="#/">Item 2</a>
 							</li>
 							<li>
-								<a href="">User Administration</a>
+								<a href="#/">Item 3</a>
 							</li>
 							<li>
-								<a href="">Log Out</a>
+								<a href="#/">Item 4</a>
+							</li>
+							<li>
+								<a href="#/">Item 5</a>
 							</li>
 						</ul>
-					</aside>
-					<!-- OFF-CANVAS - RIGHT MENU - ENDS -->
+					</div>
+				<!-- OFF-CANVAS - RIGHT MENU - ENDS -->
+				
+				<!-- TOP BAR - BEGINS -->
+					<nav class="top-bar evo-top-bar" id="evo-site-top-bar" role="navigation">
+						
+					<!-- TOP BAR TITLE - BEGINS -->
+						<div class="top-bar-title">
+							<a href="../index.html">Project Name <span></span></a>
+						</div>
+					<!-- TOP BAR TITLE - ENDS -->
+				
+					<!-- TOP BAR CONTENT - BEGINS -->
+						<div class="evo-top-bar-content">
+				
+						<!-- TOP BAR LEFT SECTION - BEGINS -->
+							<div class="top-bar-left">
+								<ul class="dropdown menu" data-dropdown-menu>
+				
+									<!-- TOP BAR - MEGA MENU - BEGINS -->
+									<li data-evo-mega-menu>
+										<a class="dropdown" data-toggle="evo-site-mega-menu">Mega Menu</a>
+										<div class="dropdown-pane" id="evo-site-mega-menu" data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true;">
+											<div class="row">
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- TOP BAR - MEGA MENU - ENDS -->
+				
+									<li>
+										<a href="javascript:;">Item 1</a>
+										<ul class="dropdown menu" data-dropdown-menu>
+											<li>
+												<a href="#/">Sub-item 1</a>
+											</li>
+											<li>
+												<a href="javascript:;">Sub-item 2</a>
+												<ul class="dropdown menu" data-dropdown-menu>
+													<li>
+														<a href="#/">Sub-sub-item 1</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 2</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 3</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 4</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#/">Sub-item 3</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 4</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						<!-- TOP BAR LEFT SECTION - ENDS -->
+				
+						<!-- TOP BAR RIGHT SECTION - BEGINS -->
+							<div class="top-bar-right">
+								<ul class="dropdown menu" data-dropdown-menu>
+									<li class="active">
+										<a href="#/">Item 2</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="evo-icon-user" aria-label="Open Menu">
+											<span class="show-for-sr">Open Menu</span>
+										</a>
+										<ul class="dropdown menu" data-dropdown-menu>
+											<li>
+												<a href="#/">Sub-item 1</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 2</a>
+											</li>
+											<li class="active">
+												<a href="#/">Sub-item 3</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 4</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						<!-- TOP BAR RIGHT SECTION - ENDS -->
+				
+						</div>
+					<!-- TOP BAR CONTENT - ENDS -->
+				
+					</nav>
+				<!-- TOP BAR - ENDS -->
 				
 				</header>				<!-- HEADER - ENDS -->
 
-				<!-- PAGE - BEGINS -->
-				<section class="evo-no-padding" role="main">
-					<div class="row evo-full-width">
-						<div class="evo-contain-to-grid evo-spacer-margin-top-large">
+				<!-- PAGE CONTENT - BEGINS -->
+				<div class="off-canvas-content" data-off-canvas-content>
+
+					<!-- PAGE - BEGINS -->
+					<section role="main">
+						<div class="row evo-spacer-margin-top-large">
 	<div class="medium-3 columns">
 		<div class="evo-spacer-margin-bottom-x-large">
-			<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >			<p>Officia reprehenderit culpa pariatur velit consectetur elit magna consectetur veniam. Qui ullamco dolor excepteur est. Consequat non adipisicing proident dolor et exercitation aliquip incididunt occaecat. Eiusmod dolor tempor cupidatat mollit. Ut veniam officia amet adipisicing qui. Aliquip incididunt reprehenderit quis ipsum irure incididunt. Ea voluptate aliqua non aliqua magna voluptate irure velit. Proident mollit velit aliquip do minim do officia dolor. Nisi magna cillum veniam nulla ullamco excepteur culpa velit consequat. Laboris nisi ex consequat cupidatat commodo dolor.</p>
+			<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >			<p>Irure non quis duis nisi. Elit reprehenderit officia fugiat pariatur fugiat sit. Laboris ut fugiat et nostrud est. Tempor adipisicing nostrud aliqua officia occaecat. Nostrud dolore qui in reprehenderit eiusmod. Eiusmod id excepteur id aliquip veniam fugiat. Dolor Lorem reprehenderit sunt eiusmod. Reprehenderit ullamco laborum elit amet cillum ad eiusmod ea. Ex tempor mollit anim proident ut amet id. Nostrud nostrud eiusmod enim non incididunt adipisicing consequat.</p>
 		</div>
 <ul>
 <li><a href="#">Other links 1</a></li>
@@ -351,97 +294,70 @@
 	</div>
 	<div class="medium-9 columns">
 		<div class="evo-spacer-margin-bottom-xxx-large">
-			<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >			<p>Quis incididunt elit et est pariatur commodo veniam officia. Amet reprehenderit sit occaecat nostrud aliquip laborum tempor eiusmod mollit. Proident eu tempor eiusmod deserunt eiusmod nulla duis. Aliqua exercitation veniam irure ullamco culpa consequat eiusmod nisi ex.</p>
+			<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >			<p>Culpa fugiat incididunt excepteur sunt. Esse laboris ut reprehenderit mollit eiusmod labore. Ipsum dolore Lorem commodo ex veniam aliqua. Laborum incididunt ut ex culpa officia do aliquip commodo.</p>
 		</div>
 
 	<!-- BLOCK GRID - BASIC DEMO - BEGIN -->
-		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
-			<li>
+		<div class="row small-up-1 medium-up-3 large-up-4">
+			<div class="columns">
 				<div class="evo-margin-bottom">
 					<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >					General text for you to read and figure out if you want to read more.
 				</div>
 
-				<a href="#/" class="button radius evo-button" role="button">Click me</a>
-			</li>
-			<li>
+				<a href="#/" class="button evo-button" role="button">Click me</a>
+			</div>
+			<div class="columns">
 				<div class="evo-margin-bottom">
 					<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >					General text for you to read and figure out if you want to read more.
 				</div>
 
-				<a href="#/" class="button radius evo-button" role="button">Click me</a>
-			</li>
-			<li>
+				<a href="#/" class="button evo-button" role="button">Click me</a>
+			</div>
+			<div class="columns">
 				<div class="evo-margin-bottom">
 					<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >					General text for you to read and figure out if you want to read more.
 				</div>
 
-				<a href="#/" class="button radius evo-button" role="button">Click me</a>
-			</li>
-			<li>
+				<a href="#/" class="button evo-button" role="button">Click me</a>
+			</div>
+			<div class="columns">
 				<div class="evo-margin-bottom">
 					<img class="evo-margin-bottom" src="../assets/images/placeholders/placeholder_rectangle_wide.png"  width="100%" height="150" >					General text for you to read and figure out if you want to read more.
 				</div>
 
-				<a href="#/" class="button radius evo-button" role="button">Click me</a>
-			</li>
-		</ul>
+				<a href="#/" class="button evo-button" role="button">Click me</a>
+			</div>
+		</div>
 	<!-- BLOCK GRID - BASIC DEMO - END -->
 
-	<!-- TABS - BEGINS -->
-		<ul class="tabs evo-tabs" data-tab role="tablist">
-			<li class="tab-title active" role="presentation">
-				<a href="#tab1" role="tab" tabindex="0" aria-selected="true" aria-controls="tabs1"><span class="text">Tab 1</span></a>
-			</li>
-			<li class="tab-title" role="presentation">
-				<a href="#tab2" role="tab" tabindex="0" aria-selected="false" aria-controls="tabs2"><span class="text">Tab 2</span></a>
-			</li>
-			<li class="tab-title" role="presentation">
-				<a href="#tab3" role="tab" tabindex="0" aria-selected="false" aria-controls="tabs3"><span class="text">Tab 3</span></a>
-			</li>
-		</ul>
-		<div class="tabs-content evo-tabs-content">
-			<section role="tabpanel" aria-hidden="false" class="content active" id="tab1">
-				<p>Magna laboris consequat culpa magna sunt reprehenderit magna enim aliquip. Do commodo nostrud quis eiusmod. Non elit tempor labore aliqua. Reprehenderit labore ad et consectetur.</p>
-			</section>
-			<section role="tabpanel" aria-hidden="true" class="content" id="tab2">
-				<p>Labore pariatur proident dolore laboris. Sunt fugiat sint reprehenderit deserunt. Mollit nulla ullamco laboris sit officia Lorem minim est. Ut commodo incididunt aliqua ut ipsum consectetur.</p>
-			</section>
-			<section role="tabpanel" aria-hidden="true" class="content" id="tab3">
-				<p>Adipisicing duis dolor aliqua fugiat in magna eu deserunt sit. Proident aute consectetur dolore commodo est aliqua. Do et anim amet ex sit aute est excepteur voluptate. Lorem ut irure enim cupidatat irure id et.</p>
-			</section>
-		</div>
-	<!-- TABS - ENDS -->
 	</div>
 </div>
-					</div>
-				</section>
-				<!-- PAGE - ENDS -->
+					</section>
+					<!-- PAGE - ENDS -->
 
-				<!-- FOOTER - BEGINS -->
-				<footer class="evo-thin-footer">
-				
-				<!-- CONTENT SECTION - BEGINS -->
-					<section class="row evo-footer-content-section">
-						<div class="evo-contain-to-grid">
+					<!-- FOOTER - BEGINS -->
+					<footer class="evo-thin-footer">
+					
+					<!-- CONTENT SECTION - BEGINS -->
+						<section class="row expanded evo-footer-content-section">
 							<div class="medium-6 columns">
-				
-								<section class="row collapse">
-									<div class="small-only-text-center medium-5 large-5 columns">
-				
+								<section class="row">
+									<div class="medium-5 large-5 columns">
+					
 									<!-- SOCIAL MEDIA BADGES - BEGINS -->
 										<div class="evo-social-media-badges-ctn">
-											<a href="#/" class="evo-icon-facebook2 evo-icon-size-medium" title="Facebook" aria-label="Facebook"></a>							<a href="#/" class="evo-icon-twitter2 evo-icon-size-medium" title="Twitter" aria-label="Twitter"></a>							<a href="#/" class="evo-icon-tumblr2 evo-icon-size-medium" title="Tumblr" aria-label="Tumblr"></a>							<a href="#/" class="evo-icon-linkedin evo-icon-size-medium" title="LinkedIn" aria-label="LinkedIn"></a>						</div>
+											<a href="#/" class="evo-icon-facebook2 evo-icon-size-medium" title="Facebook" aria-label="Facebook"></a>						<a href="#/" class="evo-icon-twitter2 evo-icon-size-medium" title="Twitter" aria-label="Twitter"></a>						<a href="#/" class="evo-icon-tumblr2 evo-icon-size-medium" title="Tumblr" aria-label="Tumblr"></a>						<a href="#/" class="evo-icon-linkedin evo-icon-size-medium" title="LinkedIn" aria-label="LinkedIn"></a>					</div>
 									<!-- SOCIAL MEDIA BADGES - ENDS -->
-				
+					
 									</div>
-									<div class="small-only-text-center medium-7 large-7 columns evo-thin-footer-logo">
-										<img src="../assets/images/core/corp-logos/marsh-mclennan/mmc_logo_rgb.png" alt="Marsh &amp; McLennan Companies" width="225" height="10">
+									<div class="medium-7 large-7 columns evo-thin-footer-logo">
+										<!-- <img src="../assets/images/core/corp-logos/marsh-mclennan/mmc_logo_rgb.png" alt="Marsh &amp; McLennan Companies" width="225" height="10"> -->
 									</div>
 								</section>
 							</div>
-							<div class="medium-6 small-only-text-center columns">
+							<div class="medium-6 columns">
 								<div class="evo-footer-links">
-									<ul class="inline-list evo-inline-list evo-inline-list-pipes">
+									<ul class="evo-inline-list evo-inline-list-pipes">
 										<li><a href="#/">Terms of Use</a></li>
 										<li><a href="#/">Privacy Policy</a></li>
 										<li><a href="#/">Site map</a></li>
@@ -449,51 +365,40 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-					</section>
-				<!-- CONTENT SECTION - ENDS -->
-				
-				<!-- BRAND BAR - BEGINS -->
-					<section class="row evo-thin-footer-brand-bar">
-						<div class="evo-contain-to-grid">
+						</section>
+					<!-- CONTENT SECTION - ENDS -->
+					
+					<!-- BRAND BAR - BEGINS -->
+						<section class="row expanded evo-thin-footer-brand-bar">
 						<!-- FOOTER BRAND LOGO - BEGINS -->
-							<div class="medium-6 medium-push-6 columns small-text-center medium-text-right evo-footer-logo">
-								<a class="small-only-text-center" href="http://www.mercer.com/" target="_blank" title="Mercer - Make Tomorrow, Today">
+							<div class="medium-6 medium-push-6 columns evo-footer-logo">
+								<a href="http://www.mercer.com/" target="_blank" title="Mercer - Make Tomorrow, Today">
 									<img src="../assets/images/core/corp-logos/mercer/mercer_mtt_horizontal_rgb.png" alt="Mercer - Make Tomorrow, Today" width="395" height="15">
 								</a>
 							</div>
 						<!-- FOOTER BRAND LOGO - ENDS -->
-				
+					
 						<!-- FOOTER COPYRIGHT - BEGINS -->
 							<div class="medium-6 medium-pull-6 columns">
-								<p class="small-only-text-center evo-footnote evo-footer-copyright">
+								<p class="evo-footnote evo-footer-copyright">
 									<small>&copy; 2016 Mercer LLC, All Rights Reserved</small>
 								</p>
 							</div>
 						<!-- FOOTER COPYRIGHT - ENDS -->
-						</div>
-					</section>
-				<!-- BRAND BAR - ENDS -->
-				
-				</footer>				<!-- FOOTER - ENDS -->
+						</section>
+					<!-- BRAND BAR - ENDS -->
+					
+					</footer>					<!-- FOOTER - ENDS -->
 
-				<!-- OFF-CANVAS CLOSE - BEGINS -->
-				<a class="exit-off-canvas"></a>
-				<!-- OFF-CANVAS CLOSE - ENDS -->
+				</div>
+				<!-- PAGE CONTENT - ENDS -->
 
 			</div>
 		</div>
 		<!-- OFF-CANVAS WRAPPER - ENDS -->
 
-		<!-- EVOLUTION CORE SCRIPTS -->
-		<script src="../assets/scripts/evolution.js"></script>
-		
-		<!-- SITE SCRIPTS -->
-		<script src="../assets/scripts/site.js"></script>
-		
-		<!-- FOUNDATION SCRIPTS INITIALIZATION -->
-		<script>
-			$(document).foundation();
-		</script>
+		<script src="../assets/js/evolution.js"></script>
+		<script src="../assets/js/evolution-animations.js"></script>
+		<script src="../assets/js/app.js"></script>
 	</body>
 </html>

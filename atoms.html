@@ -1,578 +1,471 @@
-<!DOCTYPE HTML>
-<!--[if IE 9]><html class="no-js ie9" lang="en"><![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!doctype html>
+<!--[if IE 9]><html class="no-js ie9" lang=""><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang=""><!--<![endif]-->
 	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-		<title>Project Name : Atoms</title>
-		<meta name="keywords" content="" />
-		<meta name="description" content="CSS Boilerplate for Evolution" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="cleartype" content="on" />
 		
-		<!-- Mobile touch icons - http://goo.gl/6nVq0 -->
-		<!-- For Chrome for Android: -->
-		<!-- <link rel="icon" sizes="192x192" href="touch-icon-192x192.png"> -->
-		<!-- For iPhone 6 Plus with @3× display: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="180x180" href="apple-touch-icon-180x180-precomposed.png"> -->
-		<!-- For iPad with @2× display running iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png"> -->
-		<!-- For iPad with @2× display running iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png"> -->
-		<!-- For iPhone with @2× display running iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png"> -->
-		<!-- For iPhone with @2× display running iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png"> -->
-		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≥ 7: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png"> -->
-		<!-- For the iPad mini and the first- and second-generation iPad (@1× display) on iOS ≤ 6: -->
-		<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png"> -->
-		<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-		<!-- <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"> --><!-- 57×57px -->
-
-		<!-- Tile icon for Win8 (144x144 + tile color) -->
-		<!-- <meta name="msapplication-TileImage" content="apple-touch-icon-144x144-precomposed.png"> -->
-		<!-- <meta name="msapplication-TileColor" content="#002C77"> -->
-
-		<!-- Add to homescreen for Chrome on Android -->
-		<!--
-        <meta name="mobile-web-app-capable" content="yes">
-        -->
-
-		<!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-		<!--
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="apple-mobile-web-app-title" content="" />
-		-->
-
-		<!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-		<!--
-        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-    	-->
-
-		<!-- FAVICON -->
-		<link rel="shortcut icon" href="assets/images/core/favicon.ico" />
-
-		<!-- EVOLUTION CORE STYLES -->
-		<link href="assets/css/evolution.css" rel="stylesheet" type="text/css" />
-
-		<!-- EVOLUTION UI STYLES -->
-		<link href="assets/css/evolution_ui.css" rel="stylesheet" type="text/css" />
-
-		<!-- SITE STYLES -->
-		<link href="assets/css/styles.css" rel="stylesheet" type="text/css" />
-
-		<!-- SITE IE CONDITIONAL STYLES -->
-		<!--[if IE 9]><link href="assets/css/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
-
-		<!-- MODERNIZR - USED TO CHECK HTML & CSS3 SUPPORT IN BROWSERS -->
-		<script src="assets/scripts/core/foundation/vendor/modernizr.js"></script>
-
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Project Name : Atoms</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="CSS Boilerplate for Evolution">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+		<link rel="shortcut icon" href="assets/images/core/favicon.ico">
+		
+		<link href="assets/css/evolution.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/evolution-animations.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/app.css" rel="stylesheet" type="text/css">
+		<!--[if IE 9]><link href="assets/css/ie.css" rel="stylesheet" type="text/css"><![endif]-->
 	</head>
 	<body>
 
 		<!-- OFF-CANVAS WRAPPER - BEGINS -->
-		<div class="off-canvas-wrap evo-off-canvas" data-offcanvas>
-			<div class="inner-wrap">
+		<div class="off-canvas-wrapper evo-off-canvas">
+			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
 				<!-- HEADER - BEGINS -->
-				<header class="evo-header" role="banner">
-					
-					<!-- TOP BAR CONTAINER - DEFAULT - BEGINS -->
-					<div class="contain-to-grid show-for-large-up">
+				<header class="evo-header evo-site-header" role="banner">
 				
-						<!-- TOP BAR - BEGINS -->
-						<nav class="top-bar evo-top-bar" data-topbar role="navigation">
-							
-							<!-- TOP BAR TITLE AREA - BEGINS -->
-							<ul class="title-area">
-								<li class="name">
-									<h1><a href="index.html">Project Name <span class="evo-top-bar-sub-name"></span></a></h1>
-									<!-- <a href="#/"><img  src="assets/images/core/corp-logos/mercer/mercer_logo_rgb_reverse.png" alt="Mercer - Make Tomorrow, Today" width="160"  ></a> -->
-								</li>
-							</ul>
-							<!-- TOP BAR TITLE AREA - ENDS -->
-				
-							<!-- TOP BAR NAV SECTION - BEGINS -->
-							<section class="top-bar-section">
-				
-								<!-- TOP BAR RIGHT NAV SECTION - BEGINS -->
-								<ul class="right">
-									<li class="has-dropdown">
-										<a class="evo-icon-user"></a>
-										<ul class="dropdown">
-											<li>
-												<a href="">View Profile</a>
-											</li>
-											<li class="divider"></li>
-											<li class="active">
-												<a href="">Change Language</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">User Administration</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Log Out</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<!-- TOP BAR RIGHT NAV SECTION - ENDS -->
-				
-								<!-- TOP BAR LEFT NAV SECTION - BEGINS -->
-								<ul class="left">
-									<li class="has-dropdown">
-										<a>Nav Link 1</a>
-										<ul class="dropdown">
-											<li>
-												<a href="">Item 1</a>
-											</li>
-											<li class="divider"></li>
-											<li class="has-dropdown">
-												<a>Item 2</a>
-												<ul class="dropdown">
-													<li>
-														<a href="">Sub-item 1</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 2</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 3</a>
-													</li>
-													<li class="divider"></li>
-													<li>
-														<a href="">Sub-item 4</a>
-													</li>
-												</ul>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Item 3</a>
-											</li>
-											<li class="divider"></li>
-											<li>
-												<a href="">Item 4</a>
-											</li>
-										</ul>
-									</li>
-									<li class="active">
-										<a href="">Nav Link 2</a>
-									</li>
-									<li>
-										<a href="">Nav Link 3</a>
-									</li>
-				
-									<!-- TOP BAR - MEGA MENU - BEGINS -->
-									<li class="has-dropdown" data-evo-top-bar-mega-menu>
-										<a>Mega Menu</a>
-										<ul class="dropdown" data-evo-top-bar-mega-menu-ctn>
-											<li>
-												<div class="evo-contain-to-grid" data-evo-top-bar-mega-menu-content-ctn>
-													<div class="row">
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-														<div class="large-3 columns">
-															<h6 class="evo-hdr-rule">H6 Header</h6>
-															<ul class="no-bullet">
-																<li><a href="#/">Section One</a></li>
-																<li><a href="#/">Section Two</a></li>
-																<li><a href="#/">Section Three</a></li>
-																<li><a href="#/">Section Four</a></li>	
-															</ul>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</li>
-									<!-- TOP BAR - MEGA MENU - ENDS -->
-									
-								</ul>
-								<!-- TOP BAR LEFT NAV SECTION - ENDS -->
-				
-							</section>
-							<!-- TOP BAR NAV SECTION - ENDS -->
-				
-						</nav>
-						<!-- TOP BAR - ENDS -->
-				
-					</div>
-					<!-- TOP BAR CONTAINER - DEFAULT - ENDS -->
-				
-					<!-- OFF-CANVAS - TAB BAR - BEGINS -->
-					<nav class="tab-bar hide-for-large-up" aria-hidden="true">
-						<section class="left-small">
-							<a class="left-off-canvas-toggle menu-icon">
+				<!-- OFF-CANVAS - TITLE BAR - BEGINS -->
+					<nav class="title-bar" data-responsive-toggle="evo-site-top-bar" data-hide-for="large" role="navigation">
+						<div class="title-bar-left">
+							<button class="menu-icon" type="button" data-open="evo-off-canvas-left-menu">
 								<i class="evo-icon-menu7 evo-icon-size-medium" title="Menu"></i>
-							</a>
-						</section>
-				
-						<section class="middle tab-bar-section">
-							<h1 class="title">
-								<a href="index.html">Project Name</a>
-							</h1>
-							<!-- <a class="title" href="#/"><img  src="assets/images/core/corp-logos/mercer/mercer_logo_rgb_reverse.png" alt="Mercer - Make Tomorrow, Today" width="160"  ></a> -->
-						</section>
-				
-						<section class="right-small">
-							<a class="right-off-canvas-toggle menu-icon">
-								<i class="evo-icon-user evo-icon-size-medium" title="User Account"></i>
-							</a>
-						</section>
+							</button>
+						</div>
+						<div class="title-bar-title">
+							<a href="index.html">Project Name</a>
+						</div>
+						<div class="title-bar-right">
+							<button class="menu-icon" type="button" data-open="evo-off-canvas-right-menu">
+								<i class="evo-icon-user evo-icon-size-medium" title="Menu"></i>
+							</button>
+						</div>
 					</nav>
-					<!-- OFF-CANVAS - TAB BAR - ENDS -->
+				<!-- OFF-CANVAS - TITLE BAR - ENDS -->
 				
-					<!-- OFF-CANVAS - LEFT MENU - BEGINS -->
-					<aside class="left-off-canvas-menu">
-						<ul class="off-canvas-list">
+				<!-- OFF-CANVAS - LEFT MENU - BEGINS -->
+					<div class="off-canvas position-left" id="evo-off-canvas-left-menu" data-off-canvas>
+						<ul class="vertical menu" data-drilldown>
 							<li>
 								<label>Label</label>
 							</li>
-							<li class="has-submenu">
+							<li>
 								<a href="">Item 1 w/ menu</a>
-								<ul class="left-submenu">
-									<li class="back">
-										<a href="">Back</a>
-									</li>
+								<ul class="vertical menu">
 									<li>
 										<label>Level 1</label>
 									</li>
 									<li>
-										<a href="">Sub-item 1</a>
+										<a href="#/">Sub-item 1</a>
 									</li>
-									<li class="has-submenu">
+									<li>
 										<a href="">Sub-item 2 w/ menu</a>
-										<ul class="left-submenu">
-											<li class="back">
-												<a href="">Back</a>
-											</li>
+										<ul class="vertical menu">
 											<li>
 												<label>Level 2</label>
 											</li>
 											<li>
-												<a href="">Sub-sub-item 1</a>
+												<a href="#/">Sub-sub-item 1</a>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="">Sub-item 3</a>
+										<a href="#/">Sub-item 3</a>
 									</li>
 								</ul>
 							</li>
 							<li>
-								<a href="">Item 2</a>
+								<a href="#/">Item 2</a>
 							</li>
 							<li>
-								<a href="">Item 3</a>
+								<a href="#/">Item 3</a>
 							</li>
 							<li>
-								<a href="">Item 4</a>
+								<a href="#/">Item 4</a>
 							</li>
 							<li>
-								<a href="">Item 5</a>
+								<a href="#/">Item 5</a>
 							</li>
 						</ul>
-					</aside>
-					<!-- OFF-CANVAS - LEFT MENU - ENDS -->
+					</div>
+				<!-- OFF-CANVAS - LEFT MENU - ENDS -->
 				
-					<!-- OFF-CANVAS - RIGHT MENU - BEGINS -->
-					<aside class="right-off-canvas-menu">
-						<ul class="off-canvas-list">
+				<!-- OFF-CANVAS - RIGHT MENU - BEGINS -->
+					<div class="off-canvas position-right" id="evo-off-canvas-right-menu" data-off-canvas data-position="right">
+						<ul class="vertical menu" data-drilldown>
 							<li>
-								<label>User Account</label>
+								<label>Label</label>
 							</li>
 							<li>
-								<a href="">View Profile</a>
+								<a href="">Item 1 w/ menu</a>
+								<ul class="vertical menu">
+									<li>
+										<label>Level 1</label>
+									</li>
+									<li>
+										<a href="#/">Sub-item 1</a>
+									</li>
+									<li>
+										<a href="">Sub-item 2 w/ menu</a>
+										<ul class="vertical menu">
+											<li>
+												<label>Level 2</label>
+											</li>
+											<li>
+												<a href="#/">Sub-sub-item 1</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#/">Sub-item 3</a>
+									</li>
+								</ul>
 							</li>
 							<li>
-								<a href="">Change Language</a>
+								<a href="#/">Item 2</a>
 							</li>
 							<li>
-								<a href="">User Administration</a>
+								<a href="#/">Item 3</a>
 							</li>
 							<li>
-								<a href="">Log Out</a>
+								<a href="#/">Item 4</a>
+							</li>
+							<li>
+								<a href="#/">Item 5</a>
 							</li>
 						</ul>
-					</aside>
-					<!-- OFF-CANVAS - RIGHT MENU - ENDS -->
+					</div>
+				<!-- OFF-CANVAS - RIGHT MENU - ENDS -->
+				
+				<!-- TOP BAR - BEGINS -->
+					<nav class="top-bar evo-top-bar" id="evo-site-top-bar" role="navigation">
+						
+					<!-- TOP BAR TITLE - BEGINS -->
+						<div class="top-bar-title">
+							<a href="index.html">Project Name <span></span></a>
+						</div>
+					<!-- TOP BAR TITLE - ENDS -->
+				
+					<!-- TOP BAR CONTENT - BEGINS -->
+						<div class="evo-top-bar-content">
+				
+						<!-- TOP BAR LEFT SECTION - BEGINS -->
+							<div class="top-bar-left">
+								<ul class="dropdown menu" data-dropdown-menu>
+				
+									<!-- TOP BAR - MEGA MENU - BEGINS -->
+									<li data-evo-mega-menu>
+										<a class="dropdown" data-toggle="evo-site-mega-menu">Mega Menu</a>
+										<div class="dropdown-pane" id="evo-site-mega-menu" data-dropdown data-options="closeOnClick:true; hover: true; hoverPane: true;">
+											<div class="row">
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+												<div class="large-3 columns">
+													<h6 class="evo-hdr-rule">H6 Header</h6>
+													<ul class="no-bullet">
+														<li><a href="#/">Section One</a></li>
+														<li><a href="#/">Section Two</a></li>
+														<li><a href="#/">Section Three</a></li>
+														<li><a href="#/">Section Four</a></li>	
+													</ul>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- TOP BAR - MEGA MENU - ENDS -->
+				
+									<li>
+										<a href="javascript:;">Item 1</a>
+										<ul class="dropdown menu" data-dropdown-menu>
+											<li>
+												<a href="#/">Sub-item 1</a>
+											</li>
+											<li>
+												<a href="javascript:;">Sub-item 2</a>
+												<ul class="dropdown menu" data-dropdown-menu>
+													<li>
+														<a href="#/">Sub-sub-item 1</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 2</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 3</a>
+													</li>
+													<li>
+														<a href="#/">Sub-sub-item 4</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#/">Sub-item 3</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 4</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						<!-- TOP BAR LEFT SECTION - ENDS -->
+				
+						<!-- TOP BAR RIGHT SECTION - BEGINS -->
+							<div class="top-bar-right">
+								<ul class="dropdown menu" data-dropdown-menu>
+									<li class="active">
+										<a href="#/">Item 2</a>
+									</li>
+									<li>
+										<a href="javascript:;" class="evo-icon-user" aria-label="Open Menu">
+											<span class="show-for-sr">Open Menu</span>
+										</a>
+										<ul class="dropdown menu" data-dropdown-menu>
+											<li>
+												<a href="#/">Sub-item 1</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 2</a>
+											</li>
+											<li class="active">
+												<a href="#/">Sub-item 3</a>
+											</li>
+											<li>
+												<a href="#/">Sub-item 4</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						<!-- TOP BAR RIGHT SECTION - ENDS -->
+				
+						</div>
+					<!-- TOP BAR CONTENT - ENDS -->
+				
+					</nav>
+				<!-- TOP BAR - ENDS -->
 				
 				</header>				<!-- HEADER - ENDS -->
 
-				<!-- PAGE - BEGINS -->
-				<section class="evo-no-padding" role="main">
-					<div class="row evo-full-width">
+				<!-- PAGE CONTENT - BEGINS -->
+				<div class="off-canvas-content" data-off-canvas-content>
+
+					<!-- PAGE - BEGINS -->
+					<section role="main">
 						
 
-<div class="evo-contain-to-grid evo-spacer-margin-top-large evo-spacer-margin-bottom-large">
-	<div class="small-12 columns">
+<div class="row">
+	<div class="small-12 columns evo-spacer-margin-top-large evo-spacer-margin-bottom-large">
 
 <h2 id="atoms">Atoms</h2>
 <hr>
 
-			<h4 >Box</h4>	<div class="row">
-				<div class="medium-4 columns">
+			<h4>Callout</h4>	<div class="row">
+				<div class="small-12 columns">
 		
-					<h6 class="evo-hdr-rule">Basic</h6>
-					<!-- BOX - BEGINS -->
-						<div class="panel evo-box">
-							<div class="evo-box-bdy">
-								<p class="evo-no-margin-bottom">Ea dolor voluptate laboris ut dolor mollit sunt commodo. Laborum velit incididunt sunt Lorem occaecat id tempor. Ullamco laborum amet deserunt enim. Enim est cillum deserunt incididunt ullamco. Esse id officia cupidatat pariatur deserunt non.</p>
-							</div>
+					<!-- CALLOUT - BEGINS -->
+						<div class="callout evo-callout">
+							<header>
+								<h1 class="evo-hdr-rule">Header</h1>
+							</header>
+							<section>
+								<p>Sint tempor ut excepteur culpa consequat sit Lorem do do. Consequat ut duis mollit commodo. Ad aute reprehenderit et id officia exercitation. Tempor ad veniam ipsum voluptate. Sint mollit excepteur aliqua anim ex.</p>
+							</section>
+							<footer>
+								<p class="evo-footnote evo-no-margin-bottom"><small>Ad ipsum eu dolor quis.</small></p>
+							</footer>
 						</div>
-					<!-- BOX - ENDS -->
-				</div>
-				<div class="medium-4 columns">
-		
-					<h6 class="evo-hdr-rule">With Header</h6>
-					<!-- BOX WITH HEADER - BEGINS -->
-						<div class="panel evo-box">
-							<div class="evo-box-hdr">
-								<h2 class="evo-hdr-rule">Header 2</h2>
-							</div>
-							<div class="evo-box-bdy">
-								<p class="evo-no-margin-bottom">Incididunt reprehenderit occaecat est pariatur elit anim proident. Irure consequat eu excepteur nulla ipsum sunt qui. Duis voluptate ea tempor reprehenderit occaecat non ullamco id cupidatat. Amet Lorem enim labore aliqua do fugiat qui fugiat in. Quis cupidatat ut quis reprehenderit quis sit sint nisi.</p>
-							</div>
-						</div>
-					<!-- BOX WITH HEADER - ENDS -->
-				</div>
-				<div class="medium-4 columns">
-		
-					<h6 class="evo-hdr-rule">With Shadow</h6>
-					<!-- BOX W/SHADOW - BEGINS -->
-						<div class="panel evo-box evo-box-shadow">
-							<div class="evo-box-hdr">
-								<h2 class="evo-hdr-rule">Header 2</h2>
-							</div>
-							<div class="evo-box-bdy">
-								<p class="evo-no-margin-bottom">Nisi ex ad et eiusmod consequat deserunt nulla eu nostrud. Irure cillum enim anim veniam id. Eiusmod id cupidatat id voluptate. Proident esse ipsum aliqua aliquip irure esse ut anim laborum. Cupidatat eu cillum veniam do do excepteur magna.</p>
-							</div>
-							<div class="evo-box-ftr">
-								<p class="evo-no-margin-bottom"><a href="#/">View details</a></p>
-							</div>
-						</div>
-					<!-- BOX W/SHADOW - ENDS -->
+					<!-- CALLOUT - ENDS -->
 				</div>
 			</div>
 		
 		<hr>
 		
-			<h4 >Buttons</h4>	<div class="row">
+			<h4>Buttons</h4>	<div class="row">
 				<div class="medium-6 columns">
 		
 					<h6 class="evo-hdr-rule">Basic</h6>
-					<p><code>a</code> tag</p>			<a href="#/" class="button radius secondary evo-button" role="button">Secondary a</a>
-					<a href="#/" class="button radius evo-button" role="button">Primary a</a>
+					<p><code>a</code> tag</p>			<a href="#/" class="button secondary evo-button" role="button">Secondary a</a>
+					<a href="#/" class="button evo-button" role="button">Primary a</a>
 					
-					<p><code>button</code> tag</p>			<button class="button radius secondary evo-button">Secondary</button>
-					<button class="button radius evo-button">Primary</button>
+					<p><code>button</code> tag</p>			<button class="button secondary evo-button">Secondary</button>
+					<button class="button evo-button">Primary</button>
+		
+					<h6 class="evo-hdr-rule">Hollow</h6>
+					<p><code>a</code> tag</p>			<a href="#/" class="button secondary hollow evo-button" role="button">Secondary a</a>
+					<a href="#/" class="button hollow evo-button" role="button">Primary a</a>
+					
+					<p><code>button</code> tag</p>			<button class="button secondary hollow evo-button">Secondary</button>
+					<button class="button hollow evo-button">Primary</button>
 		
 					<h6 class="evo-hdr-rule">Disabled</h6>			
-					<p><code>a</code> tag</p>			<a href="#/" class="button radius secondary disabled evo-button" role="button">Secondary disabled a</a>
-					<a href="#/" class="button radius disabled evo-button" role="button">Primary disabled a</a>
+					<p><code>a</code> tag</p>			<a href="#/" class="button secondary disabled evo-button" role="button">Secondary disabled a</a>
+					<a href="#/" class="button disabled evo-button" role="button">Primary disabled a</a>
 		
-					<p><code>button</code> tag</p>			<button class="button radius secondary disabled evo-button" disabled>Secondary disabled</button>
-					<button class="button radius disabled evo-button" disabled>Primary disabled</button>
+					<p><code>button</code> tag</p>			<button class="button secondary disabled evo-button" disabled>Secondary disabled</button>
+					<button class="button disabled evo-button" disabled>Primary disabled</button>
 		
 					<h6 class="evo-hdr-rule">Sizes</h6>
-					<p><code>a</code> tag</p>			<a href="#/" class="button tiny radius secondary evo-button" role="button">Tiny a</a>
-					<a href="#/" class="button small radius secondary evo-button" role="button">Small a</a>
-					<a href="#/" class="button radius secondary evo-button" role="button">Default a</a>
-					<a href="#/" class="button large radius secondary evo-button" role="button">Large a</a>
+					<p><code>a</code> tag</p>			<a href="#/" class="button tiny secondary evo-button" role="button">Tiny a</a>
+					<a href="#/" class="button small secondary evo-button" role="button">Small a</a>
+					<a href="#/" class="button secondary evo-button" role="button">Default a</a>
+					<a href="#/" class="button large secondary evo-button" role="button">Large a</a>
 					<br>
-					<a href="#/" class="button tiny radius evo-button" role="button">Tiny a</a>
-					<a href="#/" class="button small radius evo-button" role="button">Small a</a>
-					<a href="#/" class="button radius evo-button" role="button">Default a</a>
-					<a href="#/" class="button large radius evo-button" role="button">Large a</a>
+					<a href="#/" class="button tiny evo-button" role="button">Tiny a</a>
+					<a href="#/" class="button small evo-button" role="button">Small a</a>
+					<a href="#/" class="button evo-button" role="button">Default a</a>
+					<a href="#/" class="button large evo-button" role="button">Large a</a>
 		
-					<p><code>button</code> tag</p>			<button class="button tiny radius secondary evo-button">Tiny</button>
-					<button class="button small radius secondary evo-button">Small</button>
-					<button class="button radius secondary evo-button">Default</button>
-					<button class="button large radius secondary evo-button">Large</button>
+					<p><code>button</code> tag</p>			<button class="button tiny secondary evo-button">Tiny</button>
+					<button class="button small secondary evo-button">Small</button>
+					<button class="button secondary evo-button">Default</button>
+					<button class="button large secondary evo-button">Large</button>
 					<br>
-					<button class="button tiny radius evo-button">Tiny</button>
-					<button class="button small radius evo-button">Small</button>
-					<button class="button radius evo-button">Default</button>
-					<button class="button large radius evo-button">Large</button>
+					<button class="button tiny evo-button">Tiny</button>
+					<button class="button small evo-button">Small</button>
+					<button class="button evo-button">Default</button>
+					<button class="button large evo-button">Large</button>
 		
 				</div>
 				<div class="medium-6 columns">
 		
-					<h6 class="evo-hdr-rule">Shapes</h6>
-					<p><code>a</code> tag</p>			<a href="#/" class="button expand radius secondary evo-button" role="button">Secondary expanded a</a>
-					<a href="#/" class="button round secondary evo-button" role="button">Secondary round a</a>
-					<a href="#/" class="button radius secondary evo-button" role="button">Secondary radius a</a>
+					<h6 class="evo-hdr-rule">Expanded</h6>
+					<p><code>a</code> tag</p>			<a href="#/" class="button expanded secondary evo-button" role="button">Secondary expanded a</a>
+					<a href="#/" class="button expanded evo-button" role="button">Expanded a</a>
 		
-					<a href="#/" class="button expand radius evo-button" role="button">Expanded a</a>
-					<a href="#/" class="button round evo-button" role="button">Round a</a>
-					<a href="#/" class="button radius evo-button" role="button">Radius a</a>
-		
-					<p><code>button</code> tag</p>			<button class="button expand radius secondary evo-button">Secondary expanded a</button>
-					<button class="button round secondary evo-button">Secondary round a</button>
-					<button class="button radius secondary evo-button">Secondary radius a</button>
-		
-					<button class="button expand radius evo-button">Expanded a</button>
-					<button class="button round evo-button">Round a</button>
-					<button class="button radius evo-button">Radius a</button>
+					<p><code>button</code> tag</p>			<button class="button expanded secondary evo-button">Secondary expanded a</button>
+					<button class="button expanded evo-button">Expanded a</button>
 					
 					<h6 class="evo-hdr-rule">Icons</h6>
 					<p><code>a</code> tag</p>
 					<!-- Button icon on left and right -->
-					<a href="#/" class="button radius secondary evo-button" data-evo-button-icons="both" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Secondary a</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></a>
+					<a href="#/" class="button secondary evo-button" data-evo-button-icons="both" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Secondary a</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></a>
 		
 					<!-- Button icon on left -->
-					<a href="#/" class="button radius evo-button" data-evo-button-icons="left" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary a</span></a>
+					<a href="#/" class="button evo-button" data-evo-button-icons="left" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary a</span></a>
 		
 					<!-- Button icon on right -->
-					<a href="#/" class="button radius evo-button" data-evo-button-icons="right" role="button"><span class="evo-button-text">Primary a</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></a>
+					<a href="#/" class="button evo-button" data-evo-button-icons="right" role="button"><span class="evo-button-text">Primary a</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></a>
 		
 					<!-- Expanded button with icon on left and right -->
-					<a href="#/" class="button expand radius evo-button" data-evo-button-icons="both" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary a</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></a>
+					<a href="#/" class="button evo-button" data-evo-button-icons="both" role="button"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary a</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></a>
 		
 					
 					<p><code>button</code> tag</p>
 					<!-- Button icon on left and right -->
-					<button class="button radius secondary evo-button" data-evo-button-icons="both"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Secondary</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></button>
+					<button class="button secondary evo-button" data-evo-button-icons="both"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Secondary</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></button>
 		
 					<!-- Button icon on left -->
-					<button class="button radius evo-button" data-evo-button-icons="left"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary</span></button>
+					<button class="button evo-button" data-evo-button-icons="left"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary</span></button>
 		
 					<!-- Button icon on right -->
-					<button class="button radius evo-button" data-evo-button-icons="right"><span class="evo-button-text">Primary</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></button>
+					<button class="button evo-button" data-evo-button-icons="right"><span class="evo-button-text">Primary</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></button>
 		
 					<!-- Expanded button with icon on left and right -->
-					<button class="button expand radius evo-button" data-evo-button-icons="both"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary</span><i class="evo-icon-arrow-right2 evo-icon-position-right"></i></button>
+					<button class="button evo-button" data-evo-button-icons="both"><i class="evo-icon-plus-circle evo-icon-position-left"></i><span class="evo-button-text">Primary</span><i class="evo-icon-arrow-right5 evo-icon-position-right"></i></button>
 		
 					<h6 class="evo-hdr-rule">Form Buttons</h6>
-					<input class="button radius secondary evo-button" role="button" value="Secondary" type="submit">			<input class="button radius evo-button" role="button" value="Primary" type="submit">
+					<input class="button secondary evo-button" role="button" value="Secondary" type="submit">			<input class="button evo-button" role="button" value="Primary" type="submit">
+					<h6 class="evo-hdr-rule">Min-width</h6>
+					<button class="button secondary evo-button" data-evo-button-min-width>Secondary</button>
+					<button class="button evo-button" data-evo-button-min-width>Primary</button>
+		
 					<h6 class="evo-hdr-rule">Interactive Buttons</h6>
-					<button class="button radius secondary evo-button" data-evo-button-interactive="evo-button-interactive-secondary-example">Save</button>
-					<button class="button radius evo-button" data-evo-button-interactive="evo-button-interactive-primary-example">Save</button>
+					<button class="button secondary evo-button" data-evo-button-interactive="evo-button-interactive-secondary-example" data-evo-button-min-width>Save</button>
+					<button class="button evo-button" data-evo-button-interactive="evo-button-interactive-primary-example" data-evo-button-min-width>Save</button>
 		
 				</div>
 			</div>
 		
 		<hr>
 		
-			<h4 >Dropdowns</h4>	<div class="row">
+			<h4>Colors</h4>	<div class="row">
 				<div class="medium-6 columns">
 		
-					<h6 class="evo-hdr-rule">Basic</h6>			<!-- DROPDOWNS - BEGINS -->
-					<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false">Has Dropdown</a> 
-					<ul id="drop1" class="f-dropdown tiny evo-dropdowns" data-dropdown-content aria-hidden="true" tabindex="-1"> 
-						<li><a href="#/">This is a link</a></li> 
-						<li><a href="#/">This is another</a></li> 
-						<li><a href="#/">Yet another</a></li> 
-					</ul> 
-					<a data-dropdown="drop2" aria-controls="drop2" aria-expanded="false">Has Content Dropdown</a> 
-					<div id="drop2" data-dropdown-content class="f-dropdown content evo-dropdowns" aria-hidden="true" tabindex="-1"> 
-						<p>Anim laboris aliquip exercitation est non. Amet est qui veniam in tempor ut nisi. Pariatur veniam ut ex mollit magna labore culpa mollit. Duis qui dolor magna labore esse aliquip enim tempor pariatur. Incididunt minim minim culpa aliquip.</p> 
+					<h6 class="evo-hdr-rule">Spot Colors</h6>			<!-- SPOT COLORS - BEGINS -->
+					<div class="callout clearfix evo-callout"> 
+						<section>
+							<p data-evo-font-color="sapphire-medium"><strong>Font color attribute.</strong></p>
+						</section>
 					</div>
-					<!-- DROPDOWNS - ENDS -->
-					<br><br>
-		
-					<h6 class="evo-hdr-rule">Positioning</h6>			<!-- DROPDOWNS - BEGINS -->
-					<a data-dropdown="dropC" data-options="align:top" aria-controls="dropC" aria-expanded="false">Top</a>
-					<ul id="dropC" class="f-dropdown tiny evo-dropdowns" data-dropdown-content aria-hidden="true" tabindex="-1">
-						<li><a href="#/">This is a link</a></li>
-						<li><a href="#/">This is another</a></li>
-						<li><a href="#/">Yet another</a></li>
-					</ul>
-					<a data-dropdown="dropB" data-options="align:right" aria-controls="dropB" aria-expanded="false">Right</a>
-					<ul id="dropB" class="f-dropdown tiny evo-dropdowns" data-dropdown-content aria-hidden="true" tabindex="-1">
-						<li><a href="#/">This is a link</a></li>
-						<li><a href="#/">This is another</a></li>
-						<li><a href="#/">Yet another</a></li>
-					</ul>
-					<a data-dropdown="dropD" data-options="align:bottom" aria-controls="dropD" aria-expanded="false">Bottom</a>
-					<ul id="dropD" class="f-dropdown tiny evo-dropdowns" data-dropdown-content aria-hidden="true" tabindex="-1">
-						<li><a href="#/">This is a link</a></li>
-						<li><a href="#/">This is another</a></li>
-						<li><a href="#/">Yet another</a></li>
-					</ul>
-					<a data-dropdown="dropA" data-options="align:left" aria-controls="dropA" aria-expanded="false">Left</a>
-					<ul id="dropA" class="f-dropdown tiny evo-dropdowns" data-dropdown-content aria-hidden="true" tabindex="-1">
-						<li><a href="#/">This is a link</a></li>
-						<li><a href="#/">This is another</a></li>
-						<li><a href="#/">Yet another</a></li>
-					</ul>
-					<!-- DROPDOWNS - ENDS -->		
+					<div class="callout clearfix evo-callout" data-evo-border-color="amethyst-bright"> 
+						<section>
+							<p><strong>Border color attribute.</strong></p>
+						</section>
+					</div>
+					<div class="callout clearfix evo-callout" data-evo-background-color="emerald-light"> 
+						<section>
+							<p><strong>Background color attribute.</strong></p>
+						</section>
+					</div>
+					<!-- SPOT COLORS - ENDS -->		
 				</div>
 				<div class="medium-6 columns">
 		
-					<h6 class="evo-hdr-rule">Hover</h6>			<!-- DROPDOWNS - BEGINS -->
-					<a data-dropdown="hover1" data-options="is_hover:true; hover_timeout:1200">Has Hover Dropdown</a>
-					<ul id="hover1" class="f-dropdown evo-dropdowns" data-dropdown-content>
-						<li><a href="#/">This is a link</a></li>
-						<li><a href="#/">This is another</a></li>
-						<li><a href="#/">Yet another</a></li>
-					</ul>
-					<!-- DROPDOWNS - ENDS -->		
+					<h6 class="evo-hdr-rule">Specific Use Colors</h6>			<!-- SPECIFIC USE COLORS - BEGINS -->
+					<span class="label alert evo-label">Alert</span>
+					<span class="label success evo-label">Success</span>
+					<span class="label warning evo-label">Warning</span>
+					<!-- SPECIFIC USE COLORS - ENDS -->			<br><br>
+				
 				</div>
 			</div>
 		
+		
 		<hr>
 		
-			<h4 >Equalizer</h4>	<div class="row">
+			<h4>Equalizer</h4>	<div class="row">
 				<div class="small-12 columns">
 		
 					<h6 class="evo-hdr-rule">Basic</h6>			<!-- EQUALIZER - BEGINS -->
 					<div class="row" data-equalizer>
 						<div class="medium-4 columns">
-							<div class="panel evo-box" data-equalizer-watch>
-								<div class="evo-box-bdy">
-									<p>Commodo ea dolore nulla est proident anim ut. Eiusmod dolor irure ad occaecat ea. Laboris dolore ad non magna mollit labore reprehenderit incididunt et.</p>
-									<p>Aliquip enim irure deserunt esse nostrud tempor. Reprehenderit deserunt dolore quis cupidatat culpa cupidatat consectetur aliqua minim. In anim anim anim minim.</p>
-									<p class="evo-no-margin-bottom">Cupidatat dolore pariatur consequat voluptate amet fugiat deserunt eiusmod sunt. Proident deserunt pariatur ut sit aliquip laborum sint aute velit. Id nulla laboris minim nisi pariatur anim officia consectetur.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch>
+								<section>
+									<p>Non laborum laborum nostrud velit non. Proident adipisicing cupidatat voluptate veniam pariatur.</p>
+									<p class="evo-no-margin-bottom">Officia sit qui non dolor qui elit fugiat sit do. Consectetur fugiat laborum labore magna.</p>
+								</section>
 							</div>
 						</div> 
 						<div class="medium-4 columns"> 
-							<div class="panel evo-box" data-equalizer-watch>
-								<div class="evo-box-bdy">
-									<p>Minim quis id id amet ullamco non cupidatat irure. Aliquip amet culpa in magna exercitation aute. Non veniam eu dolor eiusmod culpa sunt id reprehenderit.</p>
-									<p class="evo-no-margin-bottom">Sint anim ad excepteur et adipisicing voluptate nostrud. Elit laborum aute ad magna non. Ad ea irure culpa nisi consectetur cillum do.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch>
+								<section>
+									<p>Ex aute ullamco do culpa commodo fugiat Lorem amet et.</p>
+									<p class="evo-no-margin-bottom">Tempor nisi ut nostrud Lorem.</p>
+								</section>
 							</div>
 						</div> 
 						<div class="medium-4 columns">
-							<div class="panel evo-box" data-equalizer-watch>
-								<div class="evo-box-bdy">
-									<p class="evo-no-margin-bottom">Elit sint minim ipsum sunt. Cupidatat labore ut consectetur ex commodo minim. Aute cillum et duis non officia nisi Lorem.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch>
+								<section>
+									<p class="evo-no-margin-bottom">Nostrud aliqua deserunt veniam aute sit enim minim reprehenderit.</p>
+								</section>
 							</div>
 						</div> 
 					</div>
@@ -583,22 +476,22 @@
 				<div class="small-12 columns">
 		
 					<h6 class="evo-hdr-rule">Responsive</h6>			<!-- EQUALIZER RESPONSIVE - BEGINS -->
-					<div class="row" data-equalizer data-equalizer-mq="large-up"> 
+					<div class="row" data-equalizer data-equalize-on="large"> 
 						<div class="medium-6 columns"> 
-							<div class="panel evo-box" data-equalizer-watch>
-								<div class="evo-box-bdy">
-									<p>Sunt anim enim mollit esse quis ipsum reprehenderit aute. Sint irure tempor proident do officia velit labore. Aute exercitation duis id adipisicing enim labore.</p>
-									<p>Do ea minim dolore sint. Laborum eiusmod consectetur dolor enim do velit. Excepteur nostrud incididunt occaecat sint sunt sunt aliquip eiusmod esse.</p>
-									<p class="evo-no-margin-bottom">Qui minim cillum excepteur ullamco magna. Veniam voluptate excepteur elit minim sit duis. Ex sunt magna ad qui aliquip.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch>
+								<section>
+									<p>Laboris nostrud pariatur dolor id minim officia in esse irure. Est qui sit et duis et esse. Ex commodo proident magna consequat.</p>
+									<p>Tempor sit ad tempor ut. Et quis ipsum amet laboris velit elit. Laboris anim laborum elit occaecat enim dolor.</p>
+									<p class="evo-no-margin-bottom">Consequat laboris reprehenderit enim adipisicing. Fugiat Lorem tempor sunt sit nulla. Quis sunt incididunt adipisicing ea et culpa fugiat ex ad.</p>
+								</section>
 							</div>
 						</div> 
 						<div class="medium-6 columns"> 
-							<div class="panel evo-box" data-equalizer-watch>
-								<div class="evo-box-bdy">
-									<p>Enim consequat sunt duis sunt qui aute deserunt deserunt. Enim ea mollit adipisicing est minim fugiat. Cupidatat aliquip excepteur est magna labore proident.</p>
-									<p class="evo-no-margin-bottom">Ad exercitation velit aliqua voluptate duis adipisicing adipisicing duis. Magna laborum quis adipisicing et anim ex. Et amet ad incididunt dolor qui.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch>
+								<section>
+									<p>Lorem irure consequat eu excepteur nostrud reprehenderit. Cillum do do esse aliquip magna consequat. Esse officia voluptate do consectetur.</p>
+									<p class="evo-no-margin-bottom">Aliquip pariatur minim nostrud eu sit magna laboris officia fugiat. Esse culpa anim veniam ipsum ea eiusmod. Est officia irure id duis occaecat consectetur deserunt ea.</p>
+								</section>
 							</div>
 						</div> 
 					</div>
@@ -609,52 +502,48 @@
 				<div class="small-12 columns">
 		
 					<h6 class="evo-hdr-rule">Nested</h6>			<!-- EQUALIZER NESTED - BEGINS -->
-					<div class="row" data-equalizer="foo"> 
+					<div class="row" data-equalizer="foo" data-equalize-on="medium"> 
 						<div class="medium-4 columns"> 
-							<div class="panel evo-box" data-equalizer-watch="foo">
-								<div class="evo-box-hdr">
-									<h3 >Parent panel</h3>			</div>
-								<div class="evo-box-bdy">
-					
-									<div class="row" data-equalizer="bar"> 
-										<div class="panel evo-box" data-equalizer-watch="bar">
-											<div class="evo-box-hdr">
-												<h5 >Nested panel 1</h5>						</div>
-											<div class="evo-box-bdy">
-												<p class="evo-no-margin-bottom">Adipisicing mollit voluptate fugiat irure commodo labore consequat aute. Commodo nisi ex et excepteur magna.</p>
-											</div>
-										</div> 
-										<div class="panel evo-box" data-equalizer-watch="bar"> 
-											<div class="evo-box-hdr">
-												<h5 >Nested panel 2</h5>						</div>
-											<div class="evo-box-bdy">
-												<p class="evo-no-margin-bottom">Qui labore deserunt ex cillum mollit veniam nostrud laborum officia. Ex qui ipsum est ut.</p>
-											</div>
-										</div> 
-										<div class="panel evo-box" data-equalizer-watch="bar"> 
-											<div class="evo-box-hdr">
-												<h5 >Nested panel 3</h5>						</div>
-											<div class="evo-box-bdy">
-												<p class="evo-no-margin-bottom">Proident ad proident quis esse ea dolore occaecat aliquip incididunt. Voluptate eu laborum id aliquip enim.</p>
-											</div>
-										</div> 
-									</div>
-									
+							<div class="callout evo-callout" data-equalizer-watch="foo" data-equalizer="bar">
+								<h4>Parent panel</h4>
+								<div class="callout evo-callout" data-equalizer-watch="bar">
+									<header>
+										<h5>Nested panel 1</h5>
+									</header>
+									<section>
+										<p class="evo-no-margin-bottom">Laboris sunt dolore id Lorem labore ut adipisicing amet sint. Adipisicing ad anim labore nulla ea est culpa aute.</p>
+									</section>
+								</div> 
+								<div class="callout evo-callout" data-equalizer-watch="bar"> 
+									<header>
+										<h5>Nested panel 2</h5>
+									</header>
+									<section>
+										<p class="evo-no-margin-bottom">Tempor sit elit in ex nisi. Mollit dolor occaecat nisi nulla aute nulla.</p>
+									</section>
+								</div> 
+								<div class="callout evo-callout" data-equalizer-watch="bar"> 
+									<header>
+										<h5>Nested panel 3</h5>
+									</header>
+									<section>
+										<p class="evo-no-margin-bottom">Nulla ipsum adipisicing ea non ad. Non exercitation sunt enim veniam aliquip labore reprehenderit.</p>
+									</section>
 								</div>
 							</div> 
 						</div> 
 						<div class="medium-4 columns"> 
-							<div class="panel evo-box" data-equalizer-watch="foo"> 
-								<div class="evo-box-bdy">
-									<p class="evo-no-margin-bottom">Sunt aliqua qui nulla labore excepteur incididunt eu. Nulla aute aliqua officia cupidatat mollit. Ut nisi laborum pariatur excepteur ullamco aute.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch="foo"> 
+								<section>
+									<p class="evo-no-margin-bottom">Reprehenderit occaecat ea cillum nostrud magna fugiat. Cillum aliqua irure est ex excepteur aliqua proident aliquip. Fugiat incididunt labore reprehenderit tempor quis mollit irure.</p>
+								</section>
 							</div> 
 						</div> 
 						<div class="medium-4 columns"> 
-							<div class="panel evo-box" data-equalizer-watch="foo"> 
-								<div class="evo-box-bdy">
-									<p class="evo-no-margin-bottom">In amet sint consequat est sit. Ad aute culpa velit deserunt exercitation nostrud id do fugiat. Amet deserunt enim laborum cupidatat Lorem est.</p>
-								</div>
+							<div class="callout evo-callout" data-equalizer-watch="foo"> 
+								<section>
+									<p class="evo-no-margin-bottom">Esse tempor et fugiat consectetur aute do cillum ullamco ut. In ad reprehenderit nostrud aute amet anim. Pariatur minim anim aute ullamco.</p>
+								</section>
 							</div> 
 						</div> 
 					</div>
@@ -664,86 +553,28 @@
 		
 		<hr>
 		
-			<h4 >Forms</h4>	<div class="row">
+			<h4>Forms</h4>	<div class="row">
 				<div class="small-12 columns">
 		
-					<h6 class="evo-hdr-rule">Error Text</h6>			<small class="error">Houston we have a problem.</small>
-					<h6 class="evo-hdr-rule">Help Text</h6>			<small class="evo-form-help-text">This is form help text.</small>			<br>
-					<br>
-		
+					<h6 class="evo-hdr-rule">Help Text</h6>			<p class="help-text" id="">This is form help text.</p>
 					<h6 class="evo-hdr-rule">Label</h6>			<label>Form label</label>			<br>
 		
 					<h6 class="evo-hdr-rule">Checkbox</h6>			<input type="checkbox" id="checkbox1" checked>			<label for="checkbox1">Checkbox 1</label>			<input type="checkbox" id="checkbox2">			<label for="checkbox2">Checkbox 2</label>
 					<h6 class="evo-hdr-rule">Radio Buttons</h6>			<input type="radio" id="red" name="color" value="red">			<label for="red">Red</label>			<input type="radio" id="blue" name="color" value="blue">			<label for="blue">Blue</label>
 					<h6 class="evo-hdr-rule">Select Menu</h6>			<select required>
 						<option value="">Choose one&hellip;</option>
-						<option value="">Item 1</option>
-						<option value="">Item 2</option>
-						<option value="">Item 3</option>
+						<option value="1">Item 1</option>
+						<option value="2">Item 2</option>
+						<option value="3">Item 3</option>
 					</select>
 					<h6 class="evo-hdr-rule">Textarea</h6>			<textarea placeholder="Placeholder text" required></textarea>
 					<h6 class="evo-hdr-rule">Text Input</h6>			<input type="text" placeholder="Placeholder text">
-					<h6 class="evo-hdr-rule">Pre/Postfix</h6>			<form class="" id="" name="" method="" action="" title="">
-						<fieldset>
-							<div class="row collapse evo-form-prefix">
-								<div class="small-3 large-2 columns">
-									<span class="prefix">http://</span>
-								</div>
-								<div class="small-9 large-10 columns">
-									<input type="text" placeholder="Enter your URL...">			</div>
-							</div>
-					
-							<div class="row collapse evo-form-postfix">
-								<div class="small-10 columns">
-									<input type="text" placeholder="Hex Value">			</div>
-								<div class="small-2 columns">
-									<a href="#/" class="button radius evo-button postfix" role="button">Go</a>
-								</div>
-							</div>
-					
-							<div class="row">
-								<div class="large-6 columns">
-									<div class="row collapse prefix-radius evo-form-prefix">
-										<div class="small-4 columns">
-											<span class="prefix">Label</span>
-										</div>
-										<div class="small-8 columns">
-											<input type="text" placeholder="Value">					</div>
-									</div>
-								</div>
-								<div class="large-6 columns">
-									<div class="row collapse postfix-radius evo-form-postfix">
-										<div class="small-8 columns">
-											<input type="text" placeholder="Value">					</div>
-										<div class="small-4 columns">
-											<span class="postfix">Label</span>
-										</div>
-									</div>
-								</div>
-							</div>
-					
-							<div class="row">
-								<div class="large-6 columns">
-									<div class="row collapse prefix-round evo-form-prefix">
-										<div class="small-4 columns">
-											<a href="#/" class="button radius evo-button prefix" role="button">Go</a>
-										</div>
-										<div class="small-8 columns">
-											<input type="text" placeholder="Value">					</div>
-									</div>
-								</div>
-								<div class="large-6 columns">
-									<div class="row collapse postfix-round evo-form-postfix">
-										<div class="small-8 columns">
-											<input type="text" placeholder="Value">					</div>
-										<div class="small-4 columns">
-											<a href="#/" class="button radius evo-button postfix" role="button">Go</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</fieldset>
-					</form>
+					<h6 class="evo-hdr-rule">Input Group</h6>			<div class="input-group">
+						<span class="input-group-label">$</span>
+						<input type="number" class="input-group-field">	<div class="input-group-button">
+							<button class="button evo-button" type="submit">Submit</button>
+						</div>
+					</div>
 					<h6 class="evo-hdr-rule">HTML5 Elements</h6>			<!-- FORM - HTML5 - BEGINS -->
 					<form class="" id="" name="" method="" action="" title="">
 						<fieldset>
@@ -765,7 +596,7 @@
 								<div class="small-12 columns">
 									<label for="number">
 										Number Input Type
-										<input type="number" placeholder="Enter a number" title="Number" data-evo-input-numeric-mask></label>
+										<input type="number" placeholder="Enter a number" title="Number"></label>
 								</div>
 							</div>
 							<div class="row">
@@ -786,7 +617,7 @@
 								<div class="small-12 columns">
 									<label for="tel">
 										Telephone Input Type
-										<input type="tel" placeholder="Enter a telephone #" title="Telephone" autocomplete="on" data-evo-input-numeric-mask></label>
+										<input type="tel" placeholder="Enter a telephone #" title="Telephone" autocomplete="on"></label>
 								</div>
 							</div>
 							<div class="row">
@@ -835,7 +666,7 @@
 								<div class="small-12 columns">
 									<label for="range">
 										Range Input Type<br>
-										<input type="range" title="Range" autocomplete="off" min="1" max="10" data-evo-input-numeric-mask></label>
+										<input type="range" title="Range" autocomplete="off" min="1" max="10"></label>
 								</div>
 							</div>
 							<div class="row">
@@ -847,384 +678,10 @@
 							</div>
 						</fieldset>
 					</form>
-					<!-- FORM - HTML5 - ENDS -->		
-				</div>
-			</div>
-		
-		<hr>
-		
-			<h4 >Grids</h4>	<div class="row evo-spacer-margin-bottom-x-large">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-		
-						<h6 class="evo-hdr-rule">Basic</h6>				<!-- GRID - BASIC DEMO - BEGIN -->
-						<section class="row">
-							<div class="small-12 columns">12</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-1 columns">1</div>
-							<div class="small-11 columns">11</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-2 columns">2</div>
-							<div class="small-10 columns">10</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-3 columns">3</div>
-							<div class="small-9 columns">9</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-4 columns">4</div>
-							<div class="small-8 columns">8</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-5 columns">5</div>
-							<div class="small-7 columns">7</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-6 columns">6</div>
-							<div class="small-6 columns">6</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-7 columns">7</div>
-							<div class="small-5 columns">5</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-8 columns">8</div>
-							<div class="small-4 columns">4</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-9 columns">9</div>
-							<div class="small-3 columns">3</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-10 columns">10</div>
-							<div class="small-2 columns">2</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-11 columns">11</div>
-							<div class="small-1 columns">1</div>
-						</section>
-						<!-- GRID - BASIC DEMO - END -->			
-					</div>
-				</div>
-			</div>
-			<div class="row evo-spacer-margin-bottom-x-large">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-					
-						<h6 class="evo-hdr-rule">Offsets</h6>				<!-- GRID - OFFSET DEMO - BEGIN -->
-						<section class="row">
-							<div class="large-1 columns">1</div>
-							<div class="large-11 columns">11</div>
-						</section>
-						
-						<section class="row">
-							<div class="large-1 columns">1</div>
-							<div class="large-10 large-offset-1 columns">10, offset 1</div>
-						</section>
-						
-						<section class="row">
-							<div class="large-1 columns">1</div>
-							<div class="large-9 large-offset-2 columns">9, offset 2</div>
-						</section>
-						
-						<section class="row">
-							<div class="large-1 columns">1</div>
-							<div class="large-8 large-offset-3 columns">8, offset 3</div>
-						</section>
-						<!-- GRID - OFFSET DEMO - END -->
-					</div>
-				</div>
-			</div>
-			<div class="row evo-spacer-margin-bottom-x-large">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-					
-						<h6 class="evo-hdr-rule">Centering</h6>				<!-- GRID - CENTERING DEMO - BEGIN -->
-						<section class="row">
-							<div class="small-3 small-centered columns">3 center</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-6 large-centered columns">6 center</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-9 small-centered large-uncentered columns">9 center</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-11 small-centered columns">11 center</div>
-						</section>
-						<!-- GRID - CENTERING DEMO - END -->			
-					</div>
-				</div>
-			</div>
-			<div class="row evo-spacer-margin-bottom-x-large">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-					
-						<h6 class="evo-hdr-rule">Source Ordering</h6>				<!-- GRID - SOURCE ORDERING DEMO - BEGIN -->
-						<section class="row">
-							<div class="small-10 small-push-2 columns">10</div>
-							<div class="small-2 small-pull-10 columns">2, last</div>
-						</section>
-						
-						<section class="row">
-							<div class="large-9 large-push-3 columns">9</div>
-							<div class="large-3 large-pull-9 columns">3, last</div>
-						</section>
-						
-						<section class="row">
-							<div class="large-8 large-push-4 columns">8</div>
-							<div class="large-4 large-pull-8 columns">4, last</div>
-						</section>
-						
-						<section class="row">
-							<div class="small-5 small-push-7 medium-7 medium-push-5 columns">7</div>
-							<div class="small-7 small-pull-5 medium-5 medium-pull-7 columns">5, last</div>
-						</section>
-						
-						<section class="row">
-							<div class="medium-6 medium-push-6 columns">6</div>
-							<div class="medium-6 medium-pull-6 columns">6, last</div>
-						</section>
-						<!-- GRID - SOURCE ORDERING DEMO - END -->
-					</div>
-				</div>
-			</div>
-			<div class="row evo-spacer-margin-bottom-x-large">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-					
-						<h6 class="evo-hdr-rule">Layouts</h6>				<!-- GRID - 1 COLUMN / CLEARING ROW - BEGINS -->
-						<section class="row">
-							<div class="small-12 columns">100%</div>
-						</section>
-						<!-- GRID - 1 COLUMN / CLEARING ROW - ENDS -->				<!-- GRID - 2 COLUMN - 50%/50% - BEGINS -->
-						<section class="row">
-							<div class="small-6 columns">50%</div>
-							<div class="small-6 columns">50%</div>
-						</section>
-						<!-- GRID - 2 COLUMN - 50%/50% - ENDS -->				<!-- GRID - 2 COLUMN - 66%/33% - BEGINS -->
-						<section class="row">
-							<div class="small-8 columns">66%</div>
-							<div class="small-4 columns">33%</div>
-						</section>
-						<!-- GRID - 2 COLUMN - 66%/33% - ENDS -->				<!-- GRID - 2 COLUMN - 33%/66% - BEGINS -->
-						<div class="row">
-							<div class="small-4 columns">33%</div>
-							<div class="small-8 columns">66%</div>
-						</div>
-						<!-- GRID - 2 COLUMN - 33%/66% - ENDS -->				<!-- GRID - 2 COLUMN - 75%/25% - BEGINS -->
-						<section class="row">
-							<div class="small-9 columns">75%</div>
-							<div class="small-3 columns">25%</div>
-						</section>
-						<!-- GRID - 2 COLUMN - 75%/25% - ENDS -->				<!-- GRID - 2 COLUMN - 25%/75% - BEGINS -->
-						<section class="row">
-							<div class="small-3 columns">25%</div>
-							<div class="small-9 columns">75%</div>
-						</section>
-						<!-- GRID - 2 COLUMN - 25%/75% - ENDS -->				<!-- GRID - 3 COLUMN - 33%/33%/33% - BEGINS -->
-						<section class="row">
-							<div class="small-4 columns">33%</div>
-							<div class="small-4 columns">33%</div>
-							<div class="small-4 columns">33%</div>
-						</section>
-						<!-- GRID - 3 COLUMN - 33%/33%/33% - ENDS -->				<!-- GRID - 3 COLUMN - 25%/50%/25% - BEGINS -->
-						<section class="row">
-							<div class="small-3 columns">25%</div>
-							<div class="small-6 columns">50%</div>
-							<div class="small-3 columns">25%</div>
-						</section>
-						<!-- GRID - 3 COLUMN - 25%/50%/25% - ENDS -->				<!-- GRID - 4 COLUMN - 25%/25%/25%/25% - BEGINS -->
-						<div class="row">
-							<div class="small-3 columns">25%</div>
-							<div class="small-3 columns">25%</div>
-							<div class="small-3 columns">25%</div>
-							<div class="small-3 columns">25%</div>
-						</div>
-						<!-- GRID - 4 COLUMN - 25%/25%/25%/25% - ENDS -->			
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 columns">
-					<div class="evo-grid-demo">
-						
-						<h6 class="evo-hdr-rule">Block Grid</h6>				<!-- BLOCK GRID - BASIC DEMO - BEGIN -->
-						<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-5">
-							<li>Item</li>
-							<li>Item</li>
-							<li>Item</li>
-							<li>Item</li>
-							<li>Item</li>
-						</ul>
-						<!-- BLOCK GRID - BASIC DEMO - END -->			
-					</div>
-				</div>
-			</div>
-		
-		<hr>
-		
-			<h4 >Helpers</h4>	<div class="row">
-				<div class="medium-6 columns">
-		
-					<h6 class="evo-hdr-rule">Floats</h6>			<!-- FLOAT HELPERS - BEGINS -->
-					<div class="panel evo-box"> 
-						<div class="clearfix evo-box-bdy">
-							<a href="#/" class="button radius right evo-button" id="" tabindex="" title="">Float Right</a>
-							<a href="#/" class="button radius left evo-button" id="" tabindex="" title="">Float Left</a>
-						</div>
-					</div>
-					<!-- FLOAT HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Radius</h6>			<!-- RADIUS HELPER - BEGINS -->
-					<!-- WARNING MESSAGE BOX - BEGINS -->
-					<div data-alert class="alert-box radius warning evo-alert-box" tabindex="0" aria-live="assertive" role="alertdialog">
-						<i class="evo-icon-warning2 evo-icon-position-left"></i>Attention message text would go here&hellip;<button href="#" tabindex="0" class="close" aria-label="Close Warning"><i class="evo-icon-cancel-circle"></i></button>
-					</div>
-					<!-- WARNING MESSAGE BOX - ENDS --><div class="progress radius"> 
-						<span class="meter" style="width:70%;"></span> 
-					</div>
-					<a href="#/" class="button radius evo-button" role="button">Button</a>
-					<span class="label radius">Label</span>
-					<!-- RADIUS HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Round</h6>			<!-- ROUND HELPER - BEGINS -->
-					<!-- WARNING MESSAGE BOX - BEGINS -->
-					<div data-alert class="alert-box round warning evo-alert-box" tabindex="0" aria-live="assertive" role="alertdialog">
-						<i class="evo-icon-warning2 evo-icon-position-left"></i>Attention message text would go here&hellip;<button href="#" tabindex="0" class="close" aria-label="Close Warning"><i class="evo-icon-cancel-circle"></i></button>
-					</div>
-					<!-- WARNING MESSAGE BOX - ENDS --><div class="progress round"> 
-						<span class="meter" style="width:70%;"></span> 
-					</div>
-					<a href="#/" class="button round evo-button" role="button">Button</a>
-					<span class="label round">Label</span> 
-					<!-- ROUND HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Spot Colors</h6>			<!-- COLOR HELPERS - DATA ATTRIBUTES - BEGINS -->
-					<div class="panel clearfix evo-box"> 
-						<div class="evo-box-bdy">
-							<p data-evo-font-color="sapphire-medium"><strong>Font color attribute.</strong></p>
-						</div>
-					</div>
-					<div class="panel clearfix evo-box" data-evo-border-color="amethyst-bright"> 
-						<div class="evo-box-bdy">
-							<p><strong>Border color attribute.</strong></p>
-						</div>
-					</div>
-					<div class="panel clearfix evo-box" data-evo-background-color="emerald-light"> 
-						<div class="evo-box-bdy">
-							<p><strong>Background color attribute.</strong></p>
-						</div>
-					</div>
-					<!-- COLOR HELPERS - DATA ATTRIBUTES - ENDS -->
-					<h6 class="evo-hdr-rule">Specific Use Colors</h6>			<!-- COLOR HELPERS - SPECIFIC USE - BEGINS -->
-					<span class="label alert evo-label">Alert</span>
-					<span class="label warning evo-label">Warning</span>
-					<span class="label success evo-label">Success</span>
-					<span class="label info evo-label">Info</span>
-					<!-- COLOR HELPERS - SPECIFIC USE - ENDS -->			<br><br>
-		
-					<h6 class="evo-hdr-rule">Keylines</h6>			<!-- KEYLINES - BEGIN -->
-					<div class="row" data-equalizer>
-						<div class="medium-4 columns evo-keyline-right" data-equalizer-watch>
-							<img src="assets/images/placeholders/placeholder_square.png" width="100%" height="200">
-						</div>
-						<div class="medium-4 columns" data-equalizer-watch>
-							<p>Officia sit est est quis velit veniam officia nisi pariatur.</p>
-							<p>Commodo elit et minim qui aliqua deserunt.</p>
-						</div>
-						<div class="medium-4 columns evo-keyline-left" data-equalizer-watch>
-							<p>Do anim est aliquip et ullamco aute officia.</p>
-							<p>Nulla veniam nisi fugiat officia culpa culpa cupidatat officia dolor.</p>
-							<p>Adipisicing eu Lorem laboris enim quis pariatur nisi occaecat.</p>
-						</div>
-					</div>
-					<!-- KEYLINES - END -->
-					<h6 class="evo-hdr-rule">Text Align</h6>			<!-- TEXT ALIGN HELPERS - BEGINS -->
-					<p class="text-left">
-						<strong>This text is left aligned.</strong> Non occaecat magna aliqua dolor id incididunt adipisicing. Eu qui velit in mollit ad sit tempor anim consequat. Qui nulla ullamco aute irure minim enim et. Laboris ea quis tempor consectetur. Minim duis irure consequat ex Lorem eiusmod magna sunt.
-					</p> 
-					<p class="text-right">
-						<strong>This text is right aligned.</strong> Amet do et eiusmod quis reprehenderit sint nisi eu. Ullamco commodo consectetur id excepteur. Commodo cillum aute officia est. Duis enim id ad non do. Anim fugiat officia eiusmod sint nisi minim culpa.
-					<p class="text-center">
-						<strong>This text is center aligned.</strong> Est commodo eiusmod labore anim qui cupidatat excepteur consectetur. Id esse dolore aliquip sint. Cillum eiusmod esse sint in non nulla laborum nulla. Ut deserunt est elit adipisicing. Ullamco reprehenderit ullamco duis tempor veniam cupidatat reprehenderit labore dolore.
-					<p class="text-justify">
-						<strong>This text is justified.</strong> Elit Lorem irure cillum ex laboris aliqua enim. Incididunt velit labore officia voluptate consectetur velit excepteur occaecat esse. Eiusmod id exercitation ullamco dolor cupidatat ut aliquip culpa aute. Ut est quis laborum velit non velit laborum. Laborum dolor quis do occaecat commodo.
-					</p>
-					<!-- TEXT ALIGN HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Image Align</h6>			<!-- IMAGE ALIGN HELPERS - BEGINS -->
-					<p>
-						<img class="evo-image-left" src="assets/images/placeholders/placeholder_square.png">
-						<strong>This image is left aligned.</strong> Do ut cupidatat sint exercitation. Reprehenderit id culpa ullamco consequat consequat ipsum nisi veniam. Sint aute ipsum tempor deserunt aute magna et. Veniam non adipisicing consequat ad deserunt. Dolore in commodo sunt occaecat esse ex aliquip adipisicing.
-					</p> 
-					<p>
-						<img class="evo-image-right" src="assets/images/placeholders/placeholder_square.png">
-						<strong>This image is right aligned.</strong> Ex ex cupidatat veniam minim. Proident veniam commodo sunt sit culpa ea. Pariatur elit minim exercitation dolor irure minim. Cupidatat fugiat consectetur consectetur veniam dolor anim ex est ex. Enim nostrud veniam et ut occaecat dolore reprehenderit.
-					</p>
-					<!-- IMAGE ALIGN HELPERS - ENDS -->			
-				</div>
-				<div class="medium-6 columns">
-		
-					<h6 class="evo-hdr-rule">Center Horizontal</h6>			<!-- CENTER HORIZONTAL HELPER - BEGINS -->
-					<div class="panel evo-box evo-center-container-dimensions-demo">
-						<div class="evo-box-bdy">
-							<p class="evo-center-block">The div that contains this text is centered horizontally within this box.</p>	</div>
-					</div>
-					<div class="panel evo-box evo-center-container-dimensions-demo">
-						<div class="evo-box-bdy">
-							<img class="evo-center-block" src="assets/images/placeholders/placeholder_square.png">
-						</div>
-					</div>
-					<!-- CENTER HORIZONTAL HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Center Vertical</h6>			<!-- CENTER VERTICAL HELPER - BEGINS -->
-					<div class="panel evo-box evo-center-container-dimensions-demo">
-						<div class="evo-box-bdy evo-center-block-vertical">
-							<p class="evo-center-block-vertical-element">The div that contains this text is centered vertically within this box.</p>	</div>
-					</div>
-					<div class="panel evo-box evo-center-container-dimensions-demo">
-						<div class="evo-box-bdy evo-center-block-vertical">
-							<div class="evo-center-block-vertical-element">
-								<img src="assets/images/placeholders/placeholder_square.png">
-							</div>
-						</div>
-					</div>
-					<!-- CENTER VERTICAL HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Input Numeric Mask</h6>			<!-- INPUT NUMERIC MASK HELPER - BEGINS -->
-					<form class="" id="" name="" method="" action="" title="" data-abide>
-						<fieldset>
-							<div class="row">
-								<div class="small-12 columns">
-									<label for="number">
-										Number Input Type
-										<input type="number" placeholder="Enter a number" title="Number" id="number" data-evo-input-numeric-mask required></label>
-									<small class="error">Houston we have a problem.</small>			</div>
-							</div>
-							<div class="row">
-								<div class="small-12 columns">
-									<label for="tel">
-										Telephone Input Type
-										<input type="tel" placeholder="Enter a telephone #" title="Telephone" id="tel" autocomplete="on" data-evo-input-numeric-mask required></label>
-									<small class="error">Houston we have a problem.</small>			</div>
-							</div>
-						</fieldset>
-					</form>
-					<!-- INPUT NUMERIC MASK HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Select All Checkboxes Toggle</h6>			<!-- SELECT ALL CHECKBOXES TABLE HELPER - BEGINS -->
+					<!-- FORM - HTML5 - ENDS -->
+					<h6 class="evo-hdr-rule">Select All Checkboxes Toggle</h6>			<!-- SELECT ALL CHECKBOXES - BEGINS -->
 					<div class="evo-table-small-mediaquery">
-						<table class="evo-table evo-table-hover" data-evo-data-table="evo-data-table-select-all-checkboxes-example" width="100%" cellpadding="0" cellspacing="0" border="0" title="" summary="" role="grid">
+						<table class="hover evo-table" data-evo-data-table="evo-data-table-select-all-checkboxes-example" width="100%" cellpadding="0" cellspacing="0" border="0" title="" summary="" role="grid">
 							<thead>
 								<tr>
 									<th scope="column" class="evo-table-form-element-cell"><input data-evo-checkboxes-select-all type="checkbox" tabindex="" title="" /></th>
@@ -1273,114 +730,397 @@
 							</tbody>
 						</table>
 					</div>
-					<!-- SELECT ALL CHECKBOXES TABLE HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Toggle Element</h6>			<!-- TOGGLE ELEMENT HELPER - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-hdr">
-							<h6><a href="javascript:;" data-evo-toggle-element="box-body-toggle-demo1">Click header 1 to toggle element</a></h6>
-						</div>
-						<div class="evo-box-bdy hide" data-evo-toggle-element-item="box-body-toggle-demo1">
-							<p class="evo-no-margin-bottom">
-								Toggled element content.
-							</p>
-						</div>
-					</div>
-					
-					<div class="panel evo-box">
-						<div class="evo-box-hdr">
-							<h6><a href="javascript:;" data-evo-toggle-element="box-body-toggle-demo2">Click header 2 to toggle element</a></h6>
-						</div>
-						<div class="evo-box-bdy hide" data-evo-toggle-element-item="box-body-toggle-demo2">
-							<p class="evo-no-margin-bottom">
-								Toggled element content.
-							</p>
-						</div>
-					</div>
-					<!-- TOGGLE ELEMENT HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Visibility - Show by Screen Size</h6>			<!-- SHOW BY SCREEN SIZE HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="show-for-small-only">This text is shown only on a small screen.</strong> 
-							<strong class="show-for-medium-up">This text is shown on medium screens and up.</strong> 
-							<strong class="show-for-medium-only">This text is shown only on a medium screen.</strong> 
-							<strong class="show-for-large-up">This text is shown on large screens and up.</strong> 
-							<strong class="show-for-large-only">This text is shown only on a large screen.</strong> 
-							<strong class="show-for-xlarge-up">This text is shown on xlarge screens and up.</strong> 
-							<strong class="show-for-xlarge-only">This text is shown only on an xlarge screen.</strong> 
-							<strong class="show-for-xxlarge-up">This text is shown on xxlarge screens and up.</strong> 
-						</div>
-					</div>
-					<!-- SHOW BY SCREEN SIZE HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Visibility - Hide by Screen Size</h6>			<!-- HIDE BY SCREEN SIZE HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="hide-for-small-only">This text is hidden only on a small screen.</strong> 
-							<strong class="hide-for-medium-up">This text is hidden on medium screens and up.</strong> 
-							<strong class="hide-for-medium-only">This text is hidden only on a medium screen.</strong> 
-							<strong class="hide-for-large-up">This text is hidden on large screens and up.</strong> 
-							<strong class="hide-for-large-only">This text is hidden only on a large screen.</strong> 
-							<strong class="hide-for-xlarge-up">This text is hidden on xlarge screens and up.</strong> 
-							<strong class="hide-for-xlarge-only">This text is hidden only on an xlarge screen.</strong> 
-							<strong class="hide-for-xxlarge-up">This text is hidden on xxlarge screens and up.</strong> 
-						</div>
-					</div>
-					<!-- HIDE BY SCREEN SIZE HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Visibility - Orientation Detection</h6>			<!-- ORIENTATION DETECTION HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="show-for-landscape">You are in landscape orientation.</strong>
-							<strong class="show-for-portrait">You are in portrait orientation.</strong>
-						</div>
-					</div>
-					<!-- ORIENTATION DETECTION HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Visibility - Touch Detection</h6>			<!-- TOUCH DETECTION HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="show-for-touch">You are on a touch-enabled device.</strong>
-					  		<strong class="hide-for-touch">You are not on a touch-enabled device.</strong>
-						</div>
-					</div>
-					<!-- TOUCH DETECTION HELPERS - ENDS -->
-					<h6 class="evo-hdr-rule">Accessibility - Show for Screen Readers Only</h6>			<!-- SHOW FOR SCREEN READERS HELPER - BEGINS -->
-					<p class="show-for-sr">This text can only be read by a screen reader.</p>
-					<p>There's a line of text above this one, you just can't see it.</p>
-					<!-- SHOW FOR SCREEN READERS HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Accessibility - Hide for Screen Readers Only</h6>			<!-- HIDE FOR SCREEN READERS HELPER - BEGINS -->
-					<p aria-hidden="true">This text can be seen, but won't be read by a screen reader.</p>
-					<!-- HIDE FOR SCREEN READERS HELPER - ENDS -->
-					<h6 class="evo-hdr-rule">Accessibility - Responsive Visibility</h6>			<!-- VISIBILITY HIDDEN HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="hidden-for-small-only">You are <em>not</em> on a small screen.</strong>
-							<strong class="hidden-for-medium-up">You are <em>not</em> on a medium, large, xlarge, or xxlarge screen.</strong>
-							<strong class="hidden-for-medium-only">You are <em>not</em> on a medium screen.</strong>
-							<strong class="hidden-for-large-up">You are <em>not</em> on a large, xlarge, or xxlarge screen.</strong>
-							<strong class="hidden-for-large-only">You are <em>not</em> on a large screen.</strong>
-							<strong class="hidden-for-xlarge-up">You are <em>not</em> on an xlarge screen and up.</strong>
-							<strong class="hidden-for-xlarge-only">You are <em>not</em> on an xlarge screen.</strong>
-							<strong class="hidden-for-xxlarge-up">You are <em>not</em> on an xxlarge screen.</strong>
-						</div>
-					</div>
-					<!-- VISIBILITY HIDDEN HELPERS - ENDS -->			<!-- VISIBILITY VISIBLE HELPERS - BEGINS -->
-					<div class="panel evo-box">
-						<div class="evo-box-bdy">
-							<strong class="visible-for-small-only">This text is shown only on a small screen.</strong>
-							<strong class="visible-for-medium-up">This text is shown on medium screens and up.</strong>
-							<strong class="visible-for-medium-only">This text is shown only on a medium screen.</strong>
-							<strong class="visible-for-large-up">This text is shown on large screens and up.</strong>
-							<strong class="visible-for-large-only">This text is shown only on a large screen.</strong>
-							<strong class="visible-for-xlarge-up">This text is shown on xlarge screens and up.</strong>
-							<strong class="visible-for-xlarge-only">This text is shown only on an xlarge screen.</strong>
-							<strong class="visible-for-xxlarge-up">This text is shown on xxlarge screens and up.</strong>
-						</div>
-					</div>
-					<!-- VISIBILITY VISIBLE HELPERS - ENDS -->			
+					<!-- SELECT ALL CHECKBOXES - ENDS -->
+					<h6 class="evo-hdr-rule">File Upload Button</h6>			<!-- FILE UPLOAD BUTTON - BEGINS -->
+					<label for="exampleFileUpload" class="button">Upload File</label>
+					<input type="file" id="exampleFileUpload" class="show-for-sr">
+					<!-- FILE UPLOAD BUTTON - ENDS -->		
 				</div>
 			</div>
 		
 		<hr>
 		
-			<h4 >Icons</h4>	<div class="row">
+			<h4>Grids</h4>	<div class="row evo-spacer-margin-bottom-x-large">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+		
+						<h6 class="evo-hdr-rule">Basic</h6>				<!-- GRID - BASIC DEMO - BEGIN -->
+						<div class="row">
+							<div class="small-12 columns">12</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-1 columns">1</div>
+							<div class="small-11 columns">11</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-2 columns">2</div>
+							<div class="small-10 columns">10</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-3 columns">3</div>
+							<div class="small-9 columns">9</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-4 columns">4</div>
+							<div class="small-8 columns">8</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-5 columns">5</div>
+							<div class="small-7 columns">7</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-6 columns">6</div>
+							<div class="small-6 columns">6</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-7 columns">7</div>
+							<div class="small-5 columns">5</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-8 columns">8</div>
+							<div class="small-4 columns">4</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-9 columns">9</div>
+							<div class="small-3 columns">3</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-10 columns">10</div>
+							<div class="small-2 columns">2</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-11 columns">11</div>
+							<div class="small-1 columns">1</div>
+						</div>
+						<!-- GRID - BASIC DEMO - END -->			
+					</div>
+				</div>
+			</div>
+			<div class="row evo-spacer-margin-bottom-x-large">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+					
+						<h6 class="evo-hdr-rule">Offsets</h6>				<!-- GRID - OFFSET DEMO - BEGIN -->
+						<div class="row">
+							<div class="large-1 columns">1</div>
+							<div class="large-11 columns">11</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-1 columns">1</div>
+							<div class="large-10 large-offset-1 columns">10, offset 1</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-1 columns">1</div>
+							<div class="large-9 large-offset-2 columns">9, offset 2</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-1 columns">1</div>
+							<div class="large-8 large-offset-3 columns">8, offset 3</div>
+						</div>
+						<!-- GRID - OFFSET DEMO - END -->
+					</div>
+				</div>
+			</div>
+			<div class="row evo-spacer-margin-bottom-x-large">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+					
+						<h6 class="evo-hdr-rule">Centering</h6>				<!-- GRID - CENTERING DEMO - BEGIN -->
+						<div class="row">
+							<div class="small-3 small-centered columns">3 center</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-6 large-centered columns">6 center</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-9 small-centered large-uncentered columns">9 center</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-11 small-centered columns">11 center</div>
+						</div>
+						<!-- GRID - CENTERING DEMO - END -->			
+					</div>
+				</div>
+			</div>
+			<div class="row evo-spacer-margin-bottom-x-large">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+					
+						<h6 class="evo-hdr-rule">Source Ordering</h6>				<!-- GRID - SOURCE ORDERING DEMO - BEGIN -->
+						<div class="row">
+							<div class="small-10 small-push-2 columns">10</div>
+							<div class="small-2 small-pull-10 columns">2, last</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-9 large-push-3 columns">9</div>
+							<div class="large-3 large-pull-9 columns">3, last</div>
+						</div>
+						
+						<div class="row">
+							<div class="large-8 large-push-4 columns">8</div>
+							<div class="large-4 large-pull-8 columns">4, last</div>
+						</div>
+						
+						<div class="row">
+							<div class="small-5 small-push-7 medium-7 medium-push-5 columns">7</div>
+							<div class="small-7 small-pull-5 medium-5 medium-pull-7 columns">5, last</div>
+						</div>
+						
+						<div class="row">
+							<div class="medium-6 medium-push-6 columns">6</div>
+							<div class="medium-6 medium-pull-6 columns">6, last</div>
+						</div>
+						<!-- GRID - SOURCE ORDERING DEMO - END -->
+					</div>
+				</div>
+			</div>
+			<div class="row evo-spacer-margin-bottom-x-large">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+					
+						<h6 class="evo-hdr-rule">Layouts</h6>				<!-- GRID - 1 COLUMN / CLEARING ROW - BEGINS -->
+						<div class="row">
+							<div class="small-12 columns">100%</div>
+						</div>
+						<!-- GRID - 1 COLUMN / CLEARING ROW - ENDS -->				<!-- GRID - 2 COLUMN - 50%/50% - BEGINS -->
+						<div class="row">
+							<div class="small-6 columns">50%</div>
+							<div class="small-6 columns">50%</div>
+						</div>
+						<!-- GRID - 2 COLUMN - 50%/50% - ENDS -->				<!-- GRID - 2 COLUMN - 66%/33% - BEGINS -->
+						<div class="row">
+							<div class="small-8 columns">66%</div>
+							<div class="small-4 columns">33%</div>
+						</div>
+						<!-- GRID - 2 COLUMN - 66%/33% - ENDS -->				<!-- GRID - 2 COLUMN - 33%/66% - BEGINS -->
+						<div class="row">
+							<div class="small-4 columns">33%</div>
+							<div class="small-8 columns">66%</div>
+						</div>
+						<!-- GRID - 2 COLUMN - 33%/66% - ENDS -->				<!-- GRID - 2 COLUMN - 75%/25% - BEGINS -->
+						<div class="row">
+							<div class="small-9 columns">75%</div>
+							<div class="small-3 columns">25%</div>
+						</div>
+						<!-- GRID - 2 COLUMN - 75%/25% - ENDS -->				<!-- GRID - 2 COLUMN - 25%/75% - BEGINS -->
+						<div class="row">
+							<div class="small-3 columns">25%</div>
+							<div class="small-9 columns">75%</div>
+						</div>
+						<!-- GRID - 2 COLUMN - 25%/75% - ENDS -->				<!-- GRID - 3 COLUMN - 33%/33%/33% - BEGINS -->
+						<div class="row">
+							<div class="small-4 columns">33%</div>
+							<div class="small-4 columns">33%</div>
+							<div class="small-4 columns">33%</div>
+						</div>
+						<!-- GRID - 3 COLUMN - 33%/33%/33% - ENDS -->				<!-- GRID - 3 COLUMN - 25%/50%/25% - BEGINS -->
+						<div class="row">
+							<div class="small-3 columns">25%</div>
+							<div class="small-6 columns">50%</div>
+							<div class="small-3 columns">25%</div>
+						</div>
+						<!-- GRID - 3 COLUMN - 25%/50%/25% - ENDS -->				<!-- GRID - 4 COLUMN - 25%/25%/25%/25% - BEGINS -->
+						<div class="row">
+							<div class="small-3 columns">25%</div>
+							<div class="small-3 columns">25%</div>
+							<div class="small-3 columns">25%</div>
+							<div class="small-3 columns">25%</div>
+						</div>
+						<!-- GRID - 4 COLUMN - 25%/25%/25%/25% - ENDS -->			
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+						
+						<h6 class="evo-hdr-rule">Block Grid</h6>				<!-- BLOCK GRID - BEGIN -->
+						<div class="row small-up-2 medium-up-3 large-up-5">
+							<div class="columns">Item</div>
+							<div class="columns">Item</div>
+							<div class="columns">Item</div>
+							<div class="columns">Item</div>
+							<div class="columns">Item</div>
+						</div>
+						<!-- BLOCK GRID - END -->			
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="small-12 columns">
+					<div class="evo-grid-demo">
+						
+						<h6 class="evo-hdr-rule">Contain to Grid</h6>				<!-- CONTAIN TO GRID - BEGINS -->
+						<div class="callout evo-callout evo-contain-to-grid">
+							<p>Incididunt irure mollit minim eu esse mollit quis officia adipisicing. Amet excepteur id Lorem cillum labore sunt. Laborum velit sit tempor non. Tempor reprehenderit sunt eu nisi. Pariatur ex reprehenderit ipsum dolor nostrud magna commodo sint.</p>
+						</div>
+						<!-- CONTAIN TO GRID - ENDS -->			
+					</div>
+				</div>
+			</div>
+		
+		<hr>
+		
+			<h4>Helpers</h4>	<div class="row">
+				<div class="medium-6 columns">
+		
+					<h6 class="evo-hdr-rule">Float</h6>			<!-- FLOAT - BEGINS -->
+					<div class="callout evo-callout"> 
+						<section class="clearfix">
+							<a href="#/" class="button float-right evo-button" id="" tabindex="" title="">Float Right</a>
+							<a href="#/" class="button float-left evo-button" id="" tabindex="" title="">Float Left</a>
+						</section>
+					</div>
+					<!-- FLOAT - ENDS -->
+					<h6 class="evo-hdr-rule">Horizontal Center</h6>			<!-- HORIZONTAL CENTER - BEGINS -->
+					<div class="callout evo-callout evo-callout-dimensions-demo">
+						<section>
+							<p class="float-center">The div that contains this text is centered horizontally within this box.</p>
+						</section>
+					</div>
+					<div class="callout evo-callout evo-callout-dimensions-demo">
+						<section>
+							<img class="float-center" src="assets/images/placeholders/placeholder_square.png">
+						</section>
+					</div>
+					<!-- HORIZONTAL CENTER - ENDS -->
+					<h6 class="evo-hdr-rule">Vertical Middle</h6>			<!-- VERTICAL MIDDLE - BEGINS -->
+					<div class="callout evo-callout evo-callout-dimensions-demo">
+						<section class="evo-vertical-middle">
+							<p class="evo-vertical-middle-element">The div that contains this text is centered vertically within this box.</p>
+						</section>
+					</div>
+					<div class="callout evo-callout evo-callout-dimensions-demo">
+						<section class="evo-vertical-middle">
+							<div class="evo-vertical-middle-element">
+								<img src="assets/images/placeholders/placeholder_square.png">
+							</div>
+						</section>
+					</div>
+					<!-- VERTICAL MIDDLE - ENDS -->
+					<h6 class="evo-hdr-rule">Keylines</h6>			<div class="evo-site--helpers-keyline-example">
+						<!-- KEYLINES - BEGIN -->
+						<div class="row" data-equalizer="keylines-demo">
+							<div class="medium-4 columns evo-keyline-right" data-equalizer-watch="keylines-demo">
+								<img src="assets/images/placeholders/placeholder_square.png" width="100%" height="200">
+							</div>
+							<div class="medium-4 columns" data-equalizer-watch="keylines-demo">
+								<p>Anim ullamco minim aliqua officia fugiat.</p>
+								<p>Proident laborum veniam anim magna cupidatat sint culpa non.</p>
+							</div>
+							<div class="medium-4 columns evo-keyline-left" data-equalizer-watch="keylines-demo">
+								<p>Amet in do occaecat irure.</p>
+								<p>Ipsum deserunt do nulla eu ipsum veniam ex proident.</p>
+								<p>Id ullamco ut excepteur officia occaecat occaecat.</p>
+							</div>
+						</div>
+						<!-- KEYLINES - END -->			</div>
+					
+				</div>
+				<div class="medium-6 columns">
+		
+					<h6 class="evo-hdr-rule">Image Align</h6>			<!-- IMAGE ALIGN - BEGINS -->
+					<p>
+						<img class="evo-image-left" src="assets/images/placeholders/placeholder_square.png">
+						<strong>This image is left aligned.</strong> Minim ad et adipisicing consequat esse irure enim. Deserunt dolore culpa in aute reprehenderit. Ullamco consectetur esse ut veniam minim tempor voluptate magna id. Culpa id nulla nostrud deserunt eiusmod ut amet culpa anim. Fugiat ea consectetur amet deserunt.
+					</p> 
+					<p>
+						<img class="evo-image-right" src="assets/images/placeholders/placeholder_square.png">
+						<strong>This image is right aligned.</strong> Nisi in magna occaecat nisi duis nulla laborum. Laborum ex ex quis ad quis labore. Elit ad dolor nisi qui Lorem enim. Amet id est excepteur occaecat deserunt ea. Qui incididunt officia ea excepteur ex.
+					</p>
+					<!-- IMAGE ALIGN - ENDS -->
+					<h6 class="evo-hdr-rule">Toggle Element</h6>			<!-- TOGGLE ELEMENT - BEGINS -->
+					<div class="callout evo-callout">
+						<header>
+							<h6><a href="javascript:;" data-toggle="box-body-toggle-demo1">Click header 1 to toggle element</a></h6>
+						</header>
+						<section class="hide" id="box-body-toggle-demo1" data-toggler=".hide">
+							<p class="evo-no-margin-bottom">
+								Toggled element content.
+							</p>
+						</section>
+					</div>
+					
+					<div class="callout evo-callout">
+						<header>
+							<h6><a href="javascript:;" data-toggle="box-body-toggle-demo2">Click header 2 to toggle element</a></h6>
+						</header>
+						<section class="hide" id="box-body-toggle-demo2" data-toggler=".hide">
+							<p class="evo-no-margin-bottom">
+								Toggled element content.
+							</p>
+						</section>
+					</div>
+					<!-- TOGGLE ELEMENT - ENDS -->
+					<h6 class="evo-hdr-rule">Show by Screen Size</h6>			<!-- SHOW BY SCREEN SIZE - BEGINS -->
+					<div class="callout evo-callout">
+						<section>
+							<strong class="show-for-small-only">This text is shown only on a small screen.</strong>
+							<strong class="show-for-medium">This text is shown on medium screens and up.</strong>
+							<strong class="show-for-medium-only">This text is shown only on a medium screen.</strong>
+							<strong class="show-for-large">This text is shown on large screens and up.</strong>
+							<strong class="show-for-large-only">This text is shown only on a large screen.</strong>
+						</section>
+					</div>
+					<!-- SHOW BY SCREEN SIZE - ENDS -->
+					<h6 class="evo-hdr-rule">Hide by Screen Size</h6>			<!-- HIDE BY SCREEN SIZE - BEGINS -->
+					<div class="callout evo-callout">
+						<section>
+							<strong class="hide-for-small-only">This text is hidden only on a small screen.</strong>
+							<strong class="hide-for-medium">This text is hidden on medium screens and up.</strong>
+							<strong class="hide-for-medium-only">This text is hidden only on a medium screen.</strong>
+							<strong class="hide-for-large">This text is hidden on large screens and up.</strong>
+							<strong class="hide-for-large-only">This text is hidden only on a large screen.</strong>
+						</section>
+					</div>
+					<!-- HIDE BY SCREEN SIZE - ENDS -->
+					<h6 class="evo-hdr-rule">Orientation Detection</h6>			<!-- ORIENTATION DETECTION - BEGINS -->
+					<div class="callout evo-callout">
+						<section>
+							<strong class="show-for-landscape">You are in landscape orientation.</strong>
+							<strong class="show-for-portrait">You are in portrait orientation.</strong>
+						</section>
+					</div>
+					<!-- ORIENTATION DETECTION - ENDS -->
+					<h6 class="evo-hdr-rule">Touch Detection</h6>			<!-- TOUCH DETECTION - BEGINS -->
+					<div class="callout evo-callout">
+						<section>
+							<strong class="show-for-touch">You are on a touch-enabled device.</strong>
+					  		<strong class="hide-for-touch">You are not on a touch-enabled device.</strong>
+						</section>
+					</div>
+					<!-- TOUCH DETECTION - ENDS -->
+					<h6 class="evo-hdr-rule">Show for Screen Readers Only</h6>			<!-- SHOW FOR SCREEN READERS - BEGINS -->
+					<p class="show-for-sr">This text can only be read by a screen reader.</p>
+					<p>There's a line of text above this one, you just can't see it.</p>
+					<!-- SHOW FOR SCREEN READERS - ENDS -->
+					<h6 class="evo-hdr-rule">Hide for Screen Readers Only</h6>			<!-- HIDE FOR SCREEN READERS - BEGINS -->
+					<p aria-hidden="true">This text can be seen, but won't be read by a screen reader.</p>
+					<!-- HIDE FOR SCREEN READERS - ENDS -->			
+				</div>
+			</div>
+		
+		<hr>
+		
+			<h4>Icons</h4>	<div class="row">
 				<div class="medium-6 columns">
 		
 					<h6 class="evo-hdr-rule">Basic Icon</h6>			<i class="evo-icon-user"></i>			<br><br>
@@ -1405,6 +1145,9 @@
 						<i class="evo-icon-alarm-check evo-icon-position-right"></i>			</label>
 					<br><br>
 		
+				</div>
+				<div class="medium-6 columns">
+		
 					<h6 class="evo-hdr-rule">Icon Size - Small</h6>			<i class="evo-icon-alarm-check evo-icon-size-small"></i>			<br><br>
 		
 					<h6 class="evo-hdr-rule">Icon Size - Medium</h6>			<i class="evo-icon-alarm-check evo-icon-size-medium"></i>			<br><br>
@@ -1413,49 +1156,16 @@
 		
 					<h6 class="evo-hdr-rule">Icon Size - X-Large</h6>			<i class="evo-icon-alarm-check evo-icon-size-x-large"></i>			<br><br>
 		
-				</div>
-				<div class="medium-6 columns">
-		
 					<h6 class="evo-hdr-rule">Icon as link</h6>			<a href="#/" class="evo-icon-alarm-check"></a>			<br><br>
 		
 					<h6 class="evo-hdr-rule">Icon with link</h6>			<a href="#/"><i class="evo-icon-alarm-check evo-icon-position-left"></i>Icon with link</a>			<br><br>
-		
-					<h6 class="evo-hdr-rule">Icon Shield - Small</h6>			<div class="row">
-						<div class="small-12 columns">
-							<a href="#/" class="evo-icon-shield evo-icon-shield-size-small evo-icon-position-left"><i class="evo-icon-alarm-check"></i></a>				</div>
-					</div>
-					<br>
-		
-					<h6 class="evo-hdr-rule">Icon Shield - Small Medium</h6>			<div class="row">
-						<div class="small-12 columns">
-							<a href="#/" class="evo-icon-shield evo-icon-shield-size-small-medium"><i class="evo-icon-alarm-check"></i></a>				</div>
-					</div>
-					<br>
-		
-					<h6 class="evo-hdr-rule">Icon Shield - Medium</h6>			<div class="row">
-						<div class="small-12 columns">
-							<a href="#/" class="evo-icon-shield evo-icon-shield-size-medium"><i class="evo-icon-alarm-check"></i></a>				</div>
-					</div>
-					<br>
-		
-					<h6 class="evo-hdr-rule">Icon Shield - Large</h6>			<div class="row">
-						<div class="small-12 columns">
-							<a href="#/" class="evo-icon-shield evo-icon-shield-size-large"><i class="evo-icon-alarm-check"></i></a>				</div>
-					</div>
-					<br>
-		
-					<h6 class="evo-hdr-rule">Icon Shield - X-Large</h6>			<div class="row">
-						<div class="small-12 columns">
-							<a href="#/" class="evo-icon-shield evo-icon-shield-size-x-large"><i class="evo-icon-alarm-check"></i></a>				</div>
-					</div>
-					<br>
 		
 				</div>
 			</div>
 			<div class="row">
 				<div class="small-12 columns">
 		
-					<h5 >Photo Icons</h5>
+					<h5>Photo Icons</h5>
 					<h6 class="evo-hdr-rule">Career</h6>			<div class="clearfix evo-spacer-margin-bottom-x-large">
 						<img src="assets/images/core/icons/photo/career/photo_icon_career_1.png" width="80" height="80" alt="" title="" />
 						<img src="assets/images/core/icons/photo/career/photo_icon_career_2.png" width="80" height="80" alt="" title="" />
@@ -1518,7 +1228,7 @@
 			<div class="row">
 				<div class="small-12 columns">
 		
-					<h5 >Vector Icons</h5>
+					<h5>Vector Icons</h5>
 					<h6 class="evo-hdr-rule">Career</h6>			<div class="clearfix evo-spacer-margin-bottom-x-large">
 						<img src="assets/images/core/icons/vector/career/vector_icon_career_1.png" width="60" height="60" alt="" title="" />
 						<img src="assets/images/core/icons/vector/career/vector_icon_career_2.png" width="60" height="60" alt="" title="" />
@@ -1593,44 +1303,44 @@
 		
 		<hr>
 		
-			<h4 >Image Placeholders</h4>	<div class="row">
+			<h4>Image Placeholders</h4>	<div class="row">
 				<div class="medium-12 columns">
 					<img  src="assets/images/placeholders/placeholder_rectangle_high.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_rectangle_high_thick.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_rectangle_high_thin.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_rectangle_wide.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_rectangle_wide_thick.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_rectangle_wide_thin.png" alt="Placeholder"   >			<img  src="assets/images/placeholders/placeholder_square.png" alt="Placeholder"   >		</div>
 			</div>
 		
 		<hr>
 		
-			<h4 >Lists</h4>	<div class="row">
+			<h4>Lists</h4>	<div class="row">
 				<div class="medium-6 columns">
 		
 					<h6 class="evo-hdr-rule">Horizontal Lists</h6>			<!-- HORIZONTAL LIST - BEGINS -->
-					<ul class="inline-list evo-inline-list">
+					<ul class="evo-inline-list">
 						<li>Item 1</li>
 						<li>Item 2</li>
 						<li>Item 3</li>
 					</ul>
 					<!-- HORIZONTAL LIST - ENDS -->
-					<h6 class="evo-hdr-rule">Horizontal Lists With Links</h6>			<!-- HORIZONTAL LIST - LINKS - BEGINS -->
-					<ul class="inline-list evo-inline-list">
+					<h6 class="evo-hdr-rule">Horizontal Lists With Links</h6>			<!-- HORIZONTAL LIST LINKS - BEGINS -->
+					<ul class="evo-inline-list">
 						<li><a href="#/">Link 1</a></li>
 						<li><a href="#/">Link 2</a></li>
 						<li><a href="#/">Link 3</a></li>
 					</ul>
-					<!-- HORIZONTAL LIST - LINKS - ENDS -->
-					<h6 class="evo-hdr-rule">Horizontal Lists With Pipes</h6>			<!-- HORIZONTAL LIST - PIPES - BEGINS -->
-					<ul class="inline-list evo-inline-list evo-inline-list-pipes">
+					<!-- HORIZONTAL LIST LINKS - ENDS -->
+					<h6 class="evo-hdr-rule">Horizontal Lists With Pipes</h6>			<!-- HORIZONTAL LIST PIPES - BEGINS -->
+					<ul class="evo-inline-list evo-inline-list-pipes">
 						<li>Item 1</li>
 						<li>Item 2</li>
 						<li>Item 3</li>
 					</ul>
-					<!-- HORIZONTAL LIST - PIPES - ENDS -->
-					<h6 class="evo-hdr-rule">Horizontal Lists With Links and Pipes</h6>			<!-- HORIZONTAL LIST - PIPES - BEGINS -->
-					<ul class="inline-list evo-inline-list evo-inline-list-pipes">
+					<!-- HORIZONTAL LIST PIPES - ENDS -->
+					<h6 class="evo-hdr-rule">Horizontal Lists With Links and Pipes</h6>			<!-- HORIZONTAL LIST PIPES - BEGINS -->
+					<ul class="evo-inline-list evo-inline-list-pipes">
 						<li><a href="#/">Item 1</a></li>
 						<li><a href="#/">Item 2</a></li>
 						<li><a href="#/">Item 3</a></li>
 					</ul>
-					<!-- HORIZONTAL LIST - PIPES - ENDS -->
+					<!-- HORIZONTAL LIST PIPES - ENDS -->
 					<h6 class="evo-hdr-rule">Horizontal Definition List</h6>			<!-- HORIZONTAL DEFINITION LIST - BEGINS -->
 					<dl class="evo-inline-list evo-inline-dl-list">
 						<dt>Title:</dt>
@@ -1745,43 +1455,46 @@
 		
 		<hr>
 		
-			<h4 >Type</h4>	<div class="row">
+			<h4>Type</h4>	<div class="row">
 				<div class="medium-6 columns">
 		
 					<h6 class="evo-hdr-rule">Paragraphs</h6>			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 					<h6 class="subheader">Paragraph Overflow</h6>			<p class="evo-text-overflow">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 					<h6 class="subheader">Paragraph Hyphen</h6>			<p class="evo-hyphen-demo">Repre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderitrepre­henderit.</p>
 					<h6 class="subheader">Paragraph Footnote</h6>			<p class="evo-footnote"><small>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</small></p>
-					<h6 class="evo-hdr-rule">Headers</h6>			<h1 >h1 header</h1>			<h2 >h2 header</h2>			<h3 >h3 header</h3>			<h4 >h4 header</h4>			<h5 >h5 header</h5>			<h6 >h6 header</h6>			<br>
+					<h6 class="evo-hdr-rule">Lead Paragraph</h6>			<!-- LEAD PARAGRAPH - BEGINS -->
+					<p class="lead">Velit aliqua incididunt sit mollit. Ad et nulla consectetur laborum pariatur laboris pariatur ullamco nostrud. Occaecat qui veniam tempor anim et.</p>
+					<!-- LEAD PARAGRAPH - ENDS -->
+					<h6 class="evo-hdr-rule">Headers</h6>			<h1>h1 header</h1>			<h2>h2 header</h2>			<h4>h3 header</h4>			<h4>h4 header</h4>			<h5>h5 header</h5>			<h6>h6 header</h6>			<br>
 		
-					<h6 class="evo-hdr-rule">Subheaders</h6>			<h1 class="subheader">h1 header</h1>			<h2 class="subheader">h2 header</h2>			<h3 class="subheader">h3 header</h3>			<h4 class="subheader">h4 header</h4>			<h5 class="subheader">h5 header</h5>			<h6 class="subheader">h6 header</h6>			<br>
+					<h6 class="evo-hdr-rule">Subheaders</h6>			<h1 class="subheader">h1 header</h1>			<h2 class="subheader">h2 header</h2>			<h4 class="subheader">h3 header</h4>			<h4 class="subheader">h4 header</h4>			<h5 class="subheader">h5 header</h5>			<h6 class="subheader">h6 header</h6>			<br>
 		
 					<h6 class="evo-hdr-rule">Header with Background Color</h6>
-					<h1 class="evo-h1-hdr-background">h1 header</h1>			<p>Aute nulla officia fugiat dolor non et eu. Sit excepteur est exercitation occaecat amet veniam id.</p>
+					<h1 class="evo-h1-hdr-background">h1 header</h1>			<p>Proident amet enim elit ex proident. Reprehenderit aute in amet quis.</p>
 		
-					<h2 class="evo-h2-hdr-background">h2 header</h2>			<p>Excepteur est nulla ipsum excepteur nisi non. Eu ea ad tempor fugiat dolor mollit nisi ullamco.</p>
+					<h2 class="evo-h2-hdr-background">h2 header</h2>			<p>Sunt esse exercitation laboris cupidatat. Aute et dolore quis velit minim do.</p>
 		
-					<h3 class="evo-h3-hdr-background">h3 header</h3>			<p>Minim labore esse labore nostrud eu amet do. Fugiat proident cupidatat sit veniam consequat duis officia labore deserunt.</p>
+					<h4 class="evo-h3-hdr-background">h3 header</h4>			<p>Sunt magna excepteur aute et incididunt officia fugiat adipisicing. Officia eu anim pariatur officia esse do anim velit officia.</p>
 		
 					<h6 class="evo-hdr-rule">Header with Rule</h6>
-					<h1 class="evo-hdr-rule">h1 header</h1>			<p>Irure deserunt Lorem culpa enim duis ea non veniam. Sint nulla quis occaecat est.</p>
+					<h1 class="evo-hdr-rule">h1 header</h1>			<p>Minim consequat est deserunt Lorem excepteur voluptate. Mollit cupidatat sunt labore deserunt eiusmod in.</p>
 		
-					<h2 class="evo-hdr-rule">h2 header</h2>			<p>Lorem id culpa consectetur est fugiat mollit. Elit culpa non ut eiusmod ullamco cupidatat commodo culpa veniam.</p>
+					<h2 class="evo-hdr-rule">h2 header</h2>			<p>Aliquip cupidatat cillum proident et consectetur sunt duis anim in. Lorem in enim elit veniam qui.</p>
 		
-					<h3 class="evo-hdr-rule">h3 header</h3>			<p>Excepteur reprehenderit tempor irure aute in. Lorem fugiat ad et nisi.</p>
+					<h4 class="evo-hdr-rule">h3 header</h4>			<p>Nisi non eu amet ex velit. Labore consequat laboris eu mollit duis aute labore dolore tempor.</p>
 		
-					<h4 class="evo-hdr-rule">h4 header</h4>			<p>Sint incididunt ad labore dolor. Sint ad aliqua reprehenderit aute cupidatat anim dolore ex.</p>
+					<h4 class="evo-hdr-rule">h4 header</h4>			<p>Non nulla reprehenderit veniam consectetur irure eiusmod culpa aliqua. Non proident incididunt anim non exercitation amet sunt.</p>
 		
-					<h5 class="evo-hdr-rule">h5 header</h5>			<p>Non sit sint veniam minim excepteur do dolore. Culpa commodo eu adipisicing eiusmod laboris id esse sunt.</p>
+					<h5 class="evo-hdr-rule">h5 header</h5>			<p>Fugiat reprehenderit ut quis dolore. Magna in qui ex commodo.</p>
 		
-					<h6 class="evo-hdr-rule">h6 header</h6>			<p>Enim duis anim nostrud exercitation nisi. Qui id aliquip fugiat incididunt et.</p>
+					<h6 class="evo-hdr-rule">h6 header</h6>			<p>Qui ullamco tempor aliqua pariatur. Veniam laboris magna irure ad eiusmod deserunt mollit.</p>
 		
 					<h6 class="evo-hdr-rule">Header with Double Rule</h6>
-					<h1 class="evo-hdr-dbl-rule">h1 header</h1>			<p>Anim eiusmod adipisicing proident do consectetur ad reprehenderit. Consectetur enim id non id.</p>
+					<h1 class="evo-hdr-dbl-rule">h1 header</h1>			<p>Velit dolor ex velit velit. Do ea sit amet ullamco ad do reprehenderit ad.</p>
 		
-					<h2 class="evo-hdr-dbl-rule">h2 header</h2>			<p>Velit est Lorem Lorem esse quis consectetur quis. Dolore laborum exercitation cillum do reprehenderit duis sint sit deserunt.</p>
+					<h2 class="evo-hdr-dbl-rule">h2 header</h2>			<p>Velit amet quis nisi cillum voluptate id enim veniam. Aliquip qui amet enim quis.</p>
 		
-					<h3 class="evo-hdr-dbl-rule">h3 header</h3>			<p>Et Lorem aute officia nisi sunt consequat ea id dolor. Laboris ea ipsum est aute ut.</p>
+					<h4 class="evo-hdr-dbl-rule">h3 header</h4>			<p>In exercitation veniam sint et non eu. Deserunt nostrud veniam eiusmod occaecat in aute.</p>
 		
 				</div>
 				<div class="medium-6 columns">
@@ -1858,7 +1571,8 @@
 							</ul>
 						</li>
 					</ul>
-					
+					<!-- TYPE - UNORDERED LIST - ENDS -->
+					<h6 class="evo-hdr-rule">Un-bulleted List</h6>			<!-- TYPE - UNBULLETED LIST - BEGINS -->
 					<ul class="no-bullet">
 						<li>Unordered list item one List item with a much longer description or more content.</li>
 						<li>Unordered list item two</li>
@@ -1870,7 +1584,7 @@
 							</ul>
 						</li>
 					</ul>
-					<!-- TYPE - UNORDERED LIST - ENDS -->
+					<!-- TYPE - UNBULLETED LIST - ENDS -->
 					<h6 class="evo-hdr-rule">Definition List</h6>			<!-- TYPE - DEFINITION LIST - BEGINS -->
 					<dl>
 						<dt>Definition Term</dt>
@@ -1883,7 +1597,7 @@
 					<!-- TYPE - DEFINITION LIST - ENDS -->			
 					<h6 class="evo-hdr-rule">Blockquote</h6>			<!-- TYPE - BLOCKQUOTE - BEGINS -->
 					<blockquote>
-						<p>Ut laboris in in ea sunt pariatur enim exercitation. Reprehenderit minim officia consectetur cillum dolore ea ipsum consectetur ad. Nostrud cillum quis aliquip aute velit ut ut. Consectetur do exercitation aliqua veniam voluptate elit non laboris.</p>
+						<p>Ea mollit ex non do consequat. Esse laboris cupidatat commodo ex labore. Voluptate sint officia aliqua ea consequat incididunt non. Id aliqua excepteur laboris enim non commodo.</p>
 						<cite>John Doe, Expert</cite>
 					</blockquote>
 					<!-- TYPE - BLOCKQUOTE - ENDS -->
@@ -1903,42 +1617,52 @@
 					<br><strong>&lt;strong&gt; strong importance or bold</strong>
 					<br>&lt;sub&gt; subscript: H<sub>2</sub>O
 					<br>&lt;sup&gt; superscript: 8<sup>th</sup> Street, E=mc<sup>2</sup>
+					<br><div class="stat">Stat: 128</div>
 					</p>
 					<!-- TYPE - OTHER MARKUP - ENDS -->
+					<h6 class="evo-hdr-rule">Text Align</h6>			<!-- TEXT ALIGN HELPERS - BEGINS -->
+					<p class="text-left">
+						<strong>This text is left aligned.</strong> Lorem nulla officia aute tempor reprehenderit adipisicing elit elit. Adipisicing laborum deserunt commodo consequat laborum adipisicing sunt. Irure magna laborum quis commodo ea. Laboris eu irure proident ex mollit nisi. Mollit cupidatat ea ipsum reprehenderit ullamco in do adipisicing exercitation.
+					</p> 
+					<p class="text-right">
+						<strong>This text is right aligned.</strong> Anim est mollit quis tempor fugiat et. Consectetur enim amet cillum commodo magna eiusmod eiusmod. Non enim esse eiusmod labore nisi ullamco ea cillum. Aliqua in mollit occaecat deserunt voluptate elit elit. Ut amet mollit nostrud ex duis et veniam dolore ex.
+					<p class="text-center">
+						<strong>This text is center aligned.</strong> Enim aute consequat id elit. Ullamco anim nostrud consequat ut ea adipisicing sunt sunt ut. Ea officia voluptate duis officia enim culpa consequat velit. Ullamco et sint laborum mollit nulla. Qui mollit pariatur nisi dolore.
+					<p class="text-justify">
+						<strong>This text is justified.</strong> Aute aliqua velit ea eiusmod reprehenderit magna. Id enim nisi cupidatat enim fugiat minim. Tempor reprehenderit dolor laborum id ex sint eu labore. Ad sunt exercitation voluptate anim. Sint sit culpa laboris sint culpa sint.
+					</p>
+					<!-- TEXT ALIGN HELPERS - ENDS -->
 				</div>
 			</div>
 
 	</div>
 </div>
-					</div>
-				</section>
-				<!-- PAGE - ENDS -->
+					</section>
+					<!-- PAGE - ENDS -->
 
-				<!-- FOOTER - BEGINS -->
-				<footer class="evo-thin-footer">
-				
-				<!-- CONTENT SECTION - BEGINS -->
-					<section class="row evo-footer-content-section">
-						<div class="evo-contain-to-grid">
+					<!-- FOOTER - BEGINS -->
+					<footer class="evo-thin-footer">
+					
+					<!-- CONTENT SECTION - BEGINS -->
+						<section class="row expanded evo-footer-content-section">
 							<div class="medium-6 columns">
-				
-								<section class="row collapse">
-									<div class="small-only-text-center medium-5 large-5 columns">
-				
+								<section class="row">
+									<div class="medium-5 large-5 columns">
+					
 									<!-- SOCIAL MEDIA BADGES - BEGINS -->
 										<div class="evo-social-media-badges-ctn">
-											<a href="#/" class="evo-icon-facebook2 evo-icon-size-medium" title="Facebook" aria-label="Facebook"></a>							<a href="#/" class="evo-icon-twitter2 evo-icon-size-medium" title="Twitter" aria-label="Twitter"></a>							<a href="#/" class="evo-icon-tumblr2 evo-icon-size-medium" title="Tumblr" aria-label="Tumblr"></a>							<a href="#/" class="evo-icon-linkedin evo-icon-size-medium" title="LinkedIn" aria-label="LinkedIn"></a>						</div>
+											<a href="#/" class="evo-icon-facebook2 evo-icon-size-medium" title="Facebook" aria-label="Facebook"></a>						<a href="#/" class="evo-icon-twitter2 evo-icon-size-medium" title="Twitter" aria-label="Twitter"></a>						<a href="#/" class="evo-icon-tumblr2 evo-icon-size-medium" title="Tumblr" aria-label="Tumblr"></a>						<a href="#/" class="evo-icon-linkedin evo-icon-size-medium" title="LinkedIn" aria-label="LinkedIn"></a>					</div>
 									<!-- SOCIAL MEDIA BADGES - ENDS -->
-				
+					
 									</div>
-									<div class="small-only-text-center medium-7 large-7 columns evo-thin-footer-logo">
-										<img src="assets/images/core/corp-logos/marsh-mclennan/mmc_logo_rgb.png" alt="Marsh &amp; McLennan Companies" width="225" height="10">
+									<div class="medium-7 large-7 columns evo-thin-footer-logo">
+										<!-- <img src="assets/images/core/corp-logos/marsh-mclennan/mmc_logo_rgb.png" alt="Marsh &amp; McLennan Companies" width="225" height="10"> -->
 									</div>
 								</section>
 							</div>
-							<div class="medium-6 small-only-text-center columns">
+							<div class="medium-6 columns">
 								<div class="evo-footer-links">
-									<ul class="inline-list evo-inline-list evo-inline-list-pipes">
+									<ul class="evo-inline-list evo-inline-list-pipes">
 										<li><a href="#/">Terms of Use</a></li>
 										<li><a href="#/">Privacy Policy</a></li>
 										<li><a href="#/">Site map</a></li>
@@ -1946,51 +1670,40 @@
 									</ul>
 								</div>
 							</div>
-						</div>
-					</section>
-				<!-- CONTENT SECTION - ENDS -->
-				
-				<!-- BRAND BAR - BEGINS -->
-					<section class="row evo-thin-footer-brand-bar">
-						<div class="evo-contain-to-grid">
+						</section>
+					<!-- CONTENT SECTION - ENDS -->
+					
+					<!-- BRAND BAR - BEGINS -->
+						<section class="row expanded evo-thin-footer-brand-bar">
 						<!-- FOOTER BRAND LOGO - BEGINS -->
-							<div class="medium-6 medium-push-6 columns small-text-center medium-text-right evo-footer-logo">
-								<a class="small-only-text-center" href="http://www.mercer.com/" target="_blank" title="Mercer - Make Tomorrow, Today">
+							<div class="medium-6 medium-push-6 columns evo-footer-logo">
+								<a href="http://www.mercer.com/" target="_blank" title="Mercer - Make Tomorrow, Today">
 									<img src="assets/images/core/corp-logos/mercer/mercer_mtt_horizontal_rgb.png" alt="Mercer - Make Tomorrow, Today" width="395" height="15">
 								</a>
 							</div>
 						<!-- FOOTER BRAND LOGO - ENDS -->
-				
+					
 						<!-- FOOTER COPYRIGHT - BEGINS -->
 							<div class="medium-6 medium-pull-6 columns">
-								<p class="small-only-text-center evo-footnote evo-footer-copyright">
+								<p class="evo-footnote evo-footer-copyright">
 									<small>&copy; 2016 Mercer LLC, All Rights Reserved</small>
 								</p>
 							</div>
 						<!-- FOOTER COPYRIGHT - ENDS -->
-						</div>
-					</section>
-				<!-- BRAND BAR - ENDS -->
-				
-				</footer>				<!-- FOOTER - ENDS -->
+						</section>
+					<!-- BRAND BAR - ENDS -->
+					
+					</footer>					<!-- FOOTER - ENDS -->
 
-				<!-- OFF-CANVAS CLOSE - BEGINS -->
-				<a class="exit-off-canvas"></a>
-				<!-- OFF-CANVAS CLOSE - ENDS -->
+				</div>
+				<!-- PAGE CONTENT - ENDS -->
 
 			</div>
 		</div>
 		<!-- OFF-CANVAS WRAPPER - ENDS -->
 
-		<!-- EVOLUTION CORE SCRIPTS -->
-		<script src="assets/scripts/evolution.js"></script>
-		
-		<!-- SITE SCRIPTS -->
-		<script src="assets/scripts/site.js"></script>
-		
-		<!-- FOUNDATION SCRIPTS INITIALIZATION -->
-		<script>
-			$(document).foundation();
-		</script>
+		<script src="assets/js/evolution.js"></script>
+		<script src="assets/js/evolution-animations.js"></script>
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>

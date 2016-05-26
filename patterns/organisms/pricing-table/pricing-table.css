@@ -1,32 +1,29 @@
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v3.0.5
-Pricing Table v1.0.0 - SASS
-DATE: March 17, 2016
+Mercer Evolution v4.0.0
+Pricing Table v1.0.1 - SASS
+DATE: May 26, 2016
 AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
-.evo-pricing-table [class*="small-block-grid-"] {
+.evo-pricing-table [class*="small-up-"] {
   background-color: #f0f0f0;
   font-size: 1.0625rem;
   padding: 0.625rem;
   margin: 0;
   margin-bottom: 0.125rem;
 }
-.evo-pricing-table [class*="small-block-grid-"] li {
-  padding-bottom: 0;
-}
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-amt,
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-break-down-amt,
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-total-amt {
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-amt,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-break-down-amt,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-total-amt {
   text-align: right;
 }
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-label,
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-break-down-label,
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-total-label {
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-break-down-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-total-label {
   text-transform: none;
 }
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-item-label,
-.evo-pricing-table [class*="small-block-grid-"] .evo-pricing-table-value-label {
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-item-label,
+.evo-pricing-table [class*="small-up-"] .evo-pricing-table-value-label {
   font-size: 0.75rem;
   position: relative;
 }
@@ -35,9 +32,6 @@ URL: http://evolution.mercer.com
   padding-bottom: 0;
   margin-top: 0;
   margin-bottom: 0;
-}
-.evo-pricing-table .evo-pricing-table-category-label li {
-  padding-bottom: 0;
 }
 .evo-pricing-table .evo-pricing-table-category-label .evo-pricing-table-item-label {
   color: #999999;
@@ -52,11 +46,11 @@ URL: http://evolution.mercer.com
   background-color: #BFBFBF;
 }
 .evo-pricing-table .evo-pricing-table-total-row {
-  background-color: #404040;
+  background-color: #002C77;
 }
 .evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-label {
-  color: #FFFFFF;
+  color: #FEFEFE;
 }
 .evo-pricing-table .evo-pricing-table-total-row .evo-pricing-table-total-amt {
-  color: #FFFFFF;
+  color: #FEFEFE;
 }
