@@ -1,16 +1,13 @@
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v3.0.5
-Showcase Panel v1.0.0 - SASS
-DATE: March 17, 2016
+Mercer Evolution v4.0.0
+Showcase Panel v1.0.1 - SASS
+DATE: May 26, 2016
 AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-showcase-panel {
-  -moz-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0.1875rem 0.3125rem 0 rgba(0, 0, 0, 0.25);
-  background-color: #FFFFFF;
+  box-shadow: 0 3px 5px 0 rgba(10, 10, 10, 0.25);
+  background-color: #FEFEFE;
 }
 .evo-showcase-panel .evo-showcase-panel-item {
   min-height: 6.25rem;
@@ -81,14 +78,17 @@ URL: http://evolution.mercer.com
   font-family: "proxima_nova_rgbold", arial, Tahoma, Geneva, sans-serif;
   text-transform: lowercase;
 }
+.evo-showcase-panel[data-evo-showcase-panel-color-reverse] {
+  background-color: #002C77;
+}
 .evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item {
-  color: #FFFFFF;
+  color: #FEFEFE;
 }
 .evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item a {
-  color: #FFFFFF;
+  color: #FEFEFE;
 }
 .evo-showcase-panel[data-evo-showcase-panel-color-reverse] .evo-showcase-panel-item [class^="evo-icon-"] {
-  color: #FFFFFF;
+  color: #FEFEFE;
 }
 .evo-showcase-panel[data-evo-showcase-panel-fixed] {
   position: fixed;

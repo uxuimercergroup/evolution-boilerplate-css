@@ -1,7 +1,7 @@
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v3.0.5
-Item Selection Panel v1.0.0 - SASS
-DATE: March 17, 2016
+Mercer Evolution v4.0.0
+Item Selection Panel v1.0.1 - SASS
+DATE: May 26, 2016
 AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
@@ -13,14 +13,12 @@ URL: http://evolution.mercer.com
 }
 .evo-item-selection-panel .evo-item-selection-panel-item {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
 }
 .evo-item-selection-panel .evo-item-selection-panel-item .evo-item-selection-panel-item-icon {
-  -webkit-border-radius: 100%;
   border-radius: 100%;
   background-clip: padding-box;
   border: 0.125rem solid #BFBFBF;
@@ -55,14 +53,11 @@ URL: http://evolution.mercer.com
   height: 0;
 }
 .evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon {
-  -moz-box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.25);
-  -o-box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 0.125rem 0.375rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.125rem 0.375rem 0 rgba(10, 10, 10, 0.25);
   border-width: 0;
-  color: #FFFFFF;
+  color: #FEFEFE;
   padding: 1.5rem;
-  background-color: #404040;
+  background-color: #002C77;
 }
 .evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon.evo-icon-size-small {
   padding: 0.75rem;
@@ -78,11 +73,9 @@ URL: http://evolution.mercer.com
 }
 .evo-item-selection-panel .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-label {
   font-family: "proxima_nova_ltsemibold", arial, Tahoma, Geneva, sans-serif;
-  color: #404040;
+  color: #002C77;
 }
 .evo-item-selection-panel[data-evo-item-selection-panel-type="photo"] .evo-item-selection-panel-item .evo-item-selection-panel-item-icon {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   padding: 0.375rem;
   width: 5rem;
@@ -93,6 +86,6 @@ URL: http://evolution.mercer.com
 }
 .evo-item-selection-panel[data-evo-item-selection-panel-type="photo"] .evo-item-selection-panel-item-selected .evo-item-selection-panel-item-icon {
   border-width: 0.125rem;
-  border-color: #404040;
+  border-color: #002C77;
   background: none;
 }

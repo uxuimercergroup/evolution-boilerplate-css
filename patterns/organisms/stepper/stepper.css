@@ -1,20 +1,18 @@
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v3.0.5
-Stepper v1.0.0 - SASS
-DATE: March 17, 2016
+Mercer Evolution v4.0.0
+Stepper v1.0.1 - SASS
+DATE: May 26, 2016
 AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
-.evo-stepper:after {
-  content: "\0020";
-  display: block;
-  height: 0;
+.evo-stepper::before, .evo-stepper::after {
+  content: ' ';
+  display: table;
+}
+.evo-stepper::after {
   clear: both;
-  overflow: hidden;
-  visibility: hidden;
 }
 .evo-stepper .evo-stepper-item {
-  -webkit-border-radius: 1.875rem;
   border-radius: 1.875rem;
   background-clip: padding-box;
   display: block;
@@ -34,5 +32,5 @@ URL: http://evolution.mercer.com
   margin: 0 0.625rem 0 0;
   width: 1.25rem;
   height: 1.25rem;
-  background-color: #999999;
+  background-color: #002C77;
 }

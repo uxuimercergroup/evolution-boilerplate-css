@@ -1,87 +1,62 @@
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v3.0.5
-Thin Footer v1.0.0 - SASS
-DATE: March 17, 2016
+Mercer Evolution v4.0.0
+Thin Footer v1.0.1 - SASS
+DATE: May 26, 2016
 AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-thin-footer .evo-footer-content-section {
-  background-color: #fafafa;
+  background-color: #FEFEFE;
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: #e6e6e6;
   padding-top: 1.25rem;
   min-height: 5rem;
-  max-width: none;
 }
 .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"] {
-  color: #404040;
+  color: #002C77;
 }
 .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:hover {
-  color: #404040;
+  color: #002C77;
 }
 .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:focus {
-  color: #404040;
+  color: #002C77;
 }
 .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn a[class^="evo-icon-"]:visited {
-  color: #404040;
+  color: #002C77;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-content-section .evo-social-media-badges-ctn {
+    margin-bottom: 0;
+    text-align: left;
+  }
 }
 .evo-thin-footer .evo-footer-content-section .evo-thin-footer-logo {
   margin-bottom: 0.75rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-content-section .evo-thin-footer-logo {
+    margin-bottom: 0;
+    text-align: left;
+  }
 }
 .evo-thin-footer .evo-footer-links {
   float: none;
+  text-align: center;
 }
 .evo-thin-footer .evo-footer-links li a {
   font-size: 0.875rem;
-  color: #006D9E;
+  color: #002C77;
 }
-.evo-thin-footer .evo-thin-footer-brand-bar {
-  background-color: #e6e6e6;
-  min-height: 3.125rem;
-  max-width: none;
+.evo-thin-footer .evo-footer-links li a:hover {
+  color: #002666;
 }
-.evo-thin-footer .evo-thin-footer-brand-bar small {
-  color: #808080;
-}
-.evo-thin-footer .evo-footer-copyright {
-  margin-top: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.075rem;
-}
-.evo-thin-footer .evo-footer-logo {
-  margin-top: 0.75rem;
-}
-
-@media only screen and (min-width: 48em) {
-  .evo-thin-footer .evo-thin-footer-logo {
-    margin-bottom: 0;
-  }
-  .evo-thin-footer .evo-social-media-badges-ctn {
-    margin-bottom: 0;
-  }
-  .evo-thin-footer .evo-footer-links {
-    float: right;
-  }
-  .evo-thin-footer .evo-footer-links:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    clear: both;
-    overflow: hidden;
-    visibility: hidden;
-  }
-  .evo-thin-footer .evo-footer-links li {
-    border-right-color: #b3b3b3;
-  }
-  .evo-thin-footer .evo-footer-links li a {
-    color: #006D9E;
-  }
-}
-@media only screen and (max-width: 47.9375em) {
+@media screen and (max-width: 47.9375em) {
   .evo-thin-footer .evo-footer-links {
     float: none;
   }
@@ -95,5 +70,54 @@ URL: http://evolution.mercer.com
   .evo-thin-footer .evo-footer-links li a {
     display: block;
     width: 100%;
+  }
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-links {
+    float: right;
+    text-align: left;
+  }
+  .evo-thin-footer .evo-footer-links::before, .evo-thin-footer .evo-footer-links::after {
+    content: ' ';
+    display: table;
+  }
+  .evo-thin-footer .evo-footer-links::after {
+    clear: both;
+  }
+  .evo-thin-footer .evo-footer-links li {
+    border-right-color: #b3b3b3;
+  }
+}
+.evo-thin-footer .evo-thin-footer-brand-bar {
+  background-color: #e6e6e6;
+  min-height: 3.125rem;
+}
+.evo-thin-footer .evo-thin-footer-brand-bar small {
+  color: #808080;
+}
+.evo-thin-footer .evo-footer-copyright {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.075rem;
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-copyright {
+    text-align: left;
+  }
+}
+.evo-thin-footer .evo-footer-logo {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.evo-thin-footer .evo-footer-logo a {
+  text-align: center;
+}
+@media screen and (min-width: 48em) {
+  .evo-thin-footer .evo-footer-logo {
+    text-align: right;
+  }
+  .evo-thin-footer .evo-footer-logo a {
+    text-align: left;
   }
 }
