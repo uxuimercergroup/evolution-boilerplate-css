@@ -7,9 +7,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /*!
-* Mercer Evolution v4.0.0 - Core JS
-* DATE: May 26, 2016
-* AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+* Mercer Evolution v4.1.0 - Core JS
+* DATE: July 1, 2016
+* AUTHOR: Douglas Fraize, Matthew Holmes
 * URL: http://evolution.mercer.com
 */
 
@@ -9688,7 +9688,7 @@ window.whatInput = function () {
 
 	"use strict";
 
-	var FOUNDATION_VERSION = '6.2.2';
+	var FOUNDATION_VERSION = '6.2.1';
 
 	// Global Foundation object
 	// This is attached to the window, or used as a module for AMD/Browserify
@@ -9730,7 +9730,7 @@ window.whatInput = function () {
    * @function
    * Populates the _uuids array with pointers to each individual plugin instance.
    * Adds the `zfPlugin` data-attribute to programmatically created plugins to allow use of $(selector).foundation(method) calls.
-   * Also fires the initialization event for each plugin, consolidating repetitive code.
+   * Also fires the initialization event for each plugin, consolidating repeditive code.
    * @param {Object} plugin - an instance of a plugin, usually `this` in context.
    * @param {String} name - the name of the plugin, passed as a camelCased string.
    * @fires Plugin#init
@@ -9759,7 +9759,7 @@ window.whatInput = function () {
    * @function
    * Removes the plugins uuid from the _uuids array.
    * Removes the zfPlugin data attribute, as well as the data-plugin-name attribute.
-   * Also fires the destroyed event for the plugin, consolidating repetitive code.
+   * Also fires the destroyed event for the plugin, consolidating repeditive code.
    * @param {Object} plugin - an instance of a plugin, usually `this` in context.
    * @fires Plugin#destroyed
    */
@@ -10101,12 +10101,10 @@ window.whatInput = function () {
 			namedQueries = parseStyleToObject(extractedStyles);
 
 			for (var key in namedQueries) {
-				if (namedQueries.hasOwnProperty(key)) {
-					self.queries.push({
-						name: key,
-						value: "only screen and (min-width: " + namedQueries[key] + ")"
-					});
-				}
+				self.queries.push({
+					name: key,
+					value: "only screen and (min-width: " + namedQueries[key] + ")"
+				});
 			}
 
 			this.current = this._getCurrentSize();
@@ -10140,10 +10138,8 @@ window.whatInput = function () {
    */
 		get: function get(size) {
 			for (var i in this.queries) {
-				if (this.queries.hasOwnProperty(i)) {
-					var query = this.queries[i];
-					if (size === query.name) return query.value;
-				}
+				var query = this.queries[i];
+				if (size === query.name) return query.value;
 			}
 
 			return null;
@@ -10184,15 +10180,14 @@ window.whatInput = function () {
 			var _this2 = this;
 
 			$(window).on('resize.zf.mediaquery', function () {
-				var newSize = _this2._getCurrentSize(),
-				    currentSize = _this2.current;
+				var newSize = _this2._getCurrentSize();
 
-				if (newSize !== currentSize) {
+				if (newSize !== _this2.current) {
+					// Broadcast the media query change on the window
+					$(window).trigger('changed.zf.mediaquery', [newSize, _this2.current]);
+
 					// Change the current media query
 					_this2.current = newSize;
-
-					// Broadcast the media query change on the window
-					$(window).trigger('changed.zf.mediaquery', [newSize, currentSize]);
 				}
 			});
 		}
@@ -10328,7 +10323,7 @@ window.whatInput = function () {
 		_createClass(Abide, [{
 			key: "_init",
 			value: function _init() {
-				this.$inputs = this.$element.find('input, textarea, select');
+				this.$inputs = this.$element.find('input, textarea, select').not('[data-abide-ignore]');
 
 				this._events();
 			}
@@ -10387,10 +10382,6 @@ window.whatInput = function () {
 				var isGood = true;
 
 				switch ($el[0].type) {
-					case 'checkbox':
-						isGood = $el[0].checked;
-						break;
-
 					case 'select':
 					case 'select-one':
 					case 'select-multiple':
@@ -10567,11 +10558,6 @@ window.whatInput = function () {
 				    validator = $el.attr('data-validator'),
 				    equalTo = true;
 
-				// don't validate ignored inputs or hidden inputs
-				if ($el.is('[data-abide-ignore]') || $el.is('[type="hidden"]')) {
-					return true;
-				}
-
 				switch ($el[0].type) {
 					case 'radio':
 						validated = this.validateRadio($el.attr('name'));
@@ -10694,25 +10680,19 @@ window.whatInput = function () {
 				// If at least one radio in the group has the `required` attribute, the group is considered required
 				// Per W3C spec, all radio buttons in a group should have `required`, but we're being nice
 				var $group = this.$element.find(":radio[name=\"" + groupName + "\"]");
-				var valid = false,
-				    required = false;
+				var valid = false;
 
-				// For the group to be required, at least one radio needs to be required
+				// .attr() returns undefined if no elements in $group have the attribute "required"
+				if ($group.attr('required') === undefined) {
+					valid = true;
+				}
+
+				// For the group to be valid, at least one radio needs to be checked
 				$group.each(function (i, e) {
-					if ($(e).attr('required')) {
-						required = true;
+					if ($(e).prop('checked')) {
+						valid = true;
 					}
 				});
-				if (!required) valid = true;
-
-				if (!valid) {
-					// For the group to be valid, at least one radio needs to be checked
-					$group.each(function (i, e) {
-						if ($(e).prop('checked')) {
-							valid = true;
-						}
-					});
-				};
 
 				return valid;
 			}
@@ -10753,9 +10733,7 @@ window.whatInput = function () {
 				$("." + opts.inputErrorClass, $form).not('small').removeClass(opts.inputErrorClass);
 				$(opts.formErrorSelector + "." + opts.formErrorClass).removeClass(opts.formErrorClass);
 				$form.find('[data-abide-error]').css('display', 'none');
-				$(':input', $form).not(':button, :submit, :reset, :hidden, :radio, :checkbox, [data-abide-ignore]').val('').removeAttr('data-invalid');
-				$(':input:radio', $form).not('[data-abide-ignore]').prop('checked', false).removeAttr('data-invalid');
-				$(':input:checkbox', $form).not('[data-abide-ignore]').prop('checked', false).removeAttr('data-invalid');
+				$(':input', $form).not(':button, :submit, :reset, :hidden, [data-abide-ignore]').val('').removeAttr('data-invalid');
 				/**
      * Fires when the form has been reset.
      * @event Abide#formreset
@@ -11109,7 +11087,7 @@ window.whatInput = function () {
 		}, {
 			key: "destroy",
 			value: function destroy() {
-				this.$element.find('[data-tab-content]').stop(true).slideUp(0).css('display', '');
+				this.$element.find('[data-tab-content]').slideUp(0).css('display', '');
 				this.$element.find('a').off('.zf.accordion');
 
 				Foundation.unregisterPlugin(this);
@@ -11304,11 +11282,11 @@ window.whatInput = function () {
 						},
 						up: function up() {
 							$prevElement.attr('tabindex', -1).focus();
-							return true;
+							e.preventDefault();
 						},
 						down: function down() {
 							$nextElement.attr('tabindex', -1).focus();
-							return true;
+							e.preventDefault();
 						},
 						toggle: function toggle() {
 							if ($element.children('[data-submenu]').length) {
@@ -11318,10 +11296,7 @@ window.whatInput = function () {
 						closeAll: function closeAll() {
 							_this.hideAll();
 						},
-						handled: function handled(preventDefault) {
-							if (preventDefault) {
-								e.preventDefault();
-							}
+						handled: function handled() {
 							e.stopImmediatePropagation();
 						}
 					});
@@ -11374,15 +11349,15 @@ window.whatInput = function () {
 
 				$target.addClass('is-active').attr({ 'aria-hidden': false }).parent('.is-accordion-submenu-parent').attr({ 'aria-expanded': true });
 
-				//Foundation.Move(this.options.slideSpeed, $target, function() {
-				$target.slideDown(_this.options.slideSpeed, function () {
-					/**
-      * Fires when the menu is done opening.
-      * @event AccordionMenu#down
-      */
-					_this.$element.trigger('down.zf.accordionMenu', [$target]);
+				Foundation.Move(this.options.slideSpeed, $target, function () {
+					$target.slideDown(_this.options.slideSpeed, function () {
+						/**
+       * Fires when the menu is done opening.
+       * @event AccordionMenu#down
+       */
+						_this.$element.trigger('down.zf.accordionMenu', [$target]);
+					});
 				});
-				//});
 			}
 
 			/**
@@ -11395,15 +11370,15 @@ window.whatInput = function () {
 			key: "up",
 			value: function up($target) {
 				var _this = this;
-				//Foundation.Move(this.options.slideSpeed, $target, function(){
-				$target.slideUp(_this.options.slideSpeed, function () {
-					/**
-      * Fires when the menu is done collapsing up.
-      * @event AccordionMenu#up
-      */
-					_this.$element.trigger('up.zf.accordionMenu', [$target]);
+				Foundation.Move(this.options.slideSpeed, $target, function () {
+					$target.slideUp(_this.options.slideSpeed, function () {
+						/**
+       * Fires when the menu is done collapsing up.
+       * @event AccordionMenu#up
+       */
+						_this.$element.trigger('up.zf.accordionMenu', [$target]);
+					});
 				});
-				//});
 
 				var $menus = $target.find('[data-submenu]').slideUp(0).addBack().attr('aria-hidden', true);
 
@@ -11526,18 +11501,18 @@ window.whatInput = function () {
 				//   this._menuLinkEvents();
 				// }
 				this.$submenuAnchors.each(function () {
-					var $link = $(this);
-					var $sub = $link.parent();
+					var $sub = $(this);
+					var $link = $sub.find('a:first');
 					if (_this.options.parentLink) {
 						$link.clone().prependTo($sub.children('[data-submenu]')).wrap('<li class="is-submenu-parent-item is-submenu-item is-drilldown-submenu-item" role="menu-item"></li>');
 					}
 					$link.data('savedHref', $link.attr('href')).removeAttr('href');
-					$link.children('[data-submenu]').attr({
+					$sub.children('[data-submenu]').attr({
 						'aria-hidden': true,
 						'tabindex': 0,
 						'role': 'menu'
 					});
-					_this._events($link);
+					_this._events($sub);
 				});
 				this.$submenus.each(function () {
 					var $menu = $(this),
@@ -11548,8 +11523,8 @@ window.whatInput = function () {
 					_this._back($menu);
 				});
 				if (!this.$element.parent().hasClass('is-drilldown')) {
-					this.$wrapper = $(this.options.wrapper).addClass('is-drilldown');
-					this.$wrapper = this.$element.wrap(this.$wrapper).parent().css(this._getMaxDims());
+					this.$wrapper = $(this.options.wrapper).addClass('is-drilldown').css(this._getMaxDims());
+					this.$element.wrap(this.$wrapper);
 				}
 			}
 
@@ -11577,11 +11552,8 @@ window.whatInput = function () {
 					_this._show($elem.parent('li'));
 
 					if (_this.options.closeOnClick) {
-						var $body = $('body');
+						var $body = $('body').not(_this.$wrapper);
 						$body.off('.zf.drilldown').on('click.zf.drilldown', function (e) {
-							if (e.target === _this.$element[0] || $.contains(_this.$element[0], e.target)) {
-								return;
-							}
 							e.preventDefault();
 							_this._hideAll();
 							$body.off('.zf.drilldown');
@@ -11622,7 +11594,7 @@ window.whatInput = function () {
 								$element.parent('li').one(Foundation.transitionend($element), function () {
 									$element.parent('li').find('ul li a').filter(_this.$menuItems).first().focus();
 								});
-								return true;
+								e.preventDefault();
 							}
 						},
 						previous: function previous() {
@@ -11632,15 +11604,15 @@ window.whatInput = function () {
 									$element.parent('li').parent('ul').parent('li').children('a').first().focus();
 								}, 1);
 							});
-							return true;
+							e.preventDefault();
 						},
 						up: function up() {
 							$prevElement.focus();
-							return true;
+							e.preventDefault();
 						},
 						down: function down() {
 							$nextElement.focus();
-							return true;
+							e.preventDefault();
 						},
 						close: function close() {
 							_this._back();
@@ -11655,18 +11627,16 @@ window.whatInput = function () {
 										$element.parent('li').parent('ul').parent('li').children('a').first().focus();
 									}, 1);
 								});
+								e.preventDefault();
 							} else if ($element.is(_this.$submenuAnchors)) {
 								_this._show($element.parent('li'));
 								$element.parent('li').one(Foundation.transitionend($element), function () {
 									$element.parent('li').find('ul li a').filter(_this.$menuItems).first().focus();
 								});
-							}
-							return true;
-						},
-						handled: function handled(preventDefault) {
-							if (preventDefault) {
 								e.preventDefault();
 							}
+						},
+						handled: function handled() {
 							e.stopImmediatePropagation();
 						}
 					});
@@ -11741,10 +11711,7 @@ window.whatInput = function () {
 			key: "_show",
 			value: function _show($elem) {
 				$elem.children('[data-submenu]').addClass('is-active');
-				/**
-     * Fires when the submenu has opened.
-     * @event Drilldown#open
-     */
+
 				this.$element.trigger('open.zf.drilldown', [$elem]);
 			}
 		}, {
@@ -11764,7 +11731,7 @@ window.whatInput = function () {
 					$elem.blur();
 				});
 				/**
-     * Fires when the submenu has closed.
+     * Fires when the submenu is has closed.
      * @event Drilldown#hide
      */
 				$elem.trigger('hide.zf.drilldown', [$elem]);
@@ -11803,10 +11770,7 @@ window.whatInput = function () {
 			value: function destroy() {
 				this._hideAll();
 				Foundation.Nest.Burn(this.$element, 'drilldown');
-				this.$element.unwrap().find('.js-drilldown-back, .is-submenu-parent-item').remove().end().find('.is-active, .is-closing, .is-drilldown-submenu').removeClass('is-active is-closing is-drilldown-submenu').end().find('[data-submenu]').removeAttr('aria-hidden tabindex role');
-				this.$submenuAnchors.each(function () {
-					$(this).off('.zf.drilldown');
-				});
+				this.$element.unwrap().find('.js-drilldown-back, .is-submenu-parent-item').remove().end().find('.is-active, .is-closing, .is-drilldown-submenu').removeClass('is-active is-closing is-drilldown-submenu').end().find('[data-submenu]').removeAttr('aria-hidden tabindex role').off('.zf.drilldown').end().off('zf.drilldown');
 				this.$element.find('a').each(function () {
 					var $link = $(this);
 					if ($link.data('savedHref')) {
@@ -11937,7 +11901,7 @@ window.whatInput = function () {
 			value: function getPositionClass() {
 				var verticalPosition = this.$element[0].className.match(/(top|left|right|bottom)/g);
 				verticalPosition = verticalPosition ? verticalPosition[0] : '';
-				var horizontalPosition = /float-(\S+)\s/.exec(this.$anchor[0].className);
+				var horizontalPosition = /float-(.+)\s/.exec(this.$anchor[0].className);
 				horizontalPosition = horizontalPosition ? horizontalPosition[1] : '';
 				var position = horizontalPosition ? horizontalPosition + ' ' + verticalPosition : verticalPosition;
 				return position;
@@ -12379,39 +12343,37 @@ window.whatInput = function () {
 				    hasTouch = 'ontouchstart' in window || typeof window.ontouchstart !== 'undefined',
 				    parClass = 'is-dropdown-submenu-parent';
 
-				// used for onClick and in the keyboard handlers
-				var handleClickFn = function handleClickFn(e) {
-					var $elem = $(e.target).parentsUntil('ul', "." + parClass),
-					    hasSub = $elem.hasClass(parClass),
-					    hasClicked = $elem.attr('data-is-click') === 'true',
-					    $sub = $elem.children('.is-dropdown-submenu');
+				if (this.options.clickOpen || hasTouch) {
+					this.$menuItems.on('click.zf.dropdownmenu touchstart.zf.dropdownmenu', function (e) {
+						var $elem = $(e.target).parentsUntil('ul', "." + parClass),
+						    hasSub = $elem.hasClass(parClass),
+						    hasClicked = $elem.attr('data-is-click') === 'true',
+						    $sub = $elem.children('.is-dropdown-submenu');
 
-					if (hasSub) {
-						if (hasClicked) {
-							if (!_this.options.closeOnClick || !_this.options.clickOpen && !hasTouch || _this.options.forceFollow && hasTouch) {
-								return;
+						if (hasSub) {
+							if (hasClicked) {
+								if (!_this.options.closeOnClick || !_this.options.clickOpen && !hasTouch || _this.options.forceFollow && hasTouch) {
+									return;
+								} else {
+									e.stopImmediatePropagation();
+									e.preventDefault();
+									_this._hide($elem);
+								}
 							} else {
-								e.stopImmediatePropagation();
 								e.preventDefault();
-								_this._hide($elem);
+								e.stopImmediatePropagation();
+								_this._show($elem.children('.is-dropdown-submenu'));
+								$elem.add($elem.parentsUntil(_this.$element, "." + parClass)).attr('data-is-click', true);
 							}
 						} else {
-							e.preventDefault();
-							e.stopImmediatePropagation();
-							_this._show($elem.children('.is-dropdown-submenu'));
-							$elem.add($elem.parentsUntil(_this.$element, "." + parClass)).attr('data-is-click', true);
+							return;
 						}
-					} else {
-						return;
-					}
-				};
-
-				if (this.options.clickOpen || hasTouch) {
-					this.$menuItems.on('click.zf.dropdownmenu touchstart.zf.dropdownmenu', handleClickFn);
+					});
 				}
 
 				if (!this.options.disableHover) {
 					this.$menuItems.on('mouseenter.zf.dropdownmenu', function (e) {
+						e.stopImmediatePropagation();
 						var $elem = $(this),
 						    hasSub = $elem.hasClass(parClass);
 
@@ -12452,21 +12414,16 @@ window.whatInput = function () {
 					});
 
 					var nextSibling = function nextSibling() {
-						if (!$element.is(':last-child')) {
-							$nextElement.children('a:first').focus();
-							e.preventDefault();
-						}
+						if (!$element.is(':last-child')) $nextElement.children('a:first').focus();
 					},
 					    prevSibling = function prevSibling() {
 						$prevElement.children('a:first').focus();
-						e.preventDefault();
 					},
 					    openSub = function openSub() {
 						var $sub = $element.children('ul.is-dropdown-submenu');
 						if ($sub.length) {
 							_this._show($sub);
 							$element.find('li > a:first').focus();
-							e.preventDefault();
 						} else {
 							return;
 						}
@@ -12476,7 +12433,6 @@ window.whatInput = function () {
 						var close = $element.parent('ul').parent('li');
 						close.children('a:first').focus();
 						_this._hide(close);
-						e.preventDefault();
 						//}
 					};
 					var functions = {
@@ -12484,15 +12440,15 @@ window.whatInput = function () {
 						close: function close() {
 							_this._hide(_this.$element);
 							_this.$menuItems.find('a:first').focus(); // focus to first element
-							e.preventDefault();
 						},
 						handled: function handled() {
+							e.preventDefault();
 							e.stopImmediatePropagation();
 						}
 					};
 
 					if (isTab) {
-						if (_this.$element.hasClass(_this.options.verticalClass)) {
+						if (_this.vertical) {
 							// vertical menu
 							if (_this.options.alignment === 'left') {
 								// left aligned
@@ -12789,10 +12745,6 @@ window.whatInput = function () {
 				this.hasNested = this.$element.find('[data-equalizer]').length > 0;
 				this.isNested = this.$element.parentsUntil(document.body, '[data-equalizer]').length > 0;
 				this.isOn = false;
-				this._bindHandler = {
-					onResizeMeBound: this._onResizeMe.bind(this),
-					onPostEqualizedBound: this._onPostEqualized.bind(this)
-				};
 
 				var imgs = this.$element.find('img');
 				var tooSmall;
@@ -12820,34 +12772,7 @@ window.whatInput = function () {
 			key: "_pauseEvents",
 			value: function _pauseEvents() {
 				this.isOn = false;
-				this.$element.off({
-					'.zf.equalizer': this._bindHandler.onPostEqualizedBound,
-					'resizeme.zf.trigger': this._bindHandler.onResizeMeBound
-				});
-			}
-
-			/**
-    * function to handle $elements resizeme.zf.trigger, with bound this on _bindHandler.onResizeMeBound
-    * @private
-    */
-
-		}, {
-			key: "_onResizeMe",
-			value: function _onResizeMe(e) {
-				this._reflow();
-			}
-
-			/**
-    * function to handle $elements postequalized.zf.equalizer, with bound this on _bindHandler.onPostEqualizedBound
-    * @private
-    */
-
-		}, {
-			key: "_onPostEqualized",
-			value: function _onPostEqualized(e) {
-				if (e.target !== this.$element[0]) {
-					this._reflow();
-				}
+				this.$element.off('.zf.equalizer resizeme.zf.trigger');
 			}
 
 			/**
@@ -12861,9 +12786,13 @@ window.whatInput = function () {
 				var _this = this;
 				this._pauseEvents();
 				if (this.hasNested) {
-					this.$element.on('postequalized.zf.equalizer', this._bindHandler.onPostEqualizedBound);
+					this.$element.on('postequalized.zf.equalizer', function (e) {
+						if (e.target !== _this.$element[0]) {
+							_this._reflow();
+						}
+					});
 				} else {
-					this.$element.on('resizeme.zf.trigger', this._bindHandler.onResizeMeBound);
+					this.$element.on('resizeme.zf.trigger', this._reflow.bind(this));
 				}
 				this.isOn = true;
 			}
@@ -12930,7 +12859,7 @@ window.whatInput = function () {
 		}, {
 			key: "_isStacked",
 			value: function _isStacked() {
-				return this.$watched[0].getBoundingClientRect().top !== this.$watched[1].getBoundingClientRect().top;
+				return this.$watched[0].offsetTop !== this.$watched[1].offsetTop;
 			}
 
 			/**
@@ -13177,12 +13106,10 @@ window.whatInput = function () {
 
 				// Iterate through each rule, but only save the last match
 				for (var i in this.rules) {
-					if (this.rules.hasOwnProperty(i)) {
-						var rule = this.rules[i];
+					var rule = this.rules[i];
 
-						if (window.matchMedia(rule.query).matches) {
-							match = rule;
-						}
+					if (window.matchMedia(rule.query).matches) {
+						match = rule;
 					}
 				}
 
@@ -13201,10 +13128,8 @@ window.whatInput = function () {
 			key: "_addBreakpoints",
 			value: function _addBreakpoints() {
 				for (var i in Foundation.MediaQuery.queries) {
-					if (Foundation.MediaQuery.queries.hasOwnProperty(i)) {
-						var query = Foundation.MediaQuery.queries[i];
-						Interchange.SPECIAL_QUERIES[query.name] = query.value;
-					}
+					var query = Foundation.MediaQuery.queries[i];
+					Interchange.SPECIAL_QUERIES[query.name] = query.value;
 				}
 			}
 
@@ -13229,20 +13154,18 @@ window.whatInput = function () {
 				}
 
 				for (var i in rules) {
-					if (rules.hasOwnProperty(i)) {
-						var rule = rules[i].slice(1, -1).split(', ');
-						var path = rule.slice(0, -1).join('');
-						var query = rule[rule.length - 1];
+					var rule = rules[i].slice(1, -1).split(', ');
+					var path = rule.slice(0, -1).join('');
+					var query = rule[rule.length - 1];
 
-						if (Interchange.SPECIAL_QUERIES[query]) {
-							query = Interchange.SPECIAL_QUERIES[query];
-						}
-
-						rulesList.push({
-							path: path,
-							query: query
-						});
+					if (Interchange.SPECIAL_QUERIES[query]) {
+						query = Interchange.SPECIAL_QUERIES[query];
 					}
+
+					rulesList.push({
+						path: path,
+						query: query
+					});
 				}
 
 				this.rules = rulesList;
@@ -13486,7 +13409,7 @@ window.whatInput = function () {
 					var isDown = this.scrollPos < winPos,
 					    _this = this,
 					    curVisible = this.points.filter(function (p, i) {
-						return isDown ? p - _this.options.barOffset <= winPos : p - _this.options.barOffset - _this.options.threshold <= winPos;
+						return isDown ? p <= winPos : p - _this.options.threshold <= winPos; //&& winPos >= _this.points[i -1] - _this.options.threshold;
 					});
 					curIdx = curVisible.length ? curVisible.length - 1 : 0;
 				}
@@ -13608,7 +13531,6 @@ window.whatInput = function () {
 			this.$element = element;
 			this.options = $.extend({}, OffCanvas.defaults, this.$element.data(), options);
 			this.$lastTrigger = $();
-			this.$triggers = $();
 
 			this._init();
 			this._events();
@@ -13631,7 +13553,7 @@ window.whatInput = function () {
 				this.$element.attr('aria-hidden', 'true');
 
 				// Find triggers that affect this element and add aria-expanded to them
-				this.$triggers = $(document).find('[data-open="' + id + '"], [data-close="' + id + '"], [data-toggle="' + id + '"]').attr('aria-expanded', 'false').attr('aria-controls', id);
+				$(document).find('[data-open="' + id + '"], [data-close="' + id + '"], [data-toggle="' + id + '"]').attr('aria-expanded', 'false').attr('aria-controls', id);
 
 				// Add a close trigger over the body if necessary
 				if (this.options.closeOnClick) {
@@ -13781,8 +13703,6 @@ window.whatInput = function () {
 					//   _this._stick();
 					// }
 				});
-
-				this.$triggers.attr('aria-expanded', 'true');
 				this.$element.attr('aria-hidden', 'false').trigger('opened.zf.offcanvas');
 
 				if (this.options.closeOnClick) {
@@ -13790,7 +13710,7 @@ window.whatInput = function () {
 				}
 
 				if (trigger) {
-					this.$lastTrigger = trigger;
+					this.$lastTrigger = trigger.attr('aria-expanded', 'true');
 				}
 
 				if (this.options.autoFocus) {
@@ -13887,7 +13807,7 @@ window.whatInput = function () {
 					this.$exiter.removeClass('is-visible');
 				}
 
-				this.$triggers.attr('aria-expanded', 'false');
+				this.$lastTrigger.attr('aria-expanded', 'false');
 				if (this.options.trapFocus) {
 					$('[data-off-canvas-content]').removeAttr('tabindex');
 				}
@@ -14728,9 +14648,7 @@ window.whatInput = function () {
 			value: function _events() {
 				var _this = this;
 
-				this._updateMqHandler = this._update.bind(this);
-
-				$(window).on('changed.zf.mediaquery', this._updateMqHandler);
+				$(window).on('changed.zf.mediaquery', this._update.bind(this));
 
 				this.$toggler.on('click.zf.responsiveToggle', this.toggleMenu.bind(this));
 			}
@@ -14779,12 +14697,7 @@ window.whatInput = function () {
 		}, {
 			key: "destroy",
 			value: function destroy() {
-				this.$element.off('.zf.responsiveToggle');
-				this.$toggler.off('.zf.responsiveToggle');
-
-				$(window).off('changed.zf.mediaquery', this._updateMqHandler);
-
-				Foundation.unregisterPlugin(this);
+				//TODO this...
 			}
 		}]);
 
@@ -14855,14 +14768,25 @@ window.whatInput = function () {
 				this.id = this.$element.attr('id');
 				this.isActive = false;
 				this.cached = { mq: Foundation.MediaQuery.current };
-				this.isMobile = mobileSniff();
+				this.isiOS = iPhoneSniff();
+
+				if (this.isiOS) {
+					this.$element.addClass('is-ios');
+				}
 
 				this.$anchor = $("[data-open=\"" + this.id + "\"]").length ? $("[data-open=\"" + this.id + "\"]") : $("[data-toggle=\"" + this.id + "\"]");
-				this.$anchor.attr({
-					'aria-controls': this.id,
-					'aria-haspopup': true,
-					'tabindex': 0
-				});
+
+				if (this.$anchor.length) {
+					var anchorId = this.$anchor[0].id || Foundation.GetYoDigits(6, 'reveal');
+
+					this.$anchor.attr({
+						'aria-controls': this.id,
+						'id': anchorId,
+						'aria-haspopup': true,
+						'tabindex': 0
+					});
+					this.$element.attr({ 'aria-labelledby': anchorId });
+				}
 
 				if (this.options.fullScreen || this.$element.hasClass('full')) {
 					this.options.fullScreen = true;
@@ -14899,7 +14823,7 @@ window.whatInput = function () {
 		}, {
 			key: "_makeOverlay",
 			value: function _makeOverlay(id) {
-				var $overlay = $('<div></div>').addClass('reveal-overlay').appendTo('body');
+				var $overlay = $('<div></div>').addClass('reveal-overlay').attr({ 'tabindex': -1, 'aria-hidden': true }).appendTo('body');
 				return $overlay;
 			}
 
@@ -14948,18 +14872,11 @@ window.whatInput = function () {
 		}, {
 			key: "_events",
 			value: function _events() {
-				var _this7 = this;
-
 				var _this = this;
 
 				this.$element.on({
 					'open.zf.trigger': this.open.bind(this),
-					'close.zf.trigger': function closeZfTrigger(event, $element) {
-						if (event.target === _this.$element[0] || $(event.target).parents('[data-closable]')[0] === $element) {
-							// only close reveal when it's explicitly called
-							return _this7.close.apply(_this7);
-						}
-					},
+					'close.zf.trigger': this.close.bind(this),
 					'toggle.zf.trigger': this.toggle.bind(this),
 					'resizeme.zf.trigger': function resizemeZfTrigger() {
 						_this._updatePosition();
@@ -15014,7 +14931,7 @@ window.whatInput = function () {
 		}, {
 			key: "open",
 			value: function open() {
-				var _this8 = this;
+				var _this7 = this;
 
 				if (this.options.deepLink) {
 					var hash = "#" + this.id;
@@ -15040,11 +14957,6 @@ window.whatInput = function () {
 
 				if (this.$overlay) {
 					this.$overlay.css({ 'visibility': '' }).hide();
-					if (this.$element.hasClass('fast')) {
-						this.$overlay.addClass('fast');
-					} else if (this.$element.hasClass('slow')) {
-						this.$overlay.addClass('slow');
-					}
 				}
 
 				if (!this.options.multipleOpened) {
@@ -15055,29 +14967,15 @@ window.whatInput = function () {
       */
 					this.$element.trigger('closeme.zf.reveal', this.id);
 				}
+
 				// Motion UI method of reveal
 				if (this.options.animationIn) {
-					var _this;
-
-					(function () {
-						var afterAnimationFocus = function afterAnimationFocus() {
-							_this.$element.attr({
-								'aria-hidden': false,
-								'tabindex': -1
-							}).focus();
-							console.log('focus');
-						};
-
-						_this = _this8;
-
-						if (_this8.options.overlay) {
-							Foundation.Motion.animateIn(_this8.$overlay, 'fade-in');
-						}
-						Foundation.Motion.animateIn(_this8.$element, _this8.options.animationIn, function () {
-							_this8.focusableElements = Foundation.Keyboard.findFocusable(_this8.$element);
-							afterAnimationFocus();
-						});
-					})();
+					if (this.options.overlay) {
+						Foundation.Motion.animateIn(this.$overlay, 'fade-in');
+					}
+					Foundation.Motion.animateIn(this.$element, this.options.animationIn, function () {
+						_this7.focusableElements = Foundation.Keyboard.findFocusable(_this7.$element);
+					});
 				}
 				// jQuery method of reveal
 				else {
@@ -15099,15 +14997,17 @@ window.whatInput = function () {
      */
 				this.$element.trigger('open.zf.reveal');
 
-				if (this.isMobile) {
-					this.originalScrollPos = window.pageYOffset;
-					$('html, body').addClass('is-reveal-open');
+				if (this.isiOS) {
+					var scrollPos = window.pageYOffset;
+					$('html, body').addClass('is-reveal-open').scrollTop(scrollPos);
 				} else {
 					$('body').addClass('is-reveal-open');
 				}
 
+				$('body').addClass('is-reveal-open').attr('aria-hidden', this.options.overlay || this.options.fullScreen ? true : false);
+
 				setTimeout(function () {
-					_this8._extraHandlers();
+					_this7._extraHandlers();
 				}, 0);
 			}
 
@@ -15153,22 +15053,22 @@ window.whatInput = function () {
 							if (_this.$element.find(':focus').is(_this.focusableElements.eq(-1))) {
 								// left modal downwards, setting focus to first element
 								_this.focusableElements.eq(0).focus();
-								return true;
+								e.preventDefault();
 							}
 							if (_this.focusableElements.length === 0) {
 								// no focusable elements inside the modal at all, prevent tabbing in general
-								return true;
+								e.preventDefault();
 							}
 						},
 						tab_backward: function tab_backward() {
 							if (_this.$element.find(':focus').is(_this.focusableElements.eq(0)) || _this.$element.is(':focus')) {
 								// left modal upwards, setting focus to last element
 								_this.focusableElements.eq(-1).focus();
-								return true;
+								e.preventDefault();
 							}
 							if (_this.focusableElements.length === 0) {
 								// no focusable elements inside the modal at all, prevent tabbing in general
-								return true;
+								e.preventDefault();
 							}
 						},
 						open: function open() {
@@ -15186,11 +15086,6 @@ window.whatInput = function () {
 							if (_this.options.closeOnEsc) {
 								_this.close();
 								_this.$anchor.focus();
-							}
-						},
-						handled: function handled(preventDefault) {
-							if (preventDefault) {
-								e.preventDefault();
 							}
 						}
 					});
@@ -15244,15 +15139,16 @@ window.whatInput = function () {
 				this.$element.off('keydown.zf.reveal');
 
 				function finishUp() {
-					if (_this.isMobile) {
+					if (_this.isiOS) {
 						$('html, body').removeClass('is-reveal-open');
-						if (_this.originalScrollPos) {
-							$('body').scrollTop(_this.originalScrollPos);
-							_this.originalScrollPos = null;
-						}
 					} else {
 						$('body').removeClass('is-reveal-open');
 					}
+
+					$('body').attr({
+						'aria-hidden': false,
+						'tabindex': ''
+					});
 
 					_this.$element.attr('aria-hidden', true);
 
@@ -15413,15 +15309,6 @@ window.whatInput = function () {
 		return (/iP(ad|hone|od).*OS/.test(window.navigator.userAgent)
 		);
 	}
-
-	function androidSniff() {
-		return (/Android/.test(window.navigator.userAgent)
-		);
-	}
-
-	function mobileSniff() {
-		return iPhoneSniff() || androidSniff();
-	}
 }(jQuery);
 
 'use strict';
@@ -15501,24 +15388,29 @@ window.whatInput = function () {
 		}, {
 			key: "_parsePoints",
 			value: function _parsePoints() {
-				var top = this.options.topAnchor == "" ? 1 : this.options.topAnchor,
-				    btm = this.options.btmAnchor == "" ? document.documentElement.scrollHeight : this.options.btmAnchor,
+				var top = this.options.topAnchor,
+				    btm = this.options.btmAnchor,
 				    pts = [top, btm],
 				    breaks = {};
-				for (var i = 0, len = pts.length; i < len && pts[i]; i++) {
-					var pt;
-					if (typeof pts[i] === 'number') {
-						pt = pts[i];
-					} else {
-						var place = pts[i].split(':'),
-						    anchor = $("#" + place[0]);
+				if (top && btm) {
 
-						pt = anchor.offset().top;
-						if (place[1] && place[1].toLowerCase() === 'bottom') {
-							pt += anchor[0].getBoundingClientRect().height;
+					for (var i = 0, len = pts.length; i < len && pts[i]; i++) {
+						var pt;
+						if (typeof pts[i] === 'number') {
+							pt = pts[i];
+						} else {
+							var place = pts[i].split(':'),
+							    anchor = $("#" + place[0]);
+
+							pt = anchor.offset().top;
+							if (place[1] && place[1].toLowerCase() === 'bottom') {
+								pt += anchor[0].getBoundingClientRect().height;
+							}
 						}
+						breaks[i] = pt;
 					}
-					breaks[i] = pt;
+				} else {
+					breaks = { 0: 1, 1: document.documentElement.scrollHeight };
 				}
 
 				this.points = breaks;
@@ -15641,8 +15533,7 @@ window.whatInput = function () {
 		}, {
 			key: "_setSticky",
 			value: function _setSticky() {
-				var _this = this,
-				    stickTo = this.options.stickTo,
+				var stickTo = this.options.stickTo,
 				    mrgn = stickTo === 'top' ? 'marginTop' : 'marginBottom',
 				    notStuckTo = stickTo === 'top' ? 'bottom' : 'top',
 				    css = {};
@@ -15659,9 +15550,6 @@ window.whatInput = function () {
      * @event Sticky#stuckto
      */
 				.trigger("sticky.zf.stuckto:" + stickTo);
-				this.$element.on("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
-					_this._setSizes();
-				});
 			}
 
 			/**
@@ -15686,11 +15574,12 @@ window.whatInput = function () {
 
 				css[mrgn] = 0;
 
-				css['bottom'] = 'auto';
-				if (isTop) {
-					css['top'] = 0;
+				if (isTop && !stickToTop || stickToTop && !isTop) {
+					css[stickTo] = anchorPt;
+					css[notStuckTo] = 0;
 				} else {
-					css['top'] = anchorPt;
+					css[stickTo] = 0;
+					css[notStuckTo] = anchorPt;
 				}
 
 				css['left'] = '';
@@ -15734,9 +15623,6 @@ window.whatInput = function () {
 				});
 
 				var newContainerHeight = this.$element[0].getBoundingClientRect().height || this.containerHeight;
-				if (this.$element.css("display") == "none") {
-					newContainerHeight = 0;
-				}
 				this.containerHeight = newContainerHeight;
 				this.$container.css({
 					height: newContainerHeight
@@ -15816,9 +15702,8 @@ window.whatInput = function () {
 					bottom: '',
 					'max-width': ''
 				}).off('resizeme.zf.trigger');
-				if (this.$anchor && this.$anchor.length) {
-					this.$anchor.off('change.zf.sticky');
-				}
+
+				this.$anchor.off('change.zf.sticky');
 				$(window).off(this.scrollListener);
 
 				if (this.wasWrapped) {
@@ -16021,12 +15906,9 @@ window.whatInput = function () {
 			value: function _events() {
 				this._addKeyHandler();
 				this._addClickHandler();
-				this._setHeightMqHandler = null;
 
 				if (this.options.matchHeight) {
-					this._setHeightMqHandler = this._setHeight.bind(this);
-
-					$(window).on('changed.zf.mediaquery', this._setHeightMqHandler);
+					$(window).on('changed.zf.mediaquery', this._setHeight.bind(this));
 				}
 			}
 
@@ -16064,6 +15946,8 @@ window.whatInput = function () {
 
 				this.$tabTitles.off('keydown.zf.tabs').on('keydown.zf.tabs', function (e) {
 					if (e.which === 9) return;
+					e.stopPropagation();
+					e.preventDefault();
 
 					var $element = $(this),
 					    $elements = $element.parent('ul').children('li'),
@@ -16096,10 +15980,6 @@ window.whatInput = function () {
 						next: function next() {
 							$nextElement.find('[role="tab"]').focus();
 							_this._handleTabChange($nextElement);
-						},
-						handled: function handled() {
-							e.stopPropagation();
-							e.preventDefault();
 						}
 					});
 				});
@@ -16204,9 +16084,7 @@ window.whatInput = function () {
 				this.$element.find("." + this.options.linkClass).off('.zf.tabs').hide().end().find("." + this.options.panelClass).hide();
 
 				if (this.options.matchHeight) {
-					if (this._setHeightMqHandler != null) {
-						$(window).off('changed.zf.mediaquery', this._setHeightMqHandler);
-					}
+					$(window).off('changed.zf.mediaquery');
 				}
 
 				Foundation.unregisterPlugin(this);
@@ -16468,7 +16346,7 @@ window.whatInput = function () {
 			value: function _init() {
 				var elemId = this.$element.attr('aria-describedby') || Foundation.GetYoDigits(6, 'tooltip');
 
-				this.options.positionClass = this.options.positionClass || this._getPositionClass(this.$element);
+				this.options.positionClass = this._getPositionClass(this.$element);
 				this.options.tipText = this.options.tipText || this.$element.attr('title');
 				this.template = this.options.template ? $(this.options.template) : this._buildTemplate(elemId);
 
@@ -16695,7 +16573,7 @@ window.whatInput = function () {
 						}
 					}).on('mouseleave.zf.tooltip', function (e) {
 						clearTimeout(_this.timeout);
-						if (!isFocus || _this.isClick && !_this.options.clickOpen) {
+						if (!isFocus || !_this.isClick && _this.options.clickOpen) {
 							_this.hide();
 						}
 					});
@@ -16705,7 +16583,7 @@ window.whatInput = function () {
 					this.$element.on('mousedown.zf.tooltip', function (e) {
 						e.stopImmediatePropagation();
 						if (_this.isClick) {
-							//_this.hide();
+							_this.hide();
 							// _this.isClick = false;
 						} else {
 								_this.isClick = true;
@@ -16713,11 +16591,6 @@ window.whatInput = function () {
 									_this.show();
 								}
 							}
-					});
-				} else {
-					this.$element.on('mousedown.zf.tooltip', function (e) {
-						e.stopImmediatePropagation();
-						_this.isClick = true;
 					});
 				}
 
@@ -16735,14 +16608,11 @@ window.whatInput = function () {
 
 				this.$element.on('focus.zf.tooltip', function (e) {
 					isFocus = true;
+					// console.log(_this.isClick);
 					if (_this.isClick) {
-						// If we're not showing open on clicks, we need to pretend a click-launched focus isn't
-						// a real focus, otherwise on hover and come back we get bad behavior
-						if (!_this.options.clickOpen) {
-							isFocus = false;
-						}
 						return false;
 					} else {
+						// $(window)
 						_this.show();
 					}
 				}).on('focusout.zf.tooltip', function (e) {
@@ -16922,7 +16792,7 @@ window.whatInput = function () {
 			bottom = eleDims.offset.top + eleDims.height <= parDims.height + parDims.offset.top;
 			top = eleDims.offset.top >= parDims.offset.top;
 			left = eleDims.offset.left >= parDims.offset.left;
-			right = eleDims.offset.left + eleDims.width <= parDims.width + parDims.offset.left;
+			right = eleDims.offset.left + eleDims.width <= parDims.width;
 		} else {
 			bottom = eleDims.offset.top + eleDims.height <= eleDims.windowDims.height + eleDims.windowDims.offset.top;
 			top = eleDims.offset.top >= eleDims.windowDims.offset.top;
@@ -17156,15 +17026,15 @@ window.whatInput = function () {
 			fn = functions[command];
 			if (fn && typeof fn === 'function') {
 				// execute function  if exists
-				var returnValue = fn.apply();
+				fn.apply();
 				if (functions.handled || typeof functions.handled === 'function') {
 					// execute function when event was handled
-					functions.handled(returnValue);
+					functions.handled.apply();
 				}
 			} else {
 				if (functions.unhandled || typeof functions.unhandled === 'function') {
 					// execute function when event was not handled
-					functions.unhandled();
+					functions.unhandled.apply();
 				}
 			}
 		},
@@ -17567,7 +17437,7 @@ window.whatInput = function () {
 			    simulatedEvent;
 
 			if ('MouseEvent' in window && typeof window.MouseEvent === 'function') {
-				simulatedEvent = new window.MouseEvent(type, {
+				simulatedEvent = window.MouseEvent(type, {
 					'bubbles': true,
 					'cancelable': true,
 					'screenX': first.screenX,
@@ -38138,9 +38008,9 @@ var Plugins;
 })(undefined);
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Buttons JS Functions
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Buttons JS Functions
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -38168,9 +38038,9 @@ var evoButtonDisabled = function evoButtonDisabled() {
 evoButtonDisabled();
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Helpers JS Functions
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Helpers JS Functions
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -38235,9 +38105,9 @@ var evoTogglerOnReInit = function evoTogglerOnReInit() {
 evoTogglerOnReInit();
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Autocomplete JS
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Autocomplete JS
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -38260,9 +38130,9 @@ var evoAutocomplete = function evoAutocomplete(objectDataValue, options) {
 };
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Data Table JS
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Data Table JS
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -38290,9 +38160,9 @@ var evoDataTable = function evoDataTable(objectDataValue, options) {
 };
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Datepicker JS
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Datepicker JS
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 
@@ -38332,9 +38202,9 @@ var evoDatepicker = function evoDatepicker(objectDataValue, options) {
 };
 
 //--------------------------------------------------------------------------------------------------------
-// Mercer Evolution v4.0.0 - Slider JS
-// DATE: May 26, 2016
-// AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+// Mercer Evolution v4.1.0 - Slider JS
+// DATE: July 1, 2016
+// AUTHOR: Douglas Fraize, Matthew Holmes
 // URL: http://evolution.mercer.com
 //--------------------------------------------------------------------------------------------------------
 

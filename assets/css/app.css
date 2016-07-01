@@ -1,18 +1,18 @@
 /*--------------------------------------------------------------------------------------------
 Project Name v1.0.0 - Application CSS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: https://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 @font-face {
-  font-family: "evo_icon_font_site";
-  src: url("../fonts/evo-icon-font-site.eot");
-  src: url("../fonts/evo-icon-font-site.eot?#iefix") format("embedded-opentype"), url("../fonts/evo-icon-font-site.woff") format("woff"), url("../fonts/evo-icon-font-site.ttf") format("truetype"), url("../fonts/evo-icon-font-site.svg#evo_icon_font_site") format("svg");
+  font-family: "evo_icon_font_app";
+  src: url("../fonts/evo-icon-font-app.eot");
+  src: url("../fonts/evo-icon-font-app.eot?#iefix") format("embedded-opentype"), url("../fonts/evo-icon-font-app.woff") format("woff"), url("../fonts/evo-icon-font-app.ttf") format("truetype"), url("../fonts/evo-icon-font-app.svg#evo_icon_font_app") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-[class^="evo-icon-site-"] {
-  font-family: "evo_icon_font_site";
+[class^="evo-icon-app-"] {
+  font-family: "evo_icon_font_app";
 }
 
 /*=== STYLES ===============================================================================*/
@@ -78,10 +78,10 @@ URL: https://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Conversational Form v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-conversational-form .evo-conversational-form-ctn {
@@ -138,10 +138,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Fat Footer v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-fat-footer .evo-footer-content-section {
@@ -241,10 +241,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Item Selection Panel v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-item-selection-panel {
@@ -333,10 +333,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Pricing Table v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-pricing-table [class*="small-up-"] {
@@ -390,10 +390,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Showcase Panel v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-showcase-panel {
@@ -490,10 +490,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution - Core v4.0.0
+Mercer Evolution - Core v4.1.0
 Social Media Badges v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-social-media-badges-ctn a[class^="evo-icon-"] {
@@ -510,10 +510,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Stepper v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-stepper::before, .evo-stepper::after {
@@ -547,10 +547,10 @@ URL: http://evolution.mercer.com
 }
 
 /*-------------------------------------------------------------------------------------------
-Mercer Evolution v4.0.0
+Mercer Evolution v4.1.0
 Thin Footer v1.0.1 - SASS
-DATE: May 26, 2016
-AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+DATE: July 1, 2016
+AUTHOR: Douglas Fraize, Matthew Holmes
 URL: http://evolution.mercer.com
 --------------------------------------------------------------------------------------------*/
 .evo-thin-footer .evo-footer-content-section {

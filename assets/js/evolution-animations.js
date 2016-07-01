@@ -1,7 +1,7 @@
 /*!
-* Mercer Evolution v4.0.0 - Animation JS
-* DATE: May 26, 2016
-* AUTHOR: Douglas Fraize, Matthew Holmes, Sherry Seeton
+* Mercer Evolution v4.1.0 - Animation JS
+* DATE: July 1, 2016
+* AUTHOR: Douglas Fraize, Matthew Holmes
 * URL: http://evolution.mercer.com
 */
 
